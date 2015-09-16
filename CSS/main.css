@@ -1,2 +1,12 @@
 @charset "UTF-8";
-body { background-color: #ffff00; }
+
+.find{
+	width:100%;
+	border: 1px solid #000;
+}
+
+.find div {
+	width: 50%;
+	border: 1px solid #FF0000;
+	margin: 0 auto;
+}
