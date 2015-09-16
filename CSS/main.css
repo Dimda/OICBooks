@@ -3,13 +3,16 @@
 
 .find{
 	width:100%;
-	border: 1px solid #000;
+	/*border: 1px solid #000;*/
 }
 
 .find div {
 	width: 50%;
-	border: 1px solid #FF0000;
+	/*border: 1px solid #FF0000;*/
 	margin: 0 auto;
+}
+#tab{
+	text-align: left;
 }
 =======
 body { background-color: #ffffff; }
