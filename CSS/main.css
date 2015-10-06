@@ -9,7 +9,7 @@ header{
   width: 100%;
   top:2%;
 }
-.left-menu{
+aside{
   background-color: #AA512F;
   z-index: 2;
   position: absolute;
@@ -26,15 +26,7 @@ header{
   height: 5%;
   text-align: center;
 }
-.find{
-	width:100%;
-	/*border: 1px solid #000;*/
-}
-.find div {
+#search-tab{
 	width: 50%;
-	/*border: 1px solid #FF0000;*/
 	margin: 0 auto;
-}
-#tab{
-	text-align: left;
 }
