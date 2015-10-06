@@ -15,7 +15,6 @@ header{
 #search-tab{
 	margin-left: 35%;
 }
-
 aside{
   background-color: #AA512F;
   z-index: 2;
