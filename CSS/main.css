@@ -2,10 +2,10 @@
 body{
   background-color: #F9F3CF;
 }
-.top-menu{
+header{
   background-color: #AA812F;
   z-index: 1;
-  position:relative;
+  position:fixed;
   width: 100%;
   top:2%;
 }
@@ -17,9 +17,7 @@ body{
   top:5px;
   width: 15%;
   height: 100%;
-}
-.left-menu li{
-  list-style: none;
+  opacity: 0.9;
 }
 #oic-books-logo{
   margin-top: 25%;
@@ -28,14 +26,10 @@ body{
   height: 5%;
   text-align: center;
 }
-.static{
-  position: static;
-}
 .find{
 	width:100%;
 	/*border: 1px solid #000;*/
 }
-
 .find div {
 	width: 50%;
 	/*border: 1px solid #FF0000;*/
