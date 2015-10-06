@@ -3,11 +3,13 @@ body{
   background-color: #F9F3CF;
 }
 header{
-  background-color: #AA812F;
   z-index: 1;
   position:fixed;
   width: 100%;
   top:2%;
+}
+#search-tab{
+	margin-left: 35%;
 }
 aside{
   background-color: #AA512F;
@@ -26,7 +28,17 @@ aside{
   height: 5%;
   text-align: center;
 }
-#search-tab{
-	width: 50%;
-	margin: 0 auto;
+#advertisement-tab{
+  margin-top: 25%;
+  margin-left: 20%;
+  height: 20%;
+}
+#new-arrivals-tab{
+  margin-top: 2%;
+  margin-left: 20%;
+  height: 20%;
+}
+
+#advertisement-tab, #new-arrivals-tab, header{
+  background-color: #AA812F;
 }
