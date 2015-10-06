@@ -1,4 +1,29 @@
 @charset "UTF-8";
+.top-menu{
+  background-color: red;
+  z-index: 1;
+  position:relative;
+  width: 100%;
+  top:2%;
+}
+.left-menu{
+  background-color: yellow;
+  z-index: 2;
+  position: absolute;
+  left:20px;
+  top:5px;
+  width: 15%;
+  height: 100%;
+}
+.left-menu li{
+  list-style: none;
+}
+#oic-books-logo{
+  padding-top: 10px;
+  background-color: brown;
+  height: 5%;
+  text-align: center;
+}
 .static{
   position: static;
 }
