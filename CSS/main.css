@@ -1,13 +1,16 @@
 @charset "UTF-8";
+body{
+  background-color: #F9F3CF;
+}
 .top-menu{
-  background-color: red;
+  background-color: #AA812F;
   z-index: 1;
   position:relative;
   width: 100%;
   top:2%;
 }
 .left-menu{
-  background-color: yellow;
+  background-color: #AA512F;
   z-index: 2;
   position: absolute;
   left:20px;
@@ -19,8 +22,9 @@
   list-style: none;
 }
 #oic-books-logo{
+  margin-top: 25%;
   padding-top: 10px;
-  background-color: brown;
+  background-color: #DDBC89;
   height: 5%;
   text-align: center;
 }
