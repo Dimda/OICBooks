@@ -1,28 +1,59 @@
 @charset "UTF-8";
+
+#header-top, header{
+  background-color: #AA812F;
+}
+#advertisement-tab, #new-arrivals-tab{
+    background: #ede7cf;
+}
 body{
   background-color: #F9F3CF;
-  margin-left:auto;
-  margin-right:auto;
+  margin:auto;
 }
 header{
   z-index: 1;
   position:fixed;
   width:100%;
-  top:30px;
-  padding: 25px 0;
+  top:40px;
+  padding: 20px 0;
+}
+#header-top {
+    padding: 10px 0;
+    padding-right:100px;
+    text-align: right;
+    border-bottom: 1px solid #DDBC89;
+}
+#header-top li :hover{
+    background: #e0c294;
+}
+ul{
+    font-size: 0;
+}
+li{
+    display: inline-block;
+}
+#header-top a {
+    border-right: 1px solid #DDBC89;
+    padding: 10px 30px;
+    font-size: 12px;
+    text-decoration:none;
+    color: #F9F3CF;
 
 }
 #search-tab{
-	margin-left: 35%;
+    margin-left: 40%;
 }
 aside{
-  background-color: #AA512F;
-  z-index: 2;
-  position: absolute;
-  left:40px;
-  top:0%;
-  width: 15%;
-  height: 100%;
+    background-color: #AA512F;
+    z-index: 10;
+    position: absolute;
+    left:40px;
+    top:0%;
+    width: 15%;
+    height: 100%;
+    box-shadow:rgba(0, 0, 0, 0.39) 0px 0px 8px 1px;
+    -webkit-box-shadow:rgba(0, 0, 0, 0.39) 0px 0px 8px 1px;
+    -moz-box-shadow:rgba(0, 0, 0, 0.39) 0px 0px 8px 1px;
 }
 #oic-books-logo{
   margin-top: 50px;
@@ -30,6 +61,10 @@ aside{
   background-color: #DDBC89;
   height: 100px;
   text-align: center;
+}
+#search-input{
+    padding: 10px 6px;
+    width:300px;
 }
 #advertisement-tab{
   margin-top: 16%;
@@ -43,7 +78,19 @@ aside{
   margin-right:40px;
   height: 20%;
 }
-
-#advertisement-tab, #new-arrivals-tab, header{
-  background-color: #AA812F;
+/*#top{
+    position: fixed;
+    -webkit-border-top-left-radius: 5px;
+        -moz-border-radius-topleft: 5px;
+                     border-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+        -moz-border-radius-topright: 5px;
+                      border-radius: 5px;
 }
+#top a{
+    padding:5px;
+    background: #AA512F;
+    color:#F9F3CF;
+    text-align: right;
+    text-decoration: none;
+}*/
