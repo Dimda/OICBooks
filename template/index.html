@@ -3,11 +3,20 @@
 <head>
 	<meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="css/main.css" media="all">
+	<link rel="stylesheet" type="text/css" href="css/top_page.css" media="all">
 	<title>OICBooks</title>
 </head>
 <body>
 	<div id="wrapper">
-	<!-- header start -->
+		<!-- sidebar start -->
+		<div id="wrapper_left">
+			<div id = "oic_books_logo">OIC<p>Books</div>
+			<nav>
+			</nav>
+		</div>
+		<!-- sidebar end -->
+
+		<!-- header start -->
 		<header>
 			<nav>
 	      		<ul>
@@ -15,33 +24,32 @@
 	        			<a href="#">カート</a>
 	       			</li>
 	       			<li>
-	          			<p><a href="#">ログイン</a></p>
+	          			<a href="#">ログイン</a>
 	        		</li>
 	      		</ul>
 			</nav>
-			<hgroup>
-				<div id="seatch_bar">
-					<div id="book_btn"></div>
-					<div id="isbn_btn"></div>
-					<div id="search_btn"></div>
+			<div id="hgroup">
+				<div id="search">
+					<button id="book_btn">書籍名</button>
+        			<button id="isbn_btn">ISBN</button><br>
+        			<input id="search_bar" placeholder="Search..."></input>
+        			<button id="search-btn" onclick="location.href='search_results.html'" value="search_results">検索</button>
 				</div>
 				<div id=" account_name"></div>
-			</hgroup>
+			</div>
 		</header>
 		<!-- header end -->
-		<!-- sidebar start -->
-		<div id="wrapper_left">
-			<nav></nav>
-		</div>
-		<!-- sidebar end -->
 		<!-- contents start -->
 		<div id="contents">
-			<div id="advertisements"></div>
+			<div id="advertisements">
+			<p>広告ページ</p>
+			</div>
 			<div id="sails">
+				<p>新着商品</p>
 				<div id="new"></div>
 				<div id="discount"></div>
 			</div>
-			<div id="recommended"></div>
+			<div id="recommended"><p>おすすめ商品</p></div>
 		</div>
 		<!-- contents end -->
 		<!-- footer start -->
