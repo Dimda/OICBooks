@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+.search-results{
+  position: absolute;
+  margin-left: 11vh;
+  list-style-type: none;
+}
+/*.search-results li{
+  border-bottom: solid black;
+}*/
+table, th, td {
+   border: 1px solid black;
+}
+th,td{
+  width: 100%;
+}
+.product-price{
+  color:red;
+}

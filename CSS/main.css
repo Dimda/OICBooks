@@ -68,9 +68,9 @@ aside{
     background-color: #AA512F;
     z-index: 2;
     position: absolute;
-    left:7%;
+    left:2vh;
     top:0%;
-    width: 15%;
+    width: 14vh;
     height: 100%;
     box-shadow        :rgba(0, 0, 0, 0.39) 0px 0px 8px 1px;
     -webkit-box-shadow:rgba(0, 0, 0, 0.39) 0px 0px 8px 1px;
@@ -120,7 +120,8 @@ aside{
     text-decoration: none;
 }*/
 main{
-  margin-top: 20%;
+  margin-top: 18vh;
+  margin-left: 2vh;
 }
 footer{
   position:absolute;
