@@ -66,7 +66,7 @@ header{
 
 aside{
     background-color: #AA512F;
-    z-index: 10;
+    z-index: 2;
     position: absolute;
     left:7%;
     top:0%;
@@ -119,9 +119,16 @@ aside{
     text-align: right;
     text-decoration: none;
 }*/
-
+main{
+  margin-top: 20%;
+}
 footer{
-  z-index: 30;
+  position:absolute;
+  bottom:0;
+  width: 100%;
+  height: auto;
+  z-index: 3;
   background: #AA812F;
-  padding: 25px 0;
+  text-align: center;
+  /*padding: 25px 0;*/
 }
