@@ -17,7 +17,7 @@
         <?php
           $servername = "localhost";
           $username = "root";
-          $password = "sivaD123";//自分のパスワードに変更して
+          $password = "wasdqe123";//自分のパスワードに変更して
           $dbname = "Webshop";
 
           $conn = new mysqli($servername, $username, $password, $dbname);
