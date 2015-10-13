@@ -9,9 +9,6 @@
   </head>
   <body>
 
-    <?php include("includes/header.html"); ?>
-    <?php include("includes/navigation.html"); ?>
-    <?php include("includes/sidebar.html"); ?>
     <main>
       <ul class="search-results">
         <?php
