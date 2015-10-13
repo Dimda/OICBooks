@@ -13,17 +13,24 @@
         <?php
           $servername = "localhost";
           $username = "root";
-          $password = "wasdqe123";//自分のパスワードに変更して
-          $dbname = "Webshop";
+          $password = "cocacola";//自分のパスワードに変更して
+          $dbname = "oicbooks";
 
           $conn = new mysqli($servername, $username, $password, $dbname);
 
           if($conn->connect_error){
             die("接続失敗" . $conn->connect_error);
           }
-
           if (!$conn->set_charset("utf8")) {
               exit();
+          }
+
+          $name = $_POST['post_'];
+          $sql;
+          if($name == ""){
+            $sql = "SELECT PRODUCT_NAME, PRICE FROM PRODUCTS WHERE PRODUCT_ID = 1";
+          }else{
+            $sql = "SELECT PRODUCT_NAME, PRICE FROM PRODUCTS WHERE PRODUCT_NAME LIKE '%($name)%'";
           }
 
           $sql = "SELECT PRODUCT_NAME, PRICE FROM PRODUCTS";
