@@ -1,0 +1,43 @@
+<html>
+  <head>
+    <script src="jquery-1.11.3.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="CSS/main.css" media="all">
+    <title>OIC本屋</title>
+    <meta charset="utf-8">
+  </head>
+  <body>
+
+    <div id = "header-top">
+      <ul>
+        <li>
+          <a href="#">カート</a>
+        </li>
+        <li>
+          <p><a href="#">ログイン</a></p>
+        </li>
+      </ul>
+    </div>
+
+    <header>
+      <div id="search-tab">
+        <button id="title-search">書籍名</button>
+        <button id="ISBN-search">ISBN</button><br>
+        <form action="search_results.php" method="post">
+          <input id="search-input" placeholder="Search..." type="text" name="post_"></input>
+          <button id="search-btn" type="submit">&#128269</button>
+        </form>
+      </div>
+    </header>
+
+    <aside>
+      <div id = "oic-books-logo">OIC<p>Books</div>
+    </aside>
+    <main>
+      <div id="advertisement-tab">広告一覧</div>
+      <div id="new-arrivals-tab">新着商品一覧</div>
+    </main>
+    <footer>
+      <p>test</p>
+    </footer>
+  </body>
+</html>
