@@ -8,12 +8,14 @@
     <meta charset="utf-8">
   </head>
   <body>
+    <?php include("includes/header.html"); ?>
+    <?php include("includes/sidebar.html"); ?>
     <main>
       <ul class="search-results">
         <?php
           $servername = "localhost";
           $username = "root";
-          $password = "cocacola";//自分のパスワードに変更して
+          $password = "cocacola";
           $dbname = "oicbooks";
 
           $conn = new mysqli($servername, $username, $password, $dbname);
@@ -25,12 +27,12 @@
               exit();
           }
 
-          $name = $_POST['post_'];
+          $keyword = $_POST['post_'];
           $sql;
-          if($name == ""){
+          if($keyword == ""){
             $sql = "SELECT PRODUCT_NAME, PRICE FROM PRODUCTS WHERE PRODUCT_ID = 1";
           }else{
-            $sql = "SELECT PRODUCT_NAME, PRICE FROM PRODUCTS WHERE PRODUCT_NAME LIKE '%($name)%'";
+            $sql = "SELECT PRODUCT_NAME, PRICE FROM PRODUCTS WHERE PRODUCT_NAME LIKE '%($keyword)%'";
           }
 
           $sql = "SELECT PRODUCT_NAME, PRICE FROM PRODUCTS";

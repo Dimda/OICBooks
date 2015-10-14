@@ -2,8 +2,10 @@
 
 .search-results{
   position: absolute;
-  margin-left: 11vh;
+  margin-left: 20vh;
+  margin-top: 20vh;
   list-style-type: none;
+  width:65vw;
 }
 /*.search-results li{
   border-bottom: solid black;
