@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="css/main.css" media="all">
   <link rel="stylesheet" type="text/css" href="css/top_page.css" media="all">
-  <title>OICBooks</title>
+  <title>OICBooksへようこそ！</title>
 </head>
 <body>
 
