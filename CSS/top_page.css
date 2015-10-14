@@ -1,4 +1,14 @@
 /*広告一覧*/
+main{
+  position: absolute;
+  width: 60vw;
+  max-width: 100%;
+  background-color: #fff;
+  margin-left: 32vw;
+  padding-bottom: auto;
+  margin-top: 8em;
+
+}
 #advertisements{
   margin-left: 1%;
   margin-right:1%;

@@ -56,7 +56,7 @@ header a{
   padding: 10px 6px;
   width:300px;
 }
-#wrapper_left{
+aside{
   /*float:left;*/
   background-color: #AA512F;
   width: 19vh;
@@ -69,7 +69,7 @@ header a{
   top: 0;
   z-index: 2;
 }
-#wrapper_left a{
+aside a{
   text-decoration: none;
 }
 #logo{
@@ -83,7 +83,6 @@ header a{
   text-align: center;
   color:#AA512F;
   position:relative;
-
 
 }
 #logo h1{
@@ -114,14 +113,6 @@ header a{
   border-style: solid;
   border-color: transparent;
   border-top-color: #b0966d;
-}
-#contents{
-  max-width: 100%;
-  background-color: #fff;
-  margin-left: 20em;
-  margin-right: 8em;
-  padding-bottom: auto;
-  margin-top: 8em;
 }
 footer{
   /*clear: left;*/  /*sidebarのfloat解除*/
