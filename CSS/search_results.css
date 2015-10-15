@@ -16,6 +16,10 @@ table, th, td {
 th,td{
   width: 100%;
 }
-.product-price{
-  color:red;
+tr{
+  color: #AA812F;
+}
+tr:nth-child(odd){
+  background-color: #AA812F;
+  color: #F9F3CF;
 }
