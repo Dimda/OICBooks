@@ -8,6 +8,8 @@ main{
   margin-top: 8em;
 }
 #login-screen{
+  border-radius: 25px;
+  padding: 3vw;
   margin-top: 4vw;
   width: 60vw;
   position: absolute;
@@ -18,6 +20,10 @@ main{
   right: 10%;
   width: 50%;
   height: 4vw;
+}
+#login-screen p{
+  margin-bottom: 5vw;
+  font-size: 3vw;
 }
 #email:focus, #password:focus{
   background-color: yellow;
