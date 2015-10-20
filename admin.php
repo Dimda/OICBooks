@@ -28,7 +28,8 @@
     </nav>
   </div>
   <main>
-    
+    <div id="product-manager">
+    </div>
   </main>
 </body>
 </html>

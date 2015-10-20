@@ -14,7 +14,7 @@
    <main>
      <ul class="search-results">
        <?php
-         $servername = "127.0.0.1";
+         $servername = "localhost";
          $username = "root";
          $password = "cocacola";
          $dbname = "oicbooks";
@@ -37,13 +37,14 @@
          }
          */
 
+
          $sql = "SELECT PRODUCT_ID, PRODUCT_NAME, PRODUCT_PRICE FROM PRODUCT";
          $result = $conn->query($sql);
          echo '<table>
                  <th>画像</th><th>商品名</th><th>価格</th>';
          while($row = $result->fetch_assoc()){
              echo '<tr>
-                       <td rowspan="1" ><img class="product-picture" src="PRODUCT_IMAGE/' . $row["PRODUCT_ID"] .'.jpg"  width="auto" height="200"></td>
+                       <td rowspan="1" width= 20% ><img class="product-picture" src="product_image/' . $row["PRODUCT_ID"] .'.jpg"  width="auto" height="200"></td>
                        <td><a class = "product-name" href="">' . $row["PRODUCT_NAME"] .'</a></td>
                        <td class = "product-price">' . $row["PRODUCT_PRICE"] .'円</td>
                      </tr>';
