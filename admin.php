@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="css/main.css" media="all">
-  <link rel="stylesheet" type="text/css" href="css/top_page.css" media="all">
-  <title>OICBooksへようこそ！</title>
+  <link rel="stylesheet" type="text/css" href="css/main.css" media="all">
+  <link rel="stylesheet" type="text/css" href="css/admin.css" media="all">
+  <title>管理者ページ</title>
 </head>
 <body>
   <?php include("includes/sidebar.html"); ?>
