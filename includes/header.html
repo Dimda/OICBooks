@@ -11,10 +11,12 @@
     </nav>
     <div id="hgroup">
       <div id="search">
-        <button id="book_btn">書籍名</button>
-        <button id="isbn_btn">ISBN</button><br>
-        <input id="search_bar" placeholder="Search..."></input>
-        <button id="search_btn" onclick="location.href='search_results.php'" value="search_results">検索</button>
+        <form action="search_results.php" method="post">
+          <button id="book_btn">書籍名</button>
+          <button id="isbn_btn">ISBN</button><br>
+          <input id="search_bar" placeholder="Search..." name="keyword">
+          <input id="search_btn" type="submit" value="検索">
+        </form>
       </div>
       <div id=" account_name"></div>
     </div>

@@ -14,17 +14,16 @@
      <ul id="search-results">
        <?php
          include("includes/connect_DB.php");
-         /*
-         $keyword = $​_POST['post_​'];
-         $sql;
+         $keyword = $_POST["keyword"];
+         echo $keyword;
+
          if($keyword == ""){
-           $sql = "SELECT PRODUCT_NAME, PRODUCT_PRICE FROM PRODUCT WHERE PRODUCT_ID = 1";
+           $sql = "SELECT PRODUCT_ID, PRODUCT_NAME, PRODUCT_PRICE FROM PRODUCT";
          }else{
-           $sql = "SELECT PRODUCT_NAME, PRODUCT_PRICE FROM PRODUCT WHERE PRODUCT_NAME LIKE '%($keyword)%'";
+           $sql = "SELECT PRODUCT_ID, PRODUCT_NAME, PRODUCT_PRICE FROM PRODUCT WHERE PRODUCT_NAME LIKE '%($keyword)%'";
          }
-         */
-         $sql = "SELECT PRODUCT_ID, PRODUCT_NAME, PRODUCT_PRICE FROM PRODUCT";
          $result = $conn->query($sql);
+
          echo '<table>
                  <th>画像</th><th>商品名</th><th>価格</th>';
          while($row = $result->fetch_assoc()){

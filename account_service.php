@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="css/main.css" media="all">
-    <link rel="stylesheet" href="text/css" href="css/account_service" media="all">
+    <link rel="stylesheet" type="text/css" href="css/account_service" media="all">
   <title>OICBooks</title>
 </head>
 <body>
