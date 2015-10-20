@@ -8,31 +8,22 @@
     <meta charset="utf-8">
   </head>
   <body>
-    <?php include("includes/header.html"); ?>
-    <?php include("includes/sidebar.html"); ?>
     <main>
       <ul class="search-results">
         <?php
           $servername = "localhost";
           $username = "root";
-          $password = "cocacola";
-          $dbname = "oicbooks";
+          $password = "wasdqe123";//自分のパスワードに変更して
+          $dbname = "Webshop";
 
           $conn = new mysqli($servername, $username, $password, $dbname);
 
           if($conn->connect_error){
             die("接続失敗" . $conn->connect_error);
           }
+
           if (!$conn->set_charset("utf8")) {
               exit();
-          }
-
-          $keyword = $_POST['post_'];
-          $sql;
-          if($keyword == ""){
-            $sql = "SELECT PRODUCT_NAME, PRICE FROM PRODUCTS WHERE PRODUCT_ID = 1";
-          }else{
-            $sql = "SELECT PRODUCT_NAME, PRICE FROM PRODUCTS WHERE PRODUCT_NAME LIKE '%($keyword)%'";
           }
 
           $sql = "SELECT PRODUCT_NAME, PRICE FROM PRODUCTS";
