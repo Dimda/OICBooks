@@ -1,11 +1,12 @@
 <!DOCTYPE HTML>
 <html>
  <head>
-   <script src="jquery-1.11.3.min.js"></script>
-   <link rel="stylesheet" type="text/css" href="css/main.css" media="all">
-   <link rel="stylesheet" type="text/css" href="css/search_results.css" media="all">
-   <title>検索結果</title>
-   <meta charset="utf-8">
+    <script src="jquery-1.11.3.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/main.css" media="all">
+    <link rel="stylesheet" href="text/css" href="css/sidebar.css" media="all">
+    <link rel="stylesheet" type="text/css" href="css/search_results.css" media="all">
+    <title>検索結果</title>
+    <meta charset="utf-8">
  </head>
  <body>
    <?php include("includes/header.html"); ?>
@@ -13,7 +14,7 @@
    <main>
      <ul class="search-results">
        <?php
-         $servername = "localhost";
+         $servername = "127.0.0.1";
          $username = "root";
          $password = "cocacola";
          $dbname = "oicbooks";
