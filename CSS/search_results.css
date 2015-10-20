@@ -1,19 +1,25 @@
 @charset "UTF-8";
 
 .search-results{
-  position: absolute;
-  margin-left: 11vh;
-  list-style-type: none;
+ position: absolute;
+ margin-left: 20vh;
+ margin-top: 20vh;
+ list-style-type: none;
+ width:65vw;
 }
 /*.search-results li{
-  border-bottom: solid black;
+ border-bottom: solid black;
 }*/
 table, th, td {
-   border: 1px solid black;
+  border: 1px solid black;
 }
 th,td{
-  width: 100%;
+ width: 100%;
 }
-.product-price{
-  color:red;
+tr{
+ color: #AA812F ;
+}
+tr:nth-child(odd){
+ background-color: #AA812F ;
+ color: #F9F3CF ;
 }
