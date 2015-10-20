@@ -25,7 +25,7 @@ header{
 }
 header nav{
   text-align:right;
-  padding:5px 7vw;
+  padding:5px 10em;
   border-bottom: 1px solid #DDBC89;
 }
 header ul{
@@ -55,7 +55,7 @@ header a{
   padding: 10px 6px;
   width:300px;
 }
-#sidebar{
+#sidebar {
   /*float:left;*/
   background-color: #AA512F;
   width: 10em;
@@ -67,23 +67,6 @@ header a{
   position: fixed;
   top: 0;
   z-index: 2;
-}
-#logo{
-  width: 11em;
-  margin-left: -0.5em;
-  margin-top: 50px;
-  padding-top: 5px;
-  padding-bottom: 10px;
-  background-color: #DDBC89;
-  height: 100px;
-  text-align: center;
-  color:#AA512F;
-  position:relative;
-}
-#logo h1{
-  margin: 0.5em 0;
-  line-height: 1em;
-  font-size: 1.8em;
 }
 #logo:before{
   content: " ";
@@ -109,10 +92,38 @@ header a{
   border-color: transparent;
   border-top-color: #b0966d;
 }
+#logo{
+  width: 11em;
+  margin-left: -0.5em;
+  margin-top: 50px;
+  padding-top: 5px;
+  padding-bottom: 10px;
+  background-color: #DDBC89;
+  height: 100px;
+  text-align: center;
+  color:#AA512F;
+  position:relative;
+  z-index: 3;
+  /*選択ラインを消す*/
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+#logo h1{
+  margin: 0.5em 0;
+  line-height: 1em;
+  font-size: 1.8em;
+}
+a{
+  text-decoration: none;
+}
 main{
   max-width: 100%;
   background-color: #fff;
-  margin-left: 25vw;
+  margin-left: 20em;
   margin-right: 8em;
   padding-bottom: auto;
   margin-top: 8em;
