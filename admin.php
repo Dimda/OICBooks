@@ -1,17 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <link rel="stylesheet" type="text/css" href="css/main.css" media="all">
   <link rel="stylesheet" type="text/css" href="css/admin.css" media="all">
   <title>管理者ページ</title>
 </head>
 <body>
-  <?php include("includes/sidebar.html"); ?>
-  <?php include("includes/header.html"); ?>
+  <header>
+    <h1>管理者ページ</h1>
+    <nav>
+      <ul>
+        <li><a href="#">test</a></li>
+        <li><a href="#">test</a></li>
+        <li><a href="#">test</a></li>
+        <li><a href="#">test</a></li>
+      </ul>
+    </nav>
+  </header>
+  <div id="sidebar">
+    <nav>
+      <ul>
+        <li><a href="#">test</a></li>
+        <li><a href="#">test</a></li>
+        <li><a href="#">test</a></li>
+        <li><a href="#">test</a></li>
+      </ul>
+    </nav>
+  </div>
   <main>
-    <!--ここで入力-->
+    
   </main>
-  <?php include("includes/footer.html"); ?>
 </body>
 </html>

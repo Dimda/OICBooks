@@ -2,10 +2,8 @@
 
 .search-results{
   position: absolute;
-  margin-left: 20vh;
-  margin-top: 20vh;
+  margin-left: 11vh;
   list-style-type: none;
-  width:65vw;
 }
 /*.search-results li{
   border-bottom: solid black;
@@ -16,10 +14,6 @@ table, th, td {
 th,td{
   width: 100%;
 }
-tr{
-  color: #AA812F;
-}
-tr:nth-child(odd){
-  background-color: #AA812F;
-  color: #F9F3CF;
+.product-price{
+  color:red;
 }
