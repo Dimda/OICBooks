@@ -13,7 +13,7 @@
         <?php
           $servername = "localhost";
           $username = "root";
-          $password = "wasdqe123";//自分のパスワードに変更して
+          $password = "cocacola";//自分のパスワードに変更して
           $dbname = "Webshop";
 
           $conn = new mysqli($servername, $username, $password, $dbname);
