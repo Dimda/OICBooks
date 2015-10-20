@@ -1,5 +1,6 @@
 @charset "UTF-8";
 
+
 .search-results{
  position: absolute;
  margin-left: 20vh;
@@ -7,6 +8,7 @@
  list-style-type: none;
  width:65vw;
 }
+
 /*.search-results li{
  border-bottom: solid black;
 }*/
@@ -17,9 +19,11 @@ th,td{
  width: 100%;
 }
 tr{
- color: #AA812F ;
+
+  color: #AA812F;
 }
 tr:nth-child(odd){
- background-color: #AA812F ;
- color: #F9F3CF ;
+  background-color: #AA812F;
+  color: #F9F3CF;
+
 }
