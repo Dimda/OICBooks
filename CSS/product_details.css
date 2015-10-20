@@ -1,0 +1,17 @@
+@charset "UTF-8";
+main{
+  background-color: #F9F3CF;
+}
+#product-info-wrapper{
+
+}
+#product-image{
+
+}
+#product-name{
+
+}
+#product-price{
+  color: #AA812F;
+  font-size: 30pt;
+}

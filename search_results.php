@@ -1,9 +1,8 @@
 <!DOCTYPE HTML>
 <html>
  <head>
-    <script src="jquery-1.11.3.min.js"></script>
     <link rel="stylesheet" type="text/css" href="css/main.css" media="all">
-    <link rel="stylesheet" href="text/css" href="css/sidebar.css" media="all">
+    <link rel="stylesheet" type="text/css" href="css/sidebar.css" media="all">
     <link rel="stylesheet" type="text/css" href="css/search_results.css" media="all">
     <title>検索結果</title>
     <meta charset="utf-8">
@@ -14,19 +13,7 @@
    <main>
      <ul id="search-results">
        <?php
-         $servername = "localhost";
-         $username = "root";
-         $password = "cocacola";
-         $dbname = "oicbooks";
-
-         $conn = new mysqli($servername, $username, $password, $dbname);
-
-         if($conn->connect_error){
-           die("接続失敗" . $conn->connect_error);
-         }
-         if (!$conn->set_charset("utf8")) {
-             exit();
-         }
+         include("includes/connect_DB.php");
          /*
          $keyword = $​_POST['post_​'];
          $sql;
@@ -36,8 +23,6 @@
            $sql = "SELECT PRODUCT_NAME, PRODUCT_PRICE FROM PRODUCT WHERE PRODUCT_NAME LIKE '%($keyword)%'";
          }
          */
-
-
          $sql = "SELECT PRODUCT_ID, PRODUCT_NAME, PRODUCT_PRICE FROM PRODUCT";
          $result = $conn->query($sql);
          echo '<table>
@@ -45,7 +30,7 @@
          while($row = $result->fetch_assoc()){
              echo   '<tr>
                        <td class = "book-image" width = "20%"><img class="product-picture" src="product_image/' . $row["PRODUCT_ID"] .'.jpg"  width="auto" height="200px"></td>
-                       <td class = "product-name" width = "70%"><a class = "product-name" href="">' . $row["PRODUCT_NAME"] .'</a></td>
+                       <td class = "product-name" width = "70%"><a class = "product-name" href="product_details.php?id=' . $row["PRODUCT_ID"] . '">' . $row["PRODUCT_NAME"] .'</a></td>
                        <td class = "product-price" width = "10%">' . $row["PRODUCT_PRICE"] .'円</td>
                      </tr>';
                 }
