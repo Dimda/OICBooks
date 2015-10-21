@@ -15,12 +15,13 @@
        <?php
          include("includes/connect_DB.php");
          $keyword = $_POST["keyword"];
-         echo $keyword;
+         $keyword = mysqli_real_escape_string($conn, $keyword);
+         echo $keyword . "の検索結果";
 
          if($keyword == ""){
            $sql = "SELECT PRODUCT_ID, PRODUCT_NAME, PRODUCT_PRICE FROM PRODUCT";
          }else{
-           $sql = "SELECT PRODUCT_ID, PRODUCT_NAME, PRODUCT_PRICE FROM PRODUCT WHERE PRODUCT_NAME LIKE '%($keyword)%'";
+           $sql = "SELECT PRODUCT_ID, PRODUCT_NAME, PRODUCT_PRICE FROM PRODUCT WHERE PRODUCT_NAME LIKE '%{$keyword}%'";
          }
          $result = $conn->query($sql);
 
