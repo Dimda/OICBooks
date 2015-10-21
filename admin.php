@@ -7,7 +7,7 @@
 </head>
 <body>
   <header>
-    <h1>管理者ページ</h1>
+    <a href="admin.php">管理者ページ</a>
     <nav>
       <ul>
         <li><a href="#">test</a></li>
@@ -29,36 +29,41 @@
   </div>
   <main>
     <div id="product-manager">
+      <h2>商品の編入、削除</h2>
+      <form action="admin.php?searchClicked=true" method="post">
+        <!--searchClickedで検索したってことを伝える-->
+        <input id="search_db" placeholder="データベースの中を検索する" name="keyword">
+        <input id="search_btn" type="submit" value="検索">
+      </form>
       <ul class="search-results">
         <?php
-          $servername = "localhost";
-          $username = "root";
-          $password = "cocacola";
-          $dbname = "oicbooks";
+          if($_GET["searchClicked"]){
+            include("includes/connect_DB.php");
+            $keyword = $_POST["keyword"];
+            $keyword = mysqli_real_escape_string($conn, $keyword);
+            echo $keyword . "の検索結果";
 
-          $conn = new mysqli($servername, $username, $password, $dbname);
+            if($keyword == ""){
+              $sql = "SELECT PRODUCT_ID, PRODUCT_NAME, PRODUCT_PRICE FROM PRODUCT";
+            }else{
+              $sql = "SELECT PRODUCT_ID, PRODUCT_NAME, PRODUCT_PRICE FROM PRODUCT WHERE PRODUCT_NAME LIKE '%{$keyword}%'";
+            }
+            $result = $conn->query($sql);
 
-          if($conn->connect_error){
-            die("接続失敗" . $conn->connect_error);
+            echo '<table>
+                    <th>商品名</th><th>価格</th><th>編集</th><th>削除</th>';
+            while($row = $result->fetch_assoc()){
+                echo   '<tr>
+                          <td class = "product-name" width = "70%"><a class = "product-name" href="product_details.php?id=' . $row["PRODUCT_ID"] . '">' . $row["PRODUCT_NAME"] .'</a></td>
+                          <td class = "product-price" width = "10%">' . $row["PRODUCT_PRICE"] .'円</td>
+                          <td class = "edit" width = "10%"><a href="">削除</a></td>
+                          <td class = "delete" width = "10%"><a href="delete.php?id=' . $row["PRODUCT_ID"] . '">削除</a></td>
+                        </tr>';
+                   }
+                echo '</table>';
+                $conn->close();
           }
-          if (!$conn->set_charset("utf8")) {
-              exit();
-          }
-
-          $sql = "SELECT PRODUCT_ID, PRODUCT_NAME, PRODUCT_PRICE FROM PRODUCT";
-          $result = $conn->query($sql);
-          echo '<table>
-                  <th>画像</th><th>商品名</th><th>価格</th>';
-          while($row = $result->fetch_assoc()){
-              echo '<tr>
-                        <td rowspan="1" width= 20% ><img class="product-picture" src="product_image/' . $row["PRODUCT_ID"] .'.jpg"  width="auto" height="200"></td>
-                        <td><a class = "product-name" href="">' . $row["PRODUCT_NAME"] .'</a></td>
-                        <td class = "product-price">' . $row["PRODUCT_PRICE"] .'円</td>
-                      </tr>';
-                 }
-              echo '</table>';
-              $conn->close();
-            ?>
+          ?>
       </ul>
     </div>
 

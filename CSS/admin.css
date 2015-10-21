@@ -28,7 +28,7 @@ header{
   border-right: 2px solid rgba(255,255,255,0.5);
   z-index: 10;
 }
-header h1{
+header a{
   margin: 10px 0 5px 20px;
 }
 header nav{
@@ -73,4 +73,9 @@ main{
   width: 100%;
   height: 100%;
   background-color: #aaaeee;
+}
+.search-results{
+  width: 600px;
+  height: 600px;
+  overflow: scroll;
 }
