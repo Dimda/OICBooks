@@ -70,6 +70,6 @@ main{
 }
 .search-results{
   width: 600px;
-  height: 600px;
+  height: 300px;
   overflow: scroll;
 }

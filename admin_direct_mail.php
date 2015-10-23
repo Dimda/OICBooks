@@ -1,3 +1,5 @@
 <?php include("includes/admin_top.html") ?>
-  <h1>管理者ページへようこそ！</h1>
+  <div class="mail-service">
+    <h2>ダイレクトメール送信</h2>
+  </div>
 <?php include("includes/admin_bottom.html") ?>
