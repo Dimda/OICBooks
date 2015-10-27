@@ -2,7 +2,7 @@
 
 <div id="product-manager">
   <h2>商品の編入、削除</h2>
-  <form action="admin.php?searchClicked=true" method="post">
+  <form action="admin_product_manager.php?searchClicked=true" method="post">
     <!--searchClickedで検索したってことを伝える-->
     <input id="search_db" placeholder="データベースの中を検索する" name="keyword">
     <input id="search_btn" type="submit" value="検索">
