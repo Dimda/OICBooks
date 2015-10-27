@@ -28,11 +28,10 @@
             echo   '<tr>
                       <td class = "product-name" width = "70%"><a class = "product-name" href="product_details.php?id=' . $row["PRODUCT_ID"] . '">' . $row["PRODUCT_NAME"] .'</a></td>
                       <td class = "product-price" width = "10%">' . $row["PRODUCT_PRICE"] .'円</td>
-                      <td class = "edit" width = "10%"><a href="">編集</a></td>
+                      <td class = "edit" width = "10%"><a href="product_edit.php?ID=' . $row["PRODUCT_ID"] . '">編集</a></td>
                       <td class = "delete" width = "10%"><a onclick="return deleteCheck()" href="delete.php?ID=' . $row["PRODUCT_ID"] . '">削除</a></td>
                     </tr>';
                }
-               echo '<a onclick="return confirm("Are you sure?");" href="delete.php?ID=' . $row["PRODUCT_ID"] . '">削除</a>';
             echo '</table>';
             $conn->close();
       }
