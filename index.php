@@ -8,18 +8,16 @@
 </head>
 <body>
 
-  <?php include("includes/sidebar.html"); ?>
   <?php include("includes/header.html"); ?>
+  <?php include("includes/sidebar.html"); ?>
   <main>
-    <div id="advertisements">
+    <div id="advertisements" class="box">
       <p>広告ページ</p>
     </div>
-    <div id="sales">
-      <p>新着商品</p>
-      <div id="new"></div>
-      <div id="discount"></div>
+    <div id="new" class="link"><a href="#"><h3>新着順</h3></a></div><div id="discount" class="link"><a href="#"><h3>割引</h3></a></div>
+    <div id="sales" class="box">
     </div>
-    <div id="recommendations"><p>おすすめ商品</p></div>
+    <div id="recommendations" class="box"><p>おすすめ商品</p></div>
   </main>
   <?php include ("includes/top.html");?>
   <?php include("includes/footer.html"); ?>
