@@ -1,0 +1,30 @@
+@charset "UTF-8";
+main{
+  position: absolute;
+  width: 60vw;
+  max-width: 100%;
+  margin-left: 32vw;
+  padding-bottom: auto;
+  margin-top: 8em;
+}
+#login-screen{
+  border-radius: 25px;
+  padding: 3vw;
+  margin-top: 4vw;
+  width: 60vw;
+  position: absolute;
+  background-color: #AA812F;
+}
+#email, #password{
+  position: absolute;
+  right: 10%;
+  width: 50%;
+  height: 4vw;
+}
+#login-screen p{
+  margin-bottom: 5vw;
+  font-size: 3vw;
+}
+#email:focus, #password:focus{
+  background-color: yellow;
+}
