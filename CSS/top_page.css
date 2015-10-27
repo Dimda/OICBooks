@@ -21,13 +21,12 @@
   border: solid 1px black;
   padding: 0.3rem;
   text-align: center;
-  width: 48.6%;
-  /*margin: 0 auto;*/
+  min-width: 48.6%;
+  /*width:31.55vw;*/
 }
 main a{
   color:black;
 }
-
 h3{
   font-size: 1em;
   margin: 0;
