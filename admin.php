@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -74,3 +75,8 @@
   <footer></footer>
 </body>
 </html>
+=======
+<?php include("includes/admin_top.html") ?>
+  <h1>管理者ページへようこそ！</h1>
+<?php include("includes/admin_bottom.html") ?>
+>>>>>>> 154875d2edfb03a866ee865bd5e52bfc13ff8ec9
