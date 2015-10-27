@@ -11,15 +11,15 @@
   <?php include("includes/sidebar.html"); ?>
   <?php include("includes/header.html"); ?>
   <main>
-    <div id="advertisements">
+    <div id="advertisements" class="box">
       <p>広告ページ</p>
     </div>
-    <div id="sales">
+    <div id="sales" class="box">
       <p>新着商品</p>
-      <div id="new"></div>
-      <div id="discount"></div>
+      <div id="new" class="box"></div>
+      <div id="discount" class="box"></div>
     </div>
-    <div id="recommendations"><p>おすすめ商品</p></div>
+    <div id="recommendations" class="box"><p>おすすめ商品</p></div>
   </main>
   <?php include ("includes/top.html");?>
   <?php include("includes/footer.html"); ?>
