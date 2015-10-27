@@ -15,7 +15,7 @@ header{
   height: auto;
 }
 #container{
-  overflow: hidden; /* サイドバーのあまりを隠す */
+  /*overflow: hidden;  サイドバーのあまりを隠す */
   width: auto;
 }
 #sidebar{
@@ -24,8 +24,8 @@ header{
   width: 9rem;
   border-right: 2px solid rgba(255,255,255,0.5);
   float: left;
-  padding-bottom: 32768px; /* サイドバーの高さをメインと同じにする */
-  margin-bottom: -32768px; /* 同上 */
+  /*padding-bottom: 32768px; /* サイドバーの高さをメインと同じにする */
+  /*margin-bottom: -32768px; /* 同上 */
 }
 header a{
   color: #eee;
