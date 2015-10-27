@@ -3,12 +3,14 @@
   margin-left: 1%;
   margin-right:1%;
   height: 20%;
+  background-color: #ede7cf;
 }
 #sails{
   margin-top: 16%;
   margin-left: 1%;
   margin-right:1%;
   height: 20%;
+  background-color: #ede7cf;
 }
 /*新着商品*/
 #recommended{
@@ -16,10 +18,5 @@
   margin-left: 1%;
   margin-right:1%;
   height: 20%;
-}
-.box{
-  display: inline-block;
-  border: solid 1px black;
-  padding: 0 3rem 2rem 0.5rem;
-  margin: 10px;
+  background-color: #ede7cf;
 }
