@@ -2,6 +2,9 @@
 main{
   background-color: #F9F3CF;
 }
+ul{
+	overflow: hidden;
+}
 table{
   padding-bottom: 100px;
 }

@@ -40,6 +40,7 @@
      </ul>
 
    </main>
-   <?php include("includes/footer.html"); ?>
+  <?php include ("includes/top.html");?>
+  <?php include("includes/footer.html"); ?>
  </body>
 </html>

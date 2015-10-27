@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="jp">
 <head>
   <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="css/main.css" media="all">
-  <link rel="stylesheet" type="text/css" href="css/top_page.css" media="all">
+    <link rel="stylesheet" type="text/css" href="css/top_page.css" media="all">
   <title>OICBooksへようこそ！</title>
 </head>
 <body>
@@ -21,6 +21,7 @@
     </div>
     <div id="recommendations"><p>おすすめ商品</p></div>
   </main>
+  <?php include ("includes/top.html");?>
   <?php include("includes/footer.html"); ?>
 
 </body>
