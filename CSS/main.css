@@ -1,5 +1,12 @@
 @charset "UTF-8";
 
+/*全ての要素に対してbox-sizingを指定*/
+* {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
 html{
   font-family: arial,sans-serif;
   height: 100%;
@@ -55,7 +62,6 @@ header a{
   width:300px;
 }
 #sidebar {
-  /*float:left;*/
   background-color: #AA512F;
   width: 10rem;
   height: 100%;
@@ -103,6 +109,9 @@ header a{
   color:#AA512F;
   position:relative;
   z-index: 3;
+  box-shadow        :rgba(0, 0, 0, 0.39) 0px 0px 8px 1px;
+  -webkit-box-shadow:rgba(0, 0, 0, 0.39) 0px 0px 8px 1px;
+  -moz-box-shadow   :rgba(0, 0, 0, 0.39) 0px 0px 8px 1px;
   /*選択ラインを消す*/
   -webkit-touch-callout: none;
   -webkit-user-select: none;
@@ -112,7 +121,7 @@ header a{
   user-select: none;
 }
 #logo h1{
-  margin: 0.5rem 0;
+  margin: 1.3rem 0;
   line-height: 1rem;
   font-size: 1.8rem;
 }
@@ -120,6 +129,7 @@ a{
   text-decoration: none;
 }
 main{
+  width: calc(100% - 28rem);
   background-color: #fff;
   margin-left: 20rem;
   margin-right: 8rem;
@@ -142,7 +152,6 @@ main{
   padding: 1rem 1rem;
 }
 footer{
-  /*clear: left;*/  /*sidebarのfloat解除*/
   margin-top: 3rem;
   background-color: #AA812F;
   position: absolute;
