@@ -21,8 +21,7 @@
   border: solid 1px black;
   padding: 0.3rem;
   text-align: center;
-  min-width: 48.6%;
-  /*width:31.55vw;*/
+  width: 50%;
 }
 main a{
   color:black;
