@@ -1,14 +1,14 @@
 <?php
-  $ID = $_GET["ID"];
-  include("includes/connect_DB.php");
-  $sql = "SELECT PRODUCT_NAME, PRODUCT_PRICE, PRODUCT_DESCRIPTION FROM PRODUCT WHERE PRODUCT_ID = $ID";
-  $result = $conn->query($sql);
-  while($row = $result->fetch_assoc()){
-    $productName = $row["PRODUCT_NAME"];
-    $productDescription = $row["PRODUCT_DESCRIPTION"];
-    $productPrice = $row["PRODUCT_PRICE"];
-  }
- ?>
+$ID = $_GET["ID"];
+include("includes/connect_DB.php");
+$sql = "SELECT PRODUCT_NAME, PRODUCT_PRICE, PRODUCT_DESCRIPTION FROM PRODUCT WHERE PRODUCT_ID = $ID";
+$result = $conn->query($sql);
+while($row = $result->fetch_assoc()){
+  $productName = $row["PRODUCT_NAME"];
+  $productDescription = $row["PRODUCT_DESCRIPTION"];
+  $productPrice = $row["PRODUCT_PRICE"];
+}
+?>
 <!DOCTYPE HTML>
 <html>
  <head>
