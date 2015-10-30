@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="css/main.css" media="all">
     <link rel="stylesheet" type="text/css" href="css/mypage.css" media="all">
+    <link rel="stylesheet" type="text/css" href="CSS/main_color.css" media="all">
   <title>OICBooks</title>
 </head>
 <body>
