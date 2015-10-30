@@ -13,7 +13,6 @@ html{
 }
 body{
   margin: auto;
-  background-color: #F9F3CF;
   height: 100%;
   min-height: 100%;
   height: auto !important;
@@ -24,8 +23,8 @@ header{
   position: fixed;
   z-index: 1;
   top:0;
+  height: auto;
   width: 100%;
-  background: #AA812F;
   box-shadow        : rgba(0, 0, 0, 0.39) 0px 4px 8px -1px;
   -webkit-box-shadow: rgba(0, 0, 0, 0.39) 0px 4px 8px -1px;
   -moz-box-shadow   : rgba(0, 0, 0, 0.39) 0px 4px 8px -1px;
@@ -33,7 +32,6 @@ header{
 header nav{
   text-align:right;
   padding:5px 10rem;
-  border-bottom: 1px solid #DDBC89;
 }
 header ul{
   font-size: 0;
@@ -41,15 +39,10 @@ header ul{
 header li{
   display: inline-block;
 }
-nav li :hover{
-  background: #e0c294;
-}
 header a{
-  border-right: 1px solid #DDBC89;
   padding: 7px 30px;
   font-size: 12px;
   text-decoration: none;
-  color: #F9F3CF;
 }
 #hgroup{
   padding: 10px 0;
@@ -58,11 +51,10 @@ header a{
   margin-left: 40%;
 }
 #search_bar{
-  padding: 10px 6px;
+  padding: 5px 6px;
   width:300px;
 }
 #sidebar {
-  background-color: #AA512F;
   width: 10rem;
   height: 100%;
   margin-left: 8rem;
@@ -83,7 +75,6 @@ header a{
   border-width: 0 8px 10px 0;
   border-style: solid;
   border-color: transparent;
-  border-right-color: #b0966d;
 }
 #logo:after{
   content: " ";
@@ -95,18 +86,14 @@ header a{
   border-width: 10px 8px 0 0;
   border-style: solid;
   border-color: transparent;
-  border-top-color: #b0966d;
 }
 #logo{
   width: 11rem;
   margin-left: -0.5rem;
   margin-top: 50px;
   padding-top: 5px;
-  padding-bottom: 10px;
-  background-color: #DDBC89;
-  height: 100px;
+  height: 115px;
   text-align: center;
-  color:#AA512F;
   position:relative;
   z-index: 3;
   box-shadow        :rgba(0, 0, 0, 0.39) 0px 0px 8px 1px;
@@ -130,7 +117,6 @@ a{
 }
 main{
   width: calc(100% - 28rem);
-  background-color: #fff;
   margin-left: 20rem;
   margin-right: 8rem;
   margin-top: 8rem;
@@ -142,18 +128,15 @@ main{
   right: 0;
   z-index: 4;
   margin-right: 0.5em;
-  background-color: #DDBC89;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 }
 #top a{
-  color: #F9F3CF;
   display: block;
   padding: 1rem 1rem;
 }
 footer{
   margin-top: 3rem;
-  background-color: #AA812F;
   position: absolute;
   z-index: 3;
   bottom: 0;

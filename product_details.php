@@ -15,6 +15,7 @@
     <link rel="stylesheet" type="text/css" href="css/main.css" media="all">
     <link rel="stylesheet" type="text/css" href="css/sidebar.css" media="all">
     <link rel="stylesheet" type="text/css" href="css/product_details.css" media="all">
+    <link rel="stylesheet" type="text/css" href="CSS/main_color.css" media="all">
     <title><?php echo $productName; ?></title>
     <meta charset="utf-8">
  </head>
