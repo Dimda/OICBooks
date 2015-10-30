@@ -4,45 +4,31 @@
     <h2>ダイレクトメール送信</h2>
   </div>
 
-  <form action="" method="post">
-  	<input id="subject" placeholder="件名を入力してください" name="meil_to"><br/>
+  <form name="form1" action="admin_direct_mail.php?SendClicked=true" method="post">
+  	<input id="subject" placeholder="件名を入力してください" name="mail_to"><br/>
   	<br/>
-  	<textarea name="message" cols="60" rows="10" value="本文を入力してください"></textarea>
-
-
+  	<textarea name="message" cols="60" rows="10"></textarea><br/>
+  	<br/>
+  	<input id="mail_btn" type="submit" value="送信">
   </form>
 
+  <?php
+      if(isset($_POST["mail_to"], $_POST["message"]) and $_GET["SendClicked"] ){
+        include("includes/connect_DB.php");
+        $mail_to = $_POST["mail_to"];
+        $mail_to = mysqli_real_escape_string($conn, $mail_to);
+        $message = $_POST["message"];
+        $message = mysqli_real_escape_string($conn, $message);
+
+        echo "aaa";
+        
+		$conn->close(); 
+        }
+        ?>
 
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<?php include("includes/admin_bottom.html") ?>
-
+<?php include("includes/admin_bottom.html"); ?>
