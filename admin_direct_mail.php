@@ -1,7 +1,7 @@
 <?php include("includes/admin_top.html") ?>
-
   <div class="mail-service">
     <h2>ダイレクトメール送信</h2>
+    
   </div>
 
   <form name="form1" action="admin_direct_mail.php?SendClicked=true" method="post">
@@ -31,4 +31,5 @@
 
 
 
-<?php include("includes/admin_bottom.html"); ?>
+<?php include("includes/admin_bottom.html"); ?><?php include("includes/admin_bottom.html"); ?><?php include("includes/admin_bottom.html"); ?>
+
