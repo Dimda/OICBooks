@@ -10,8 +10,9 @@
   height: 200px;
 }
 .box{
+  background-color: #ffffff; /*確認*/
   display: block;
-  border: solid 1px black;
+  border-bottom: solid 1px #C6C6C6;
   padding: 0 3rem 2rem 0.5rem;
   margin-bottom: 2rem;
 }

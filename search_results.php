@@ -1,11 +1,13 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-   <link rel="stylesheet" type="text/css" href="css/main.css" media="all">
-   <link rel="stylesheet" type="text/css" href="css/search_results.css" media="all">
-   <link rel="stylesheet" type="text/css" href="CSS/main_color.css" media="all">
-   <title>検索結果</title>
-   <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="css/main.css" media="all">
+  <link rel="stylesheet" type="text/css" href="css/search_results.css" media="all">
+  <link rel="stylesheet" type="text/css" href="CSS/main_color.css" media="all">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+  <title>検索結果</title>
+  <meta charset="utf-8">
 </head>
 <body>
   <?php include("includes/header.html"); ?>

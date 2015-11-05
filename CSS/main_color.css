@@ -18,6 +18,9 @@ header a {
 	/*border-right: 1px solid #f2f2f2;*/
   color: #F9F3CF;
 }
+.btn_search{
+  background-color: #DDBC89;
+}
 #sidebar {
   background-color: #AA512F;
   /*background-color: #735939;*/

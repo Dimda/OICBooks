@@ -50,8 +50,13 @@ header a{
 #search{
   margin-left: 40%;
 }
+.btn_search {
+  padding: 7px 15px;
+  margin-left: -4px;
+  /*padding: 0 -5px;*/
+}
 #search_bar{
-  padding: 5px 6px;
+  padding: 5.25px 6px;
   width:300px;
 }
 #sidebar {
