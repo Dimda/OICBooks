@@ -20,9 +20,16 @@
         $message = $_POST["message"];
         $message = mysqli_real_escape_string($conn, $message);
 
-        echo "aaa";
+        $to = "oicbooks2@gmail.com";
+
+        $from = "yuuri_ol6_6lo@softbank.ne.jp";
+
+        //md_send_mail($to,$mail_to,$message,"From:".$from);
+        
+        mail($to,$mail_to,$message,$from);
         
 		$conn->close(); 
+    echo "終了";
         }
         ?>
 
