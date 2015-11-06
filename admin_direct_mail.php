@@ -1,7 +1,7 @@
 <?php include("includes/admin_top.html") ?>
   <div class="mail-service">
     <h2>ダイレクトメール送信</h2>
-    
+
   </div>
 
   <form name="form1" action="admin_direct_mail.php?SendClicked=true" method="post">
@@ -20,9 +20,16 @@
         $message = $_POST["message"];
         $message = mysqli_real_escape_string($conn, $message);
 
-        echo "aaa";
-        
-		$conn->close(); 
+        $to = "oicbooks2@gmail.com";
+
+        $from = "yuuri_ol6_6lo@softbank.ne.jp";
+
+        //md_send_mail($to,$mail_to,$message,"From:".$from);
+
+        mail($to,$mail_to,$message,$from);
+
+		$conn->close();
+    echo "終了";
         }
         ?>
 
@@ -32,4 +39,3 @@
 
 
 <?php include("includes/admin_bottom.html"); ?><?php include("includes/admin_bottom.html"); ?><?php include("includes/admin_bottom.html"); ?>
-

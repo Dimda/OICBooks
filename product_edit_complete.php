@@ -1,42 +1,44 @@
+
 <?php
+include("includes/admin_top.html");
 $target_dir = "product_image/";
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 $uploadOk = 1;
 $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
-// Check if image file is a actual image or fake image
-if(isset($_POST["submit"])) {
+
+if(isset($_POST["submit"]) && is_uploaded_file ($_FILES["fileToUpload"]["tmp_name"])) {
     $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
     if($check !== false) {
-        echo "File is an image - " . $check["mime"] . ".";
         $uploadOk = 1;
     } else {
-        echo "File is not an image.";
+        echo "追加したファイルは画像ではありません。<br>";
         $uploadOk = 0;
     }
     // Check file size
     if ($_FILES["fileToUpload"]["size"] > 5000000) {
-        echo "Sorry, your file is too large.";
+        echo "画像ファイルは大きすぎます。<br>";
         $uploadOk = 0;
     }
+
     if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
     && $imageFileType != "gif" ) {
-      echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+      echo "対応するのはJPG, JPEG, PNG, GIFファイルのみです。<br>";
       $uploadOk = 0;
     }
     if ($uploadOk == 0) {
-    echo "Sorry, your file was not uploaded.";
+      echo "画像ファイルを追加できませんでした。";
     // if everything is ok, try to upload file
     } else {
-        if (file_exists($target_file)) {
-          !unlink($target_file);
-          echo "上書き完成";
-        }
-        if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-            echo "The file ". basename( $_FILES["fileToUpload"]["name"]). " has been uploaded.";
-        } else {
-            echo "Sorry, there was an error uploading your file.";
+        $matches = glob('./product_image/' . $_GET["ID"] . "*");
+        !unlink($matches[0]);
+        if (!move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], "product_image/" . $_GET["ID"] . "." . $imageFileType)) {
+          echo "画像ファイルを追加できませんでした。<br>";
+        }else{
+          echo $_GET["ID"] . $imageFileType . "アップされた";
         }
     }
+}else{
+  echo "画像ファイルは大きすぎますまたは、画像ではありません。";
 }
-
+include("includes/admin_bottom.html");
 ?>
