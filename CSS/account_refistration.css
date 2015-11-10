@@ -1,0 +1,38 @@
+
+table {
+	border: 1px solid black;
+	table-layout: fixed;
+	width: auto;
+	text-align: left;
+}
+th {
+	padding: 10px;
+	background-color: #BFC2DF;
+	font-size: 12px;
+}
+td {
+	font-size: 10px;
+	background-color: #DEDFEF;
+	padding: 3px;
+}
+p {
+	margin: 3px 0;
+}
+#city {
+	width: 100%;
+}
+#add {
+	width: 100%;
+}
+#email {
+	width: 100%;
+}
+#confirm-email {
+	width: 100%;
+}
+#phone-number {
+	width: 10%;
+}
+#address1, #address2 {
+	width: 15%;
+}

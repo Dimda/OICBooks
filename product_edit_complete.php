@@ -1,6 +1,20 @@
 
 <?php
+//画像以外の項目
 include("includes/admin_top.html");
+include("includes/connect_DB.php");
+$formOk = 1;
+$productName = mysqli_real_escape_string($conn, $_POST["productName"]);
+$productDescription = mysqli_real_escape_string($conn, $_POST["productDescription"]);
+$productPrice = mysqli_real_escape_string($conn, $_POST["productPrice"]);
+if(!is_numeric($productPrice)){
+  $formOk = 0;
+}
+if($formOk == 0){
+  header('Location: product_edit.php?ID=' . $_GET["ID"] . '&errNum=1');
+}
+//画像
+
 $target_dir = "product_image/";
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 $uploadOk = 1;
@@ -14,7 +28,6 @@ if(isset($_POST["submit"]) && is_uploaded_file ($_FILES["fileToUpload"]["tmp_nam
         echo "追加したファイルは画像ではありません。<br>";
         $uploadOk = 0;
     }
-    // Check file size
     if ($_FILES["fileToUpload"]["size"] > 5000000) {
         echo "画像ファイルは大きすぎます。<br>";
         $uploadOk = 0;
@@ -27,7 +40,6 @@ if(isset($_POST["submit"]) && is_uploaded_file ($_FILES["fileToUpload"]["tmp_nam
     }
     if ($uploadOk == 0) {
       echo "画像ファイルを追加できませんでした。";
-    // if everything is ok, try to upload file
     } else {
         $matches = glob('./product_image/' . $_GET["ID"] . "*");
         !unlink($matches[0]);
@@ -37,8 +49,13 @@ if(isset($_POST["submit"]) && is_uploaded_file ($_FILES["fileToUpload"]["tmp_nam
           echo $_GET["ID"] . $imageFileType . "アップされた";
         }
     }
+}else if($_FILES["fileToUpload"]["size"] == 0){
+  /*echo "ファイルサイズ=0mb";*/
 }else{
   echo "画像ファイルは大きすぎますまたは、画像ではありません。";
+  echo $_FILES["fileToUpload"]["size"];
 }
+
+
 include("includes/admin_bottom.html");
 ?>
