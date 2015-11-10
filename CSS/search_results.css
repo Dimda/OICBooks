@@ -1,8 +1,6 @@
 @charset "UTF-8";
-main{
-  background-color: #F9F3CF;
-}
-ul{
+
+main ul{
 	overflow: hidden;
 }
 table{

@@ -2,26 +2,24 @@
 <html lang="jp">
 <head>
   <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="css/main.css" media="all">
-    <link rel="stylesheet" type="text/css" href="css/top_page.css" media="all">
+  <link rel="stylesheet" type="text/css" href="css/main.css" media="all">
+  <link rel="stylesheet" type="text/css" href="css/top_page.css" media="all">
+  <link rel="stylesheet" type="text/css" href="CSS/main_color.css" media="all">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
   <title>OICBooksへようこそ！</title>
 </head>
 <body>
 
-  <?php include("includes/sidebar.html"); ?>
   <?php include("includes/header.html"); ?>
+  <?php include("includes/sidebar.html"); ?>
   <main>
-    <div id="advertisements">
-      <p>広告ページ</p>
-    </div>
-    <div id="sales">
-      <p>新着商品</p>
-      <div id="new"></div>
-      <div id="discount"></div>
-    </div>
-    <div id="recommendations"><p>おすすめ商品</p></div>
+    <div id="advertisements" class="box"></div>
+    <div id="new" class="link"><a href="#"><h3>新着順</h3></a></div><div id="discount" class="link"><a href="#"><h3>割引</h3></a></div>
+    <div id="sales" class="box"></div>
+    <h2>おすすめ商品情報</h2>
+    <div id="recommended" class="box"></div>
   </main>
-  <?php include ("includes/top.html");?>
+  <?php include ("includes/top.html"); ?>
   <?php include("includes/footer.html"); ?>
 
 </body>

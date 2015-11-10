@@ -11,11 +11,13 @@
     </nav>
     <div id="hgroup">
       <div id="search">
-        <form action="search_results.php" method="post">
+        <form action="search_results.php" method="post" name="search">
           <button id="book_btn">書籍名</button>
           <button id="isbn_btn">ISBN</button><br>
           <input id="search_bar" placeholder="Search..." name="keyword">
-          <input id="search_btn" type="submit" value="検索">
+          <!-- <input id="search_btn" class="btn_search fa fa-search" type="image"> -->
+          <a href=""javascript:void(0);" onclick="document.search.submit();return false;"" class="btn_search fa fa-search">
+          </a>
         </form>
       </div>
       <div id=" account_name"></div>
