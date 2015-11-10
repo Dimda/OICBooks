@@ -27,10 +27,10 @@ p {
 #email {
 	width: 100%;
 }
-#confirm-email {
+#confirm_email {
 	width: 100%;
 }
-#phone-number {
+.phone_number {
 	width: 10%;
 }
 #address1, #address2 {
