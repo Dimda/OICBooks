@@ -1,7 +1,7 @@
 
 <?php
-
 $ID = $_GET["ID"];
+$errNum = $_GET["errNum"];
 include("includes/connect_DB.php");
 $sql = "SELECT PRODUCT_NAME, PRODUCT_PRICE, PRODUCT_DESCRIPTION FROM PRODUCT WHERE PRODUCT_ID = $ID";
 $result = $conn->query($sql);
@@ -19,8 +19,9 @@ while($row = $result->fetch_assoc()){
   <label for="productDescription">商品明細</label>
   <input type="text" name="productDescription" value="<?php echo "$productDescription"; ?>"><br>
   <label for="productPrice">価格</label>
-  <input type="text" name="productPrice" value="<?php echo "$productPrice"; ?>"><br>
-  <input type="file" name="fileToUpload"><br>
+  <input type="number" id="productPrice" name="productPrice" min="1" max="1000000" value="<?php echo "$productPrice"; ?>"><br>
+  <input type="file" name="fileToUpload">
+  <label for="fileToUpload">jpg, jpeg, png, gif　ファイル２mbまで</label><br>
   <input type="submit" value="登録" class="button" name="submit" >
   <a href="./admin_product_manager.php" class="button">キャンセル</a>
 </form>
