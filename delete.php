@@ -2,7 +2,7 @@
 include("includes/connect_DB.php");
 $ID = $_GET["ID"];
 $sql = "DELETE FROM PRODUCT WHERE PRODUCT_ID='$ID'";
-$file =  "product_image/" . $ID . ".jpg";
+$matches = glob('./product_image/' . $ID . "*");
 //レコード削除
 if ($conn->query($sql) === TRUE) {
     echo "Record deleted successfully";
@@ -10,7 +10,7 @@ if ($conn->query($sql) === TRUE) {
     echo "Error deleting record: " . $conn->error;
 }
 //画像削除
-if (!unlink($file)){
+if (!unlink($matches[0])){
   echo ("Error deleting $file");
 }else{
   echo ("Deleted $file");
