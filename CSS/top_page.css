@@ -1,0 +1,36 @@
+/*広告一覧*/
+#advertisements{
+  height: 250px;
+}
+#sales{
+  height: 250px;
+}
+/*新着商品*/
+#recommended{
+  height: 200px;
+}
+.box{
+  display: block;
+  border: solid 1px black;
+  padding: 0 3rem 2rem 0.5rem;
+  margin-bottom: 2rem;
+}
+.link{
+  display: inline-block;
+  background-color: #DDBC89;
+  border: solid 1px black;
+  padding: 0.3rem;
+  text-align: center;
+  width: 50%;
+}
+main a{
+  color:black;
+}
+h2{
+  font-size: 1.3rem;
+  margin-bottom: 0.2rem;
+}
+h3{
+  font-size: 1rem;
+  margin: 0;
+}
