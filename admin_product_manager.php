@@ -26,7 +26,7 @@
               <th>商品名</th><th>価格</th><th>編集</th><th>削除</th>';
       while($row = $result->fetch_assoc()){
           echo   '<tr>
-                    <td class = "product-name" width = "70%"><a class = "product-name" href="product_details.php?id=' . $row["PRODUCT_ID"] . '">' . $row["PRODUCT_NAME"] .'</a></td>
+                    <td class = "product-name" width = "70%"><a class = "product-name" href="product_details.php?ID=' . $row["PRODUCT_ID"] . '">' . $row["PRODUCT_NAME"] .'</a></td>
                     <td class = "product-price" width = "10%">' . $row["PRODUCT_PRICE"] .'円</td>
                     <td class = "edit" width = "10%"><a href="product_edit.php?ID=' . $row["PRODUCT_ID"] . '">編集</a></td>
                     <td class = "delete" width = "10%"><a onclick="return deleteCheck()" href="delete.php?ID=' . $row["PRODUCT_ID"] . '">削除</a></td>
@@ -42,6 +42,6 @@
 <?php include("includes/admin_bottom.html");?>
 <script>
   function deleteCheck() {
-    return confirm("ほんまに削除しますか。");
+    return confirm("本当に削除しますか。");
   }
 </script>

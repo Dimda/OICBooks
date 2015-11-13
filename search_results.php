@@ -1,11 +1,13 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-   <link rel="stylesheet" type="text/css" href="css/main.css" media="all">
-   <link rel="stylesheet" type="text/css" href="css/search_results.css" media="all">
-   <link rel="stylesheet" type="text/css" href="CSS/main_color.css" media="all">
-   <title>検索結果</title>
-   <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="css/main.css" media="all">
+  <link rel="stylesheet" type="text/css" href="css/search_results.css" media="all">
+  <link rel="stylesheet" type="text/css" href="CSS/main_color.css" media="all">
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+  <title>検索結果</title>
+  <meta charset="utf-8">
 </head>
 <body>
   <?php include("includes/header.html"); ?>
@@ -27,10 +29,12 @@
 
         echo '<table>
                 <th>画像</th><th>商品名</th><th>価格</th>';
+
         while($row = $result->fetch_assoc()){
+          $matches = glob('./product_image/' . $row["PRODUCT_ID"] . "*");
             echo   '<tr>
-                      <td class = "book-image" width = "20%"><img class="product-picture" src="product_image/' . $row["PRODUCT_ID"] .'.jpg"  width="auto" height="200px"></td>
-                      <td class = "product-name" width = "70%"><a class = "product-name" href="product_details.php?id=' . $row["PRODUCT_ID"] . '">' . $row["PRODUCT_NAME"] .'</a></td>
+                      <td class = "book-image" width = "20%"><img class="product-picture" src="' . $matches[0] . '"  width="auto" height="200px"></td>
+                      <td class = "product-name" width = "70%"><a class = "product-name" href="product_details.php?ID=' . $row["PRODUCT_ID"] . '">' . $row["PRODUCT_NAME"] .'</a></td>
                       <td class = "product-price" width = "10%">' . $row["PRODUCT_PRICE"] .'円</td>
                     </tr>';
                }
