@@ -2,15 +2,19 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="CSS/main.css">
-	<link rel="stylesheet" type="text/css" href="CSS/main_color.css">
-	<link rel="stylesheet" type="text/css" href="CSS/account_form.css">
-	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="css/main_color.css">
+	<link rel="stylesheet" type="text/css" href="css/account_form.css">
+	<link rel="stylesheet" type="text/css" href="css/validationEngine.jquery.css">
+	<script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
+	<script type="text/javascript" src="js/jquery.validationEngine.js"></script>
+	<script type="text/javascript" src="js/languages/jquery.validationEngine-ja.js"></script>
+	<!-- <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
 	<script type="text/javascript" src="http://jpostal.googlecode.com/svn/trunk/jquery.jpostal.js"></script>
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 	<title>アカウントフォーム</title>
 	<script type="text/javascript">
-   $(window).ready( function() {
+    $(window).ready( function() {
       $('#address1').jpostal({
          postcode : [
             '#address1',
@@ -24,12 +28,17 @@
       });
    });
 	</script>
+	<script>
+  	$(function(){
+    	jQuery("#account_form").validationEngine();
+  	});
+	</script>
 </head>
 <body>
 	<?php include("includes/sidebar.html"); ?>
 	<?php include("includes/header.html"); ?>
 	<main>
-		<form name="account_form" action="account_registration.php" method="post">
+		<form id="account_form" action="account_registration.php" method="post">
 			<table>
 				<tr>
 					<th>名前</th>
@@ -62,16 +71,16 @@
 				<tr>
 					<th>電話番号</th>
 					<td>
-						<input type="text" class="phone_number" name="phone_number1" maxlength="3"> - 
-						<input type="text" class="phone_number" name="phone_number2" maxlength="4"> - 
-						<input type="text" class="phone_number" name="phone_number3" maxlength="4">
+						<input type="text" class="phone_number validate[required, custom[phone]] minSize[3]" name="phone_number1" maxlength="3"> - 
+						<input type="text" class="phone_number validate[requierd, custom[phone]] minSize[3]" name="phone_number2" maxlength="4"> - 
+						<input type="text" class="phone_number validate[requierd, custom[phone]] minSize[3]" name="phone_number3" maxlength="4">
 					</td>
 				</tr>
 				<tr>
 					<th>メールアドレス</th>
 					<td>
-						<p><input type="email" id="email" name="email" placeholder="半角英数字で入力してください"></p>
-						<input type="email" id="confirm_email" name="confirm_email" placeholder="確認のためもう一度入力してください">
+						<p><input type="text" id="email" class="validate[required,custom[email]]" name="email" placeholder="半角英数字で入力してください"></p>
+						<input type="text" id="confirm_email" class="validate[required,custom[email]]" name="confirm_email" placeholder="確認のためもう一度入力してください">
 					</td>
 				</tr>
 				<tr>
@@ -107,8 +116,9 @@
 				</tr>
 			</table>
 			<input type="submit" name="submit" value="送信">
+			<input type="reset">
 		</form>
-		<script src="js/formCheck.js" charset="utf-8"></script>
+		<!-- // <script src="js/formCheck.js" charset="utf-8"></script> -->
 
 
 	</main>
