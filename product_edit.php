@@ -1,7 +1,9 @@
 
 <?php
 $ID = $_GET["ID"];
-$errNum = $_GET["errNum"];
+$imageErrNum = array();
+$imageErrNum = explode(",", $_GET["imageErrNum"]);
+
 include("includes/connect_DB.php");
 $sql = "SELECT PRODUCT_NAME, PRODUCT_PRICE, PRODUCT_DESCRIPTION FROM PRODUCT WHERE PRODUCT_ID = $ID";
 $result = $conn->query($sql);
@@ -11,7 +13,27 @@ while($row = $result->fetch_assoc()){
   $productPrice = $row["PRODUCT_PRICE"];
 }
  ?>
-<?php include("includes/admin_top.html") ?>
+<?php
+include("includes/admin_top.html");
+include("includes/error_messages.php");
+?>
+
+<div class="error_log">
+  <?php
+  foreach($imageErrNum as $num){
+    if($num == 1){
+      echo $imageErrMessages[1] . "<br>";
+    }else if ($num == 2){
+      echo $imageErrMessages[2] . "<br>";
+    }else if ($num == 3){
+      echo $imageErrMessages[3] . "<br>";
+    }else if ($num == 4){
+      echo $imageErrMessages[4] . "<br>";
+    }
+  }
+  ?>
+</div>
+
 <form action="product_edit_complete.php?ID=<?php echo $ID; ?>" method="post" enctype="multipart/form-data">
   <input type="hidden" name="MAX_FILE_SIZE" value="2097152">
   <label for="productName">商品名</label>

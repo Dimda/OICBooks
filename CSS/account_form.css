@@ -27,12 +27,18 @@ p {
 #email {
 	width: 100%;
 }
-#confirm-email {
+#confirm_email {
 	width: 100%;
 }
-#phone-number {
+.phone_number {
 	width: 10%;
 }
 #address1, #address2 {
 	width: 15%;
+}
+#pass1,#pass2 {
+	width: 50%;
+}
+.check, #pass1-error, #pass2-error {
+	color: #ff3333;
 }
