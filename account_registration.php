@@ -7,24 +7,24 @@
 <body>
 	<?php
 	include("includes/connect_DB.php");
-	$first_name = $_REQUEST['first_name']; //FIRST_NAME
-	$last_name = $_REQUEST['last_name']; //LAST_NAME
-	$f_phonetic = $_REQUEST['first_phonetic']; //FRIGANA
-	$l_phonetic = $_REQUEST['last_phonetic']; //FRIGANA
-	$phone_number = $_REQUEST['phone_number1'].'-'.$_REQUEST['phone_number2'].'-'.$_REQUEST['phone_number3']; //PHONE_NUMBER
-	$pref = $_REQUEST['pref']; //ADDRESS_STREET1
-	$city = $_REQUEST['city']; //ADDRESS_STREET2
-	$add = $_REQUEST['add']; //ADDRESS_STREET3
-	$zip = $_REQUEST['address1'].'-'.$_REQUEST['address2']; //ZIP_CODE
-	$email = $_REQUEST['email']; //EMAIL_ADDRESS
-	$sex = $_REQUEST['sex']; //SEX
-	$password = $_REQUEST['password']; //PASSWORD
-	$mailmagazine = $_REQUEST['mailmagazine']; //MAIL_OK
-	$birthday = date('Y/M/D',strtotime($_REQUEST['birthday'] . $_REQUEST['month'] . $_REQUEST['day']));
-	// $birthday = $_REQUEST['birthday'].'/'.$_REQUEST['month'].'/'.$_REQUEST['day'];
+	$first_name = $_POST['first_name']; //FIRST_NAME
+	$last_name = $_POST['last_name']; //LAST_NAME
+	$fPhonetic = $_POST['first_phonetic']; //FRIGANA
+	$lPhonetic = $_POST['last_phonetic']; //FRIGANA
+	$phone_number = $_POST['phone_number1'].'-'.$_POST['phone_number2'].'-'.$_POST['phone_number3']; //PHONE_NUMBER
+	$pref = $_POST['pref']; //ADDRESS_STREET1
+	$city = $_POST['city']; //ADDRESS_STREET2
+	$add = $_POST['add']; //ADDRESS_STREET3
+	$zip = $_POST['address1'].'-'.$_POST['address2']; //ZIP_CODE
+	$email = $_POST['email']; //EMAIL_ADDRESS
+	$sex = $_POST['sex']; //SEX
+	$password = $_POST['pass1']; //PASSWORD
+	$mailmagazine = $_POST['mailmagazine']; //MAIL_OK
+	// $birthday = date('Y/M/D',strtotime($_POST['birthday'] . $_POST['month'] . $_POST['day'])); //BIRTH_DATE
+	$birthday = $_REQUEST['birthday'].'/'.$_REQUEST['month'].'/'.$_REQUEST['day'];
 	echo $first_name . '<br>';
 	echo $last_name . '<br>';
-	echo $f_phonetic.$l_phonetic.'<br>';
+	echo $fPhonetic.$lPhonetic.'<br>';
 	echo $phone_number. '<br>';
 	echo $pref.$city.$add.'<br>';
 	echo $zip.'<br>';

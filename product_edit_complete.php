@@ -64,7 +64,7 @@ if(isset($_POST["submit"]) && is_uploaded_file ($_FILES["fileToUpload"]["tmp_nam
 }else if($_FILES["fileToUpload"]["size"] == 0){
   /*echo "ファイルサイズ=0mb";*/
   echo("Err ok <br>");
-  echo($_FILES['fileToUpload']['UPLOAD_ERR_OK']);
+  echo($_FILES['fileToUpload']['error']);
   echo("Err ini size<br>");
   echo($_FILES['fileToUpload']['UPLOAD_ERR_INI_SIZE']);
   echo("Err ini size<br>");
@@ -77,7 +77,6 @@ if(isset($_POST["submit"]) && is_uploaded_file ($_FILES["fileToUpload"]["tmp_nam
   echo($_FILES['fileToUpload']['UPLOAD_ERR_CANT_WRITE']);
   echo("Err ini size<br>");
   echo($_FILES['fileToUpload']['UPLOAD_ERR_EXTENSION']);
-
   /*
   UPLOAD_ERR_FORM_SIZE
 値: 2; アップロードされたファイルは、HTML フォームで指定された MAX_FILE_SIZE を超えています。

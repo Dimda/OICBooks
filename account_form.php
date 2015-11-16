@@ -23,18 +23,18 @@
          }
       });
    });
-</script>
+	</script>
 </head>
 <body>
 	<?php include("includes/sidebar.html"); ?>
 	<?php include("includes/header.html"); ?>
 	<main>
-		<form action="account_registration.php" method="post">
+		<form name="account_form" action="account_registration.php" method="post">
 			<table>
 				<tr>
 					<th>名前</th>
 					<td>
-						姓 <input type="text" class="name" name="first_name" maxlength="20">
+						姓 <input type="text" class="name" name="first_name" maxlength="20" autofocus>
 						名 <input type="text" class="name" name="last_name" maxlength="20">
 					</td>
 				</tr>
@@ -70,9 +70,8 @@
 				<tr>
 					<th>メールアドレス</th>
 					<td>
-						<p><input type="email" id="email" name="email"></p>
-						<input type="email" id="confirm_email" name="confirm_email">
-						<p>確認のためもう一度入力してください。</p>
+						<p><input type="email" id="email" name="email" placeholder="半角英数字で入力してください"></p>
+						<input type="email" id="confirm_email" name="confirm_email" placeholder="確認のためもう一度入力してください">
 					</td>
 				</tr>
 				<tr>
@@ -88,24 +87,32 @@
 					</td>
 				</tr>
 				<tr>
-					<th>パスワード</th>
+					<th>パスワード(6文字以上12文字以下)</th>
 					<td>
-						<p><input type="password" id="password" name="password" maxlength="15"></p>
-						<input type="password" id="confirm_password" name="confirm_password" maxlength="15">
-						<p>確認のためもう一度入力してください。</p>
+						<p><input type="password" id="pass1" name="pass1" minlength="6" maxlength="12" placeholder="半角英数字で入力してください"></p>
+						<p id="pass1-error" class="alert-error"></p>
+            <p id="pass1-error2" class="alert-error"></p>
+						<input type="password" id="pass2" name="pass2" minlength="6" maxlength="12" placeholder="確認のためもう一度入力してください">
+            <p id="pass2-error" class="alert-error"></p>
+						<input type="button" id="checkPassButton" class="btn btn-primary" value="パスワード確認">
+
 					</td>
 				</tr>
 				<tr>
 					<th>メールマガジンの送付について</th>
 					<td>
-						<p><input type="radio" class="mailmagazine" name="mailmagazine" value="true"> 受け取る</p>
-						<p><input type="radio" class="mailmagazine" name="mailmagazine" value="false"> 受け取らない</p>
+						<p><input type="radio" name="mailmagazine" value="true"> 受け取る</p>
+						<p><input type="radio" name="mailmagazine" value="false"> 受け取らない</p>
 					</td>
 				</tr>
 			</table>
-			<input type="submit" id="submit" name="submit" value="送信">
+			<input type="submit" name="submit" value="送信">
 		</form>
+		<script src="js/formCheck.js" charset="utf-8"></script>
+
+
 	</main>
+
 	<?php include("includes/top.html"); ?>
 	<?php include("includes/footer.html"); ?>
 </body>
