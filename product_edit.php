@@ -35,7 +35,6 @@ include("includes/error_messages.php");
 </div>
 
 <form action="product_edit_complete.php?ID=<?php echo $ID; ?>" method="post" enctype="multipart/form-data">
-  <input type="hidden" name="MAX_FILE_SIZE" value="2097152">
   <label for="productName">商品名</label>
   <input type="text" name="productName" value="<?php echo "$productName"; ?>"><br>
   <label for="productDescription">商品明細</label>
