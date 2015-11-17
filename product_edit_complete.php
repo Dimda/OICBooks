@@ -51,7 +51,6 @@ if(isset($_POST["submit"]) && is_uploaded_file ($_FILES["fileToUpload"]["tmp_nam
     }
     if ($uploadOk == 0) {
       array_push($imageErrNum, 4);
-
       header('Location: product_edit.php?ID=' . $_GET["ID"] . '&imageErrNum=' . implode(",", $imageErrNum));
     } else {
         $matches = glob('./product_image/' . $_GET["ID"] . "*");
@@ -62,35 +61,8 @@ if(isset($_POST["submit"]) && is_uploaded_file ($_FILES["fileToUpload"]["tmp_nam
           header('Location: product_edit.php?ID=' . $_GET["ID"] . '&success=true');
         }
     }
-<<<<<<< HEAD
-=======
-}else if($_FILES["fileToUpload"]["size"] == 0){
-  /*echo "ファイルサイズ=0mb";*/
-  echo("Err ok <br>");
-  echo($_FILES['fileToUpload']['error']);
-  echo("Err ini size<br>");
-  echo($_FILES['fileToUpload']['UPLOAD_ERR_INI_SIZE']);
-  echo("Err ini size<br>");
-  echo($_FILES['fileToUpload']['UPLOAD_ERR_FORM_SIZE']);
-  echo("Err ini size<br>");
-  echo($_FILES['fileToUpload']['UPLOAD_ERR_PARTIAL']);
-  echo("Err ini size<br>");
-  echo($_FILES['fileToUpload']['UPLOAD_ERR_NO_TMP_DIR']);
-  echo("Err ini size<br>");
-  echo($_FILES['fileToUpload']['UPLOAD_ERR_CANT_WRITE']);
-  echo("Err ini size<br>");
-  echo($_FILES['fileToUpload']['UPLOAD_ERR_EXTENSION']);
-  /*
-  UPLOAD_ERR_FORM_SIZE
-値: 2; アップロードされたファイルは、HTML フォームで指定された MAX_FILE_SIZE を超えています。
->>>>>>> 8ee003335cc6c89420958525ab2ba04eebd454a3
-
-}else if($_FILES["fileToUpload"]["size"] == 0){
-  echo "ファイルサイズ=0mb";
-
 }else{
-  echo "画像ファイルは大きすぎますまたは、画像ではありません。";
-  echo $_FILES["fileToUpload"]["size"];
+  header('Location: product_edit.php?ID=' . $_GET["ID"] . '&success=true');
 }
 
 include("includes/admin_bottom.html");

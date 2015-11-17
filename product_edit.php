@@ -16,35 +16,47 @@ while($row = $result->fetch_assoc()){
 <?php
 include("includes/admin_top.html");
 include("includes/error_messages.php");
-?>
 
-<div class="error_log">
-  <?php
-  foreach($imageErrNum as $num){
-    if($num == 1){
-      echo $imageErrMessages[1] . "<br>";
-    }else if ($num == 2){
-      echo $imageErrMessages[2] . "<br>";
-    }else if ($num == 3){
-      echo $imageErrMessages[3] . "<br>";
-    }else if ($num == 4){
-      echo $imageErrMessages[4] . "<br>";
+if(isset($_GET["imageErrNum"])){
+  echo '<div class="error-log">';
+    foreach($imageErrNum as $num){
+      if($num == 1){
+        echo $imageErrMessages[0] . "<br>";
+      }else if ($num == 2){
+        echo $imageErrMessages[1] . "<br>";
+      }else if ($num == 3){
+        echo $imageErrMessages[2] . "<br>";
+      }else if ($num == 4){
+        echo $imageErrMessages[3] . "<br>";
+      }
     }
-  }
-  ?>
-</div>
+  echo '</div>';
+}
+if(isset($_GET["success"])){
+  echo
+  '<div class="success-log">
+    更新しました。
+  </div>';
+}
 
+?>
 <form action="product_edit_complete.php?ID=<?php echo $ID; ?>" method="post" enctype="multipart/form-data">
-  <label for="productName">商品名</label>
-  <input type="text" name="productName" value="<?php echo "$productName"; ?>"><br>
-  <label for="productDescription">商品明細</label>
-  <input type="text" name="productDescription" value="<?php echo "$productDescription"; ?>"><br>
-  <label for="productPrice">価格</label>
-  <input type="number" id="productPrice" name="productPrice" min="1" max="1000000" value="<?php echo "$productPrice"; ?>"><br>
-  <input type="file" name="fileToUpload">
-  <label for="fileToUpload">jpg, jpeg, png, gif　ファイル２mbまで</label><br>
-  <input type="submit" value="登録" class="button" name="submit" >
-  <a href="./admin_product_manager.php" class="button">キャンセル</a>
+  <h2>商品編集</h2>
+  <div class="form-contents">
+    <label for="productName">商品名</label>
+    <input id="product-name" type="text" name="productName" value="<?php echo "$productName"; ?>"><br>
+    <label for="productDescription">商品明細</label>
+    <textarea id="product-description" type="text" cols="30" rows="15" name="productDescription"><?php echo "$productDescription"; ?></textarea><br>
+    <label for="productPrice">価格</label>
+    <input id="product-price" type="number"  name="productPrice" min="1" max="1000000" value="<?php echo "$productPrice"; ?>"><br>
+    <label id="file-upload" for="fileToUpload">画像ファイル</label>
+    <input type="file" name="fileToUpload">
+    <label for="fileToUpload" id="file-description">jpg, jpeg, png, gif　ファイル 5mb まで</label><br>
+  </div>
+  <div id="bott-buttons">
+    <input type="submit" value="登録" class="button" name="submit" >
+    <a href="./admin_product_manager.php" class="button">キャンセル</a>
+  <div>
 </form>
 
 <?php include("includes/admin_bottom.html") ?>

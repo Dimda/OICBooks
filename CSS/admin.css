@@ -79,7 +79,7 @@ main{
   margin-left: calc(9rem + 2px);
   padding:30px 20px;
   width: auto;
-  height: auto;
+  height: 93%;
   background-color: #aaaeee;
 }
 #product-manager{
@@ -91,6 +91,19 @@ main{
   height: 300px;
   overflow: scroll;
 }
+form{
+  color:white;
+  background-color: #5B7784;
+  margin: 0 20px 0 20px;
+  border-radius: 25px;
+}
+.form-contents{
+  text-align:right;
+  padding-right: 20%;
+}
+form h2{
+  text-align: center;
+}
 .button {
   font: bold 11px Arial;
   text-decoration: none;
@@ -101,4 +114,45 @@ main{
   border-right: 1px solid #333333;
   border-bottom: 1px solid #333333;
   border-left: 1px solid #CCCCCC;
+}
+#product-name{
+  width: 700px;
+  height: 30px;
+  font-size: 15px;
+}
+#product-description{
+  margin-top: 15px;
+  width: 700px;
+  height: 350px;
+  font-size: 15px;
+  overflow:scroll;
+}
+#product-price{
+  margin-right: 66%;
+}
+#file-upload{
+}
+#file-description{
+  font-size: 10px;
+  margin-right: 300px;
+}
+#bott-buttons{
+  margin-top: 15px;
+  text-align: center;
+}
+.error-log{
+  text-align: center;
+  background-color: red;
+  width: 60%;
+  margin-left: 20%;
+  margin-bottom: 15px;
+  border: 2px inset black;
+}
+.success-log{
+  text-align: center;
+  background-color: green;
+  width: 60%;
+  margin-bottom: 15px;
+  margin-left: 20%;
+  border: 2px inset black;
 }
