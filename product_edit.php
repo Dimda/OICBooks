@@ -50,7 +50,7 @@ if(isset($_GET["success"])){
 }
 
 ?>
-<form action="product_edit_complete.php?ID=<?php echo $ID; ?>" method="post" enctype="multipart/form-data">
+<form id="edit-form" action="product_edit_complete.php?ID=<?php echo $ID; ?>" method="post" enctype="multipart/form-data">
   <h2>商品編集</h2>
   <div class="form-contents">
     <label for="productName">商品名</label>
@@ -58,7 +58,7 @@ if(isset($_GET["success"])){
     <label for="productDescription">商品明細</label>
     <textarea id="product-description" type="text" cols="30" rows="15" name="productDescription"><?php echo "$productDescription"; ?></textarea><br>
     <label for="productPrice">価格</label>
-    <input id="product-price" type="number"  name="productPrice" min="1" max="1000000" value="<?php echo "$productPrice"; ?>"><br>
+    <input id="product-price" type="number"  name="productPrice" data-validation="number" data-validation-error-msg="数字ではありません。" value='<?php echo "$productPrice";?>'><br>
     <label id="file-upload" for="fileToUpload">画像ファイル</label>
     <input type="file" name="fileToUpload">
     <label for="fileToUpload" id="file-description">jpg, jpeg, png, gif　ファイル 5mb まで</label><br>
@@ -70,3 +70,8 @@ if(isset($_GET["success"])){
 </form>
 
 <?php include("includes/admin_bottom.html") ?>
+<script>
+  $.validate({
+  form : '#edit-form'
+  });
+</script>

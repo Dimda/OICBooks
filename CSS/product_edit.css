@@ -1,8 +1,4 @@
 @charset "UTF-8";
-
-#product-manager{
-  border: 2px inset white;
-}
 .search-results{
   width: 600px;
   height: 300px;
@@ -45,7 +41,7 @@ form h2{
   overflow:scroll;
 }
 #product-price{
-  margin-right: 66%;
+  margin-right: 58%;
 }
 #file-upload{
 }
