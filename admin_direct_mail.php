@@ -42,9 +42,9 @@
     //SMTP接続
     $mail->IsSMTP();
     $mail->SMTPAuth = TRUE;
-    //$mail->SMTPDebug = 2;
+    $mail->SMTPDebug = 2;
     $mail->SMTPSecure = 'ssl';
-    $mail->Host = 'smtp.googlemail.com';
+    $mail->Host = 'smtp.gmail.com';
     $mail->Port = 465;
     $mail->Username = $from; //Gmailのアカウント名
     $mail->Password = $pass; //Gmailのパスワード
