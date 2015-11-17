@@ -34,9 +34,9 @@
     $message = $_POST["message"];
     //$message = mysqli_real_escape_string($conn, $message);
 
-    $from = "oicbooks2@gmail.com";
+    $from = "oicbooks3@gmail.com";
     $pass = "cocacola1111";
-    $fromname = 'OICBooks';
+    $fromname = 'OICBooks1';
     $to = "kutuzov1228@gmail.com";
     //body作成
     $mbody = $message;
@@ -54,7 +54,7 @@
     $mail->SMTPAuth = TRUE;
     $mail->SMTPDebug = 2;
     $mail->SMTPSecure = 'ssl';
-    $mail->Host = 'smtp.gmail.com';
+    $mail->Host = 'smtp.googlemail.com';
     $mail->Port = 465;
     $mail->Username = $from; //Gmailのアカウント名
     $mail->Password = $pass; //Gmailのパスワード
