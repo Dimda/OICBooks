@@ -7,6 +7,7 @@ $productName = mysqli_real_escape_string($conn, $_POST["productName"]);
 $productDescription = mysqli_real_escape_string($conn, $_POST["productDescription"]);
 $productPrice = mysqli_real_escape_string($conn, $_POST["productPrice"]);
 
+/*$sql = "UPDATE PRODUCT SET PRODUCT_NAME='Doe' WHERE id=2";*/
 
 //画像
 
