@@ -1,28 +1,13 @@
 <?php
-//画像以外の項目
 
 include("includes/admin_top.html");
 include("includes/connect_DB.php");
-/*
-$formOk = 1;
+
 $productName = mysqli_real_escape_string($conn, $_POST["productName"]);
 $productDescription = mysqli_real_escape_string($conn, $_POST["productDescription"]);
 $productPrice = mysqli_real_escape_string($conn, $_POST["productPrice"]);
-$formErrNum = array();
-$formOk = 1;
 
-if(!is_numeric($productPrice)){
-  $formOk = 0;
-  array_push($formErrNum, 1);
-}
-if($formOk == 0){
-  header('Location: product_edit.php?ID=' . $_GET["ID"] . '&formErrNum=' . );
-}
 
-if($formOk == 1){
-  header('Location: product_edit.php?ID=' . $_GET["ID"] . '&formOk=1');
-}
-*/
 //画像
 
 $target_dir = "product_image/";

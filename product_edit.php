@@ -1,3 +1,13 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="css/admin.css" media="all">
+  <link rel="stylesheet" type="text/css" href="css/product_edit.css" media="all">
+  <title>管理者ページ</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.2.8/jquery.form-validator.min.js"></script>
+</head>
 
 <?php
 $ID = $_GET["ID"];
@@ -12,7 +22,7 @@ while($row = $result->fetch_assoc()){
   $productDescription = $row["PRODUCT_DESCRIPTION"];
   $productPrice = $row["PRODUCT_PRICE"];
 }
- ?>
+?>
 <?php
 include("includes/admin_top.html");
 include("includes/error_messages.php");
@@ -40,7 +50,7 @@ if(isset($_GET["success"])){
 }
 
 ?>
-<form action="product_edit_complete.php?ID=<?php echo $ID; ?>" method="post" enctype="multipart/form-data">
+<form id="edit-form" action="product_edit_complete.php?ID=<?php echo $ID; ?>" method="post" enctype="multipart/form-data">
   <h2>商品編集</h2>
   <div class="form-contents">
     <label for="productName">商品名</label>
@@ -48,7 +58,7 @@ if(isset($_GET["success"])){
     <label for="productDescription">商品明細</label>
     <textarea id="product-description" type="text" cols="30" rows="15" name="productDescription"><?php echo "$productDescription"; ?></textarea><br>
     <label for="productPrice">価格</label>
-    <input id="product-price" type="number"  name="productPrice" min="1" max="1000000" value="<?php echo "$productPrice"; ?>"><br>
+    <input id="product-price" type="number"  name="productPrice" data-validation="number" data-validation-error-msg="数字ではありません。" value='<?php echo "$productPrice";?>'><br>
     <label id="file-upload" for="fileToUpload">画像ファイル</label>
     <input type="file" name="fileToUpload">
     <label for="fileToUpload" id="file-description">jpg, jpeg, png, gif　ファイル 5mb まで</label><br>
@@ -60,3 +70,8 @@ if(isset($_GET["success"])){
 </form>
 
 <?php include("includes/admin_bottom.html") ?>
+<script>
+  $.validate({
+  form : '#edit-form'
+  });
+</script>
