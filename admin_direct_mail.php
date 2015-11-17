@@ -1,4 +1,16 @@
-<?php include("includes/admin_top.html") ?>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="css/admin.css" media="all">
+  <link rel="stylesheet" type="text/css" href="css/product_edit.css" media="all">
+  <title>管理者ページ</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.2.8/jquery.form-validator.min.js"></script>
+</head>
+<?php include("includes/admin_top.html");
+      include("includes/connect_DB.php");
+?>
 
   <div class="mail-service">
     <h2>ダイレクトメール送信</h2>
@@ -7,33 +19,62 @@
 
 
   <form name="form1" action="admin_direct_mail.php?SendClicked=true" method="post">
-  	<input id="subject" placeholder="件名を入力してください" name="mail_to"><br/>
+  	<input id="subject" placeholder="件名を入力してください" name="subject"><br/>
   	<br/>
-  	<textarea name="message" cols="60" rows="10"></textarea><br/>
+  	<textarea cols="60" rows="10" name="message"></textarea><br/>
   	<br/>
   	<input id="mail_btn" type="submit" value="送信">
   </form>
+<?php
+   if(isset($_POST["subject"], $_POST["message"]) and $_GET["SendClicked"] ){
+    require_once 'includes\class.phpmailer.php';
 
-  <?php
-      if(isset($_POST["mail_to"], $_POST["message"]) and $_GET["SendClicked"] ){
-        include("includes/connect_DB.php");
-        $mail_to = $_POST["mail_to"];
-        $mail_to = mysqli_real_escape_string($conn, $mail_to);
-        $message = $_POST["message"];
-        $message = mysqli_real_escape_string($conn, $message);
+    $subject = $_POST["subject"];
+    //$subject = mysqli_real_escape_string($conn, $subject);
+    $message = $_POST["message"];
+    //$message = mysqli_real_escape_string($conn, $message);
 
-        $to = "oicbooks2@gmail.com";
+    $from = "oicbooks3@gmail.com";
+    $pass = "cocacola1111";
+    $fromname = 'OICBooks1';
+    $to = "kutuzov1228@gmail.com";
+    //body作成
+    $mbody = $message;
+    //メール送信処理
+    mb_language('japanese');
+    mb_internal_encoding('UTF-8');
 
-        $from = "kutuzov1228@gmail.com";
+    //インスタンス生成
+    $mail = new PHPMailer();
+    $mail->CharSet = 'iso-2022-jp';
+    $mail->Encoding = '7bit';
 
-        mb_send_mail($to,$mail_to,$message,"From:".$from);
+    //SMTP接続
+    $mail->IsSMTP();
+    $mail->SMTPAuth = TRUE;
+    $mail->SMTPDebug = 2;
+    $mail->SMTPSecure = 'ssl';
+    $mail->Host = 'smtp.googlemail.com';
+    $mail->Port = 465;
+    $mail->Username = $from; //Gmailのアカウント名
+    $mail->Password = $pass; //Gmailのパスワード
 
-       	//mail($to,$mail_to,$message,$from);
+    $mail->From = $from; //差出人(From)をセット
+    $mail->FromName = mb_encode_mimeheader($fromname, 'JIS'); //差出人(From名)をセット
+    $mail->Subject = mb_encode_mimeheader($subject, 'JIS');   //件名(Subject)をセット
+    $mail->AddAddress($to); //宛先
+    $mail->Body  = mb_convert_encoding($mbody, 'JIS', 'UTF-8'); //本文(Body)をセット
 
-		$conn->close();
-    echo "終了";
-        }
-        ?>
+    //メール送信
+    if ($mail->Send()){
+      echo 'Mail send Success!';
+    } else {
+      //エラー処理
+    }
+    exit;
+  }
+?>
+
 
 
 
@@ -63,5 +104,3 @@
 
 
 <?php include("includes/admin_bottom.html") ?>
-
-
