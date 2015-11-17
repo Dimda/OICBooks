@@ -17,20 +17,32 @@
 		
 		<div id="address_select">
 			<form action="payment_time.php?search_address=true" method="post">
+				<input id="search_db" placeholder="会員のID入力(１～４)" name="member_ID">
+				<input id="search_btn" type="submit" value="検索">
+			</form>
 			<?php
-			include("includes/connect_DB.php");
-			$member_ID = $_POST["member_ID"];
-	        $member_ID = mysqli_real_escape_string($conn, $member_ID);
-	        echo $member_ID . "の検索結果";
+			if($_GET["search_address"]){
+				include("includes/connect_DB.php");
+				$member_ID = $_POST["member_ID"];
+		        $member_ID = mysqli_real_escape_string($conn, $member_ID);
+		        echo $member_ID . "の検索結果";
 
 	        if($member_ID == ""){
-	          $sql = "SELECT PRODUCT_ID, PRODUCT_NAME, PRODUCT_PRICE FROM PRODUCT";
+	          echo "入力してね";
 	        }
 	        else{
-	          $sql = "SELECT PRODUCT_ID, PRODUCT_NAME, PRODUCT_PRICE FROM PRODUCT WHERE PRODUCT_NAME LIKE '%{$member_ID}%'";
+	        	$sql = "SELECT CUSTOMER_ID, FIRST_NAME, LAST_NAME, ADDRESS, ADDRESS2, ADDRESS3 FROM customer WHERE CUSTOMER_ID LIKE '%{$member_ID}%'";
         	}
-        $result = $conn->query($sql);
+       		$result = $conn->query($sql);
 
+			while($row = $result->fetch_assoc()){
+				echo $row["ADDRESS"];
+
+			} 
+
+			$conn->close();
+
+			}
 			?>
 		</div>
 		<h3>新しい住所を追加</h3>
