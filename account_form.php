@@ -41,85 +41,78 @@
 		<form id="account_form" action="account_registration.php" method="post">
 			<table>
 				<tr>
-					<th>名前</th>
+					<th>名前<i>必須</i></th>
 					<td>
-						姓 <input type="text" class="name" name="first_name" maxlength="20" autofocus>
-						名 <input type="text" class="name" name="last_name" maxlength="20">
+						姓 <input type="text" class="name validate[required]" name="first_name" maxlength="20" autofocus>
+						名 <input type="text" class="name validate[required]" name="last_name" maxlength="20">
 					</td>
 				</tr>
 				<tr>
-					<th>フリガナ</th>
+					<th>フリガナ<i>必須</i></th>
 					<td>
-						セイ <input type="text" class="phonetic" name="first_phonetic" maxlength="30">
-						メイ <input type="text" class="phonetic" name="last_phonetic" maxlength="30">
+						セイ <input type="text" class="phonetic validate[required]" name="first_phonetic" maxlength="30">
+						メイ <input type="text" class="phonetic validate[required]" name="last_phonetic" maxlength="30">
 					</td>
 				</tr>
 				<tr>
-					<th>郵便番号</th>	
+					<th>郵便番号<i>必須</i></th>
 					<td>
-						<p>〒 <input type="text" id="address1" name="address1" maxlength="3"> - <input type="text" id="address2" name="address2" maxlength="4"></p>
+						<p>〒 <input type="text" id="address1" class="validate[required] number" name="address1" maxlength="3"> - <input type="text" id="address2" class="validate[required] number" name="address2" maxlength="4"></p>
 					</td>
 				</tr>
 				<tr>
-					<th>住所</th>
+					<th>住所<i>必須</i></th>
 					<td>
-						<p><select id="pref" name="pref"><?php include("includes/pref.html"); ?></select></p>
-						<p><input type="text" id="city" name="city"><br>市区町村名</p>
-						<p><input type="text" id="add" name="add"><br>町域番地</p>
+						<p><select id="pref" name="pref" class="validate[required] number"><?php include("includes/pref.html"); ?></select></p>
+						<p><input type="text" id="city" name="city" class="validate[required]"><br>市区町村名</p>
+						<p><input type="text" id="add" name="add" class="validate[required]"><br>町域番地</p>
 					</td>
 				</tr>
 				<tr>
-					<th>電話番号</th>
+					<th>電話番号<i>必須</i></th>
 					<td>
-						<input type="text" class="phone_number validate[required, custom[phone]] minSize[3]" name="phone_number1" maxlength="3"> - 
-						<input type="text" class="phone_number validate[requierd, custom[phone]] minSize[3]" name="phone_number2" maxlength="4"> - 
-						<input type="text" class="phone_number validate[requierd, custom[phone]] minSize[3]" name="phone_number3" maxlength="4">
+						<input type="text" class="phone_number validate[required, custom[phone]] minSize[3] number" name="phone_number1" maxlength="3"> - 
+						<input type="text" class="phone_number validate[required, custom[phone]] minSize[3] number" name="phone_number2" maxlength="4"> - 
+						<input type="text" class="phone_number validate[required, custom[phone]] minSize[3] number" name="phone_number3" maxlength="4">
 					</td>
 				</tr>
 				<tr>
-					<th>メールアドレス</th>
+					<th>メールアドレス<i>必須</i></th>
 					<td>
-						<p><input type="text" id="email" class="validate[required,custom[email]]" name="email" placeholder="半角英数字で入力してください"></p>
-						<input type="text" id="confirm_email" class="validate[required,custom[email]]" name="confirm_email" placeholder="確認のためもう一度入力してください">
+						<p><input type="text" id="email" class="validate[required, custom[email]]" name="email" placeholder="半角英数字で入力してください"></p>
+						<input type="text" id="confirm_email" class="validate[required, custom[email], equals[email]]" name="confirm_email" placeholder="確認のためもう一度入力してください">
 					</td>
 				</tr>
 				<tr>
-					<th>性別</th>
+					<th>性別<i>必須</i></th>
 					<td>
-						<input type="radio" class="sex" name="sex" value="male"> 男性 <input type="radio" class="sex" name="sex" value="female"> 女性
+						<input type="radio" class="sex validate[required]" name="sex" value="male"> 男性 <input type="radio" class="sex validate[required]" name="sex" value="female"> 女性
 					</td>
 				</tr>
 				<tr>
-					<th>生年月日</th>
+					<th>生年月日<i>必須</i></th>
 					<td>
 						<?php include("includes/birthday.html"); ?>
 					</td>
 				</tr>
 				<tr>
-					<th>パスワード(6文字以上12文字以下)</th>
+					<th>パスワード(6文字以上12文字以下)<i>必須</i></th>
 					<td>
-						<p><input type="password" id="pass1" name="pass1" minlength="6" maxlength="12" placeholder="半角英数字で入力してください"></p>
-						<p id="pass1-error" class="alert-error"></p>
-            <p id="pass1-error2" class="alert-error"></p>
-						<input type="password" id="pass2" name="pass2" minlength="6" maxlength="12" placeholder="確認のためもう一度入力してください">
-            <p id="pass2-error" class="alert-error"></p>
-						<input type="button" id="checkPassButton" class="btn btn-primary" value="パスワード確認">
-
+						<p><input type="password" id="pass1" name="pass1" class="validate[required] minSize[6]" maxlength="12" placeholder="半角英数字で入力してください"></p>
+						<input type="password" id="pass2" name="pass2" class="validate[required] equals[pass1] minSize[6]" maxlength="12" placeholder="確認のためもう一度入力してください">
 					</td>
 				</tr>
 				<tr>
-					<th>メールマガジンの送付について</th>
+					<th>メールマガジンの送付について<i>必須</i></th>
 					<td>
-						<p><input type="radio" name="mailmagazine" value="true"> 受け取る</p>
-						<p><input type="radio" name="mailmagazine" value="false"> 受け取らない</p>
+						<p><input type="radio" name="mailmagazine" class="validate[required]" value="true"> 受け取る</p>
+						<p><input type="radio" name="mailmagazine" class="validate[required]" value="false"> 受け取らない</p>
 					</td>
 				</tr>
 			</table>
 			<input type="submit" name="submit" value="送信">
 			<input type="reset">
 		</form>
-		<!-- // <script src="js/formCheck.js" charset="utf-8"></script> -->
-
 
 	</main>
 

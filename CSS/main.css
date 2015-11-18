@@ -129,7 +129,7 @@ main{
   /*margin-left: 20rem;*/
   margin-right: 8rem;
   /*margin-top: 8rem;*/
-  padding-bottom: 5rem;
+  padding-bottom: 10rem;
 }
 #top{
   position: fixed;
@@ -147,6 +147,7 @@ main{
 footer{
   margin-top: 3rem;
   position: relative;
+  /*position: absolute;*/
   z-index: 10;
   bottom: 0;
   width: 100%;
