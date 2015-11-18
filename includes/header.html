@@ -2,11 +2,36 @@
     <nav>
       <ul>
         <li>
+            <?php
+              session_start();
+              if (isset($_SESSION["name"])){
+                echo "<a href='#'>";
+                echo $_SESSION["name"];
+                echo "</a>";
+              }else{
+                echo "<a href='#'>";
+                echo 'ようこそゲストさん'.'アカウント登録はこちら';
+                echo "</a>";
+              }
+              
+            ?>
+        </li>
+        <li>
           <a href="#">カート</a>
         </li>
         <li>
-          <a href="login.php">ログイン</a>
-        </li>
+          <?php
+            if (isset($_SESSION["name"])){
+                    echo "<a href='logout.php'>";
+                    echo "ログアウト";
+                    echo "</a>";
+                  }else{
+                    echo "<a href='login.php'>";
+                    echo "ログイン";
+                    echo "</a>";
+                  }
+          ?>
+      </li>
       </ul>
     </nav>
     <div id="hgroup">
