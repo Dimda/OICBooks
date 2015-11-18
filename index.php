@@ -26,7 +26,7 @@
 
   <script>
     $(window).cbKonami(function () {
-      window.location = "http://localhost/OICBooks/admin.php";
+      window.location = "admin.php";
     });
   </script>
 </body>

@@ -42,3 +42,11 @@ p {
 .check, #pass1-error, #pass2-error {
 	color: #ff3333;
 }
+table i {
+	color: white;
+	background-color: #ff3333;
+	padding: 2px;
+	font-size: 0.8em;
+	float: right;
+	margin-left: 10px;
+}
