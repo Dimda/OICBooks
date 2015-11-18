@@ -27,14 +27,14 @@
   </form>
 <?php
    if(isset($_POST["subject"], $_POST["message"]) and $_GET["SendClicked"] ){
-    include'includes\class.phpmailer.php';
+    include'includes/class.phpmailer.php';
 
     $subject = $_POST["subject"];
     //$subject = mysqli_real_escape_string($conn, $subject);
     $message = $_POST["message"];
     //$message = mysqli_real_escape_string($conn, $message);
 
-    $from = "oicbooks3@gmail.com";
+    $from = "oicbooks2@gmail.com";
     $pass = "cocacola1111";
     $fromname = 'OICBooks1';
     $to = "kutuzov1228@gmail.com";
