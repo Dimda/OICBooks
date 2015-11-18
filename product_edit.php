@@ -12,7 +12,10 @@
 <?php
 $ID = $_GET["ID"];
 $imageErrNum = array();
-$imageErrNum = explode(",", $_GET["imageErrNum"]);
+if(isset($_GET["imageErrNum"])){
+  $imageErrNum = explode(",", $_GET["imageErrNum"]);
+}
+
 
 include("includes/connect_DB.php");
 $sql = "SELECT PRODUCT_NAME, PRODUCT_PRICE, PRODUCT_DESCRIPTION FROM PRODUCT WHERE PRODUCT_ID = $ID";

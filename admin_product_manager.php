@@ -18,7 +18,7 @@
   </form>
   <ul class="search-results">
     <?php
-    if($_GET["searchClicked"]){
+    if(isset($_GET["searchClicked"])){
       include("includes/connect_DB.php");
       $keyword = $_POST["keyword"];
       $keyword = mysqli_real_escape_string($conn, $keyword);

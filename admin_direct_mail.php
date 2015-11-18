@@ -27,7 +27,7 @@
   </form>
 <?php
    if(isset($_POST["subject"], $_POST["message"]) and $_GET["SendClicked"] ){
-    require_once 'includes\class.phpmailer.php';
+    include'includes\class.phpmailer.php';
 
     $subject = $_POST["subject"];
     //$subject = mysqli_real_escape_string($conn, $subject);
