@@ -34,9 +34,9 @@
     $message = $_POST["message"];
     //$message = mysqli_real_escape_string($conn, $message);
 
-    $from = "oicbooks3@gmail.com";
+    $from = "oicbooks2@gmail.com";
     $pass = "cocacola1111";
-    $fromname = 'OICBooks1';
+    $fromname = 'OICBooks_hide';
     $to = "kutuzov1228@gmail.com";
     //body作成
     $mbody = $message;
