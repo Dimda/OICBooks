@@ -105,8 +105,8 @@
 				<tr>
 					<th>メールマガジンの送付について<i>必須</i></th>
 					<td>
-						<p><input type="radio" name="mailmagazine" class="validate[required]" value="true"> 受け取る</p>
-						<p><input type="radio" name="mailmagazine" class="validate[required]" value="false"> 受け取らない</p>
+						<p><input type="radio" name="mailmagazine" class="validate[required]" value="1"> 受け取る</p>
+						<p><input type="radio" name="mailmagazine" class="validate[required]" value="0"> 受け取らない</p>
 					</td>
 				</tr>
 			</table>
