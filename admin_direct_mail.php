@@ -17,7 +17,6 @@
 
   </div>
 
-
   <form name="form1" action="admin_direct_mail.php?SendClicked=true" method="post">
   	<input id="subject" placeholder="件名を入力してください" name="subject"><br/>
   	<br/>
@@ -27,16 +26,16 @@
   </form>
 <?php
    if(isset($_POST["subject"], $_POST["message"]) and $_GET["SendClicked"] ){
-    include'includes\class.phpmailer.php';
+    include'includes/class.phpmailer.php';
 
     $subject = $_POST["subject"];
     //$subject = mysqli_real_escape_string($conn, $subject);
     $message = $_POST["message"];
     //$message = mysqli_real_escape_string($conn, $message);
 
-    $from = "oicbooks3@gmail.com";
+    $from = "oicbooks2@gmail.com";
     $pass = "cocacola1111";
-    $fromname = 'OICBooks1';
+    $fromname = 'OICBooks_hide';
     $to = "kutuzov1228@gmail.com";
     //body作成
     $mbody = $message;
@@ -74,33 +73,4 @@
     exit;
   }
 ?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <?php include("includes/admin_bottom.html") ?>
