@@ -17,7 +17,13 @@
             ?>
         </li>
         <li>
-          <a href="#">カート</a>
+          <?php
+            if (isset($_SESSION["name"])){
+                    echo "<a href='cart.php'>";
+                    echo "カート";
+                    echo "</a>";
+                  }
+          ?>
         </li>
         <li>
           <?php
