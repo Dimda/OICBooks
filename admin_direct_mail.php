@@ -17,7 +17,6 @@
 
   </div>
 
-
   <form name="form1" action="admin_direct_mail.php?SendClicked=true" method="post">
   	<input id="subject" placeholder="件名を入力してください" name="subject"><br/>
   	<br/>
@@ -74,33 +73,4 @@
     exit;
   }
 ?>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <?php include("includes/admin_bottom.html") ?>
