@@ -14,17 +14,16 @@
   <?php include("includes/header.html"); ?>
   <main>
     <div id="login-screen">
-      <form action="login_check.php" method="post" name="login">
-        <p>
-          メールアドレス
-          <input id = "email" name="email">
-        </p>
-        <p>
-          パスワード
-          <input type="password" id = "password" name="password">
-        </p>
-        <input id="login_btn" type="submit" value="ログイン">
-      </form>
+    	<?php
+        $_SESSION = array();
+
+        if (isset($_COOKIE["PHPSESSID"])) {
+         setcookie("PHPSESSID", '', time() - 1800, '/');
+        }
+
+        session_destroy();
+        echo "ログアウトしました";
+    	?>
     </div>
   </main>
   <?php include("includes/footer.html"); ?>

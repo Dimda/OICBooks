@@ -35,7 +35,7 @@
 
     $from = "oicbooks2@gmail.com";
     $pass = "cocacola1111";
-    $fromname = 'OICBooks1';
+    $fromname = 'OICBooks_hide';
     $to = "kutuzov1228@gmail.com";
     //body作成
     $mbody = $message;
