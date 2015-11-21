@@ -1,24 +1,27 @@
 @charset "UTF-8";
 
-main ul{
-	overflow: hidden;
+#box {
+	width: 33.3%;
+	height: auto;
+	display: inline-block;
+	vertical-align: top;
+	padding: 10px 20px 10px 20px;
 }
-table{
-  padding-bottom: 100px;
+.product-picture {
+	margin-bottom: 15px;
+	max-width :150px;
+	height: 200px;
 }
-table, th, td {
-  border: 1px solid black;
+.product-name{
+	/*margin-bottom: 10px;*/
+	color: #b0966d;
 }
-th,td{
-
-}
-tr{
-  color: #AA812F;
-}
-tr:nth-child(odd){
-  background-color: #AA812F;
-  color: #F9F3CF;
+.product-name:hover {
+	opacity: 0.8;
 }
 .product-price{
+	margin-top: 10px;
   font-size: 20pt;
+  color: #AA512F;
+  font-size: 15px;
 }

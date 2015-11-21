@@ -39,7 +39,7 @@
 	// echo $birthday . '<br>';
 
 	mysql_set_charset('utf8');
-  $sql = "INSERT INTO CUSTOMER (FIRST_NAME, LAST_NAME, FURIGANA, GENDER, BIRTH_DATE, EMAIL_ADDRESS, PHONE_NUMBER, PASS_WORD, EMAIL_PERMIT) VALUES ('$first_name', '$last_name', '$phonetic', '$sex', '$birthday', '$email', '$phone_number', '$pass_hash', '$mailmagazine' )";
+  $sql = "INSERT INTO CUSTOMER (FIRST_NAME, LAST_NAME, FURIGANA, GENDER, BIRTH_DATE, EMAIL_ADDRESS, PHONE_NUMBER, PASS_WORD, EMAIL_PERMIT) VALUES ('$first_name', '$last_name', '$phonetic', '$sex', '$birthday', '$email', '$phone_number', '$pass_hash', '$mailmagazine')";
   $conn->query($sql);
 
 	?>
