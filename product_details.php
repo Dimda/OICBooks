@@ -29,6 +29,12 @@ while($row = $result->fetch_assoc()){
        <div id="product-name"><b><?php echo $productName; ?></b></div>
        <div id="product-description"><?php echo $productDescription; ?></div>
        <div id="product-price"><?php echo $productPrice; ?>円</div>
+       <div id="add-cart">
+        <form method="POST" action="includes/add_cart.php?ID=<?php echo $ID; ?>">
+          <input type="submit" name="add-cart" value="カートに追加">
+          <input type="number" min="0" name="quantity" value="0">
+        </form>
+      </div>
     </div>
    </main>
    <?php include("includes/footer.html"); ?>
