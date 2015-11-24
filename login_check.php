@@ -36,7 +36,8 @@
     			echo $row["CUSTOMER_ID"];
     			//session_start();
     			$_SESSION["name"] = $row["CUSTOMER_ID"];
-    		}else {
+          $_SESSION["cart"] = array();
+     		}else {
     			echo "なにもないよ";
     		}
     		$conn->close();
