@@ -24,5 +24,28 @@ h1 {
   border-top: solid 1px #C6C6C6;
   border-bottom: solid 1px #C6C6C6;
 	padding: 5px 0;
+	
+}
+
+#form{
 	font-size: 0;
+}
+
+#Customer_Name
+{
+	font-size:16px;
+	font-weight: 600;
+}
+
+#destination a
+{
+	color:white;
+	background-color: #AA812F;
+	border-radius: 5px;
+	padding:10px;
+	margin-bottom: 20px;
+	display: block;
+	text-align: center;
+	font-size: 15px;
+	width:25%;
 }
