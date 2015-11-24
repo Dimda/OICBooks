@@ -10,7 +10,7 @@ body{
   width: 100%;
 }
 header{
-  background-color: rgba(0,0,0,0.85);
+  background-color: #1F4E5F;
   color: #eee;
   height: auto;
 }
@@ -19,7 +19,7 @@ header{
   width: auto;
 }
 #sidebar{
-  background-color: rgba(0,0,0,0.8);
+  background-color: #1F4E5F;
   height: 100%;
   width: 9rem;
   border-right: 2px solid rgba(255,255,255,0.5);
@@ -80,7 +80,8 @@ main{
   padding:30px 20px;
   width: auto;
   height: 93%;
-  background-color: #aaaeee;
+  background-color: #AACFD0;
+  opacity: 50%;
 }
 #product-manager{
   width: auto;

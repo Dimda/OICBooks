@@ -1,0 +1,46 @@
+@charset "UTF-8";
+h2{
+  border-bottom: 1px grey solid;
+  color: #efefef;
+}
+#search-db{
+  width: 500px;
+  height: 40px;
+  margin-left: 27%;
+  color: #AACFD0;
+  font-size: 30px;
+  background-color: #F4F7F7;
+}
+.search-results{
+  background-color: #79A8A9;
+  margin: 30px 20px 0 20px;
+  border-radius: 25px;
+  width: 70%;
+  height: 550px;
+  margin-left: 7%;
+  padding-left: 10%;
+  color: #efefef;
+}
+.product-price{
+  text-align: center;
+
+}
+a{
+  text-decoration: none;
+  color:#AACFD0;
+}
+.edit, .delete{
+  position: relative;
+  text-decoration: none;
+  background-color: #1F4E5F;
+  color:#AACFD0;
+  text-align: center;
+  border: #efefef solid 1px;
+
+}
+.edit :hover, .delete :hover{
+  background-color: rgba(255,255,255,0.3);
+}
+.product-name{
+  color: #1F4E5F;
+}
