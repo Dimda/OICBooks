@@ -2,14 +2,27 @@
 
 include("includes/admin_top.html");
 include("includes/connect_DB.php");
-
+$productID = $_GET["ID"];
 $productName = mysqli_real_escape_string($conn, $_POST["productName"]);
 $productDescription = mysqli_real_escape_string($conn, $_POST["productDescription"]);
-$productPrice = mysqli_real_escape_string($conn, $_POST["productPrice"]);
+$productPrice = $_POST["productPrice"];
+echo $productID;
 
-/*$sql = "UPDATE PRODUCT SET PRODUCT_NAME='Doe' WHERE id=2";*/
+$sql = "UPDATE PRODUCT SET PRODUCT_NAME='$productName', PRODUCT_DESCRIPTION='$productDescription',
+PRODUCT_PRICE=$productPrice WHERE PRODUCT_ID=$productID";
+
+
+/*   '%{$keyword}%'   */
+
+if ($conn->query($sql) === TRUE) {
+    echo "Record updated successfully";
+} else {
+    echo "Error updating record: " . $conn->error;
+}
+
 
 //画像
+
 
 $target_dir = "product_image/";
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
