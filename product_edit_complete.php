@@ -11,9 +11,6 @@ echo $productID;
 $sql = "UPDATE PRODUCT SET PRODUCT_NAME='$productName', PRODUCT_DESCRIPTION='$productDescription',
 PRODUCT_PRICE=$productPrice WHERE PRODUCT_ID=$productID";
 
-
-/*   '%{$keyword}%'   */
-
 if ($conn->query($sql) === TRUE) {
     echo "Record updated successfully";
 } else {
