@@ -27,7 +27,7 @@
 
     		$sql = "SELECT CUSTOMER_ID FROM CUSTOMER
     				WHERE EMAIL_ADDRESS = '{$email}' and 
-    						PASS_WORD = '$password'";
+    						PASSWORD = '$password'";
     		$result = $conn->query($sql);
     		$row = $result->fetch_assoc();
     		echo '<br>';
