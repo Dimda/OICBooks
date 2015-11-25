@@ -19,6 +19,7 @@ header a {
   color: #F9F3CF;
 }
 .btn_search{
+  vertical-align: middle;
   background-color: #DDBC89;
 }
 #sidebar {
