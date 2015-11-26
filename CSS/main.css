@@ -13,9 +13,9 @@ html{
 }
 body{
   margin: auto;
-  height: 100%;
+/*  height: 100%;
   min-height: 100%;
-  height: auto !important;
+  height: auto !important;*/
   width: 100%;
   position: relative;
 }
@@ -127,7 +127,7 @@ main{
   left: 20rem;
   width: calc(100% - 28rem);
   /*margin-left: 20rem;*/
-  margin-right: 8rem;
+  /*margin-right: 8rem;*/
   /*margin-top: 8rem;*/
   padding-bottom: 10rem;
 }
@@ -143,6 +143,8 @@ main{
 #top a{
   display: block;
   padding: 1rem 1rem;
+  transition: margin-bottom .25s ease;
+
 }
 footer{
   margin-top: 3rem;
