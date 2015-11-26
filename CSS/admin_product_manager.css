@@ -11,7 +11,11 @@ h2{
   font-size: 30px;
   background-color: #F4F7F7;
 }
+#search-btn{
+  height: 40px;
+}
 .search-results{
+  position: relative;
   background-color: #79A8A9;
   margin: 30px 20px 0 20px;
   border-radius: 25px;
@@ -29,18 +33,18 @@ a{
   text-decoration: none;
   color:#AACFD0;
 }
+
 .edit, .delete{
-  position: relative;
   text-decoration: none;
   background-color: #1F4E5F;
-  color:#AACFD0;
   text-align: center;
   border: #efefef solid 1px;
 
 }
-.edit :hover, .delete :hover{
+
+/*.edit :hover, .delete :hover{
   background-color: rgba(255,255,255,0.3);
-}
+}*/
 .product-name{
   color: #1F4E5F;
 }

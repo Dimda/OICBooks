@@ -7,6 +7,7 @@
   <title>管理者ページ</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.2.8/jquery.form-validator.min.js"></script>
+  <script src="scripts/admin_product_manager.js"></script>
 </head>
 <?php include("includes/admin_top.html"); ?>
 
@@ -14,7 +15,7 @@
   <h2>商品の編入、削除</h2>
   <form action="admin_product_manager.php" method="post">
     <!--searchClickedで検索したってことを伝える-->
-    <input id="search-db" placeholder="データベースを検索する" name="keyword">
+    <input id="search-db" placeholder="データベースを検索する" name="keyword" value = "<?php if(isset($_POST["keyword"])){ echo $_POST["keyword"];}?>">
     <input id="search-btn" type="submit" value="検索">
   </form>
   <ul class="search-results">
