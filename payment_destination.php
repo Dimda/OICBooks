@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-		<link rel="stylesheet" href="CSS/payment_time.css">
+		<link rel="stylesheet" href="CSS/payment_destination.css">
 		<title>支払いページ</title>
 	</head>
 	<body>
@@ -16,7 +16,7 @@
 		<h2>お届け先、配送業者、日時指定の設定</h2>
 		
 		<div id="address_select">
-			<form action="payment_time.php?search_address=true" method="post" ID="form">
+			<form action="payment_destination.php?search_address=true" method="post" ID="form">
 				<input id="search_db" placeholder="会員のID入力(１～４)" name="member_ID">
 				<input id="search_btn" type="submit" value="検索">
 				</form>
@@ -57,7 +57,7 @@
 					?>
 
 					<div ID="destination">
-						<a href="" style="text-decoration:none;">この住所を使う</a>
+						<a href="payment_delivery.php" style="text-decoration:none;">この住所を使う</a>
 					</div>
 					<?php
 
@@ -79,7 +79,20 @@
 		<input type="text" name="newName" size="30" maxlength="25">
 
 		<p>郵便番号:</p>
-		<input type="text" name="newzip1" size="5" maxlength="3">-<input type="text" name="newzip2" size="5" maxlength="4">
+		<input type="text" name="newZip1" size="10" maxlength="7">
+
+		<p>住所1:(例：大阪府大阪市)</p>
+		<input type="text" name="newAddress1" size="30" maxlength="30">
+
+		<p>住所2:(例:天王寺区○○)</p>
+		<input type="text" name="newAddress2" size="30" maxlength="30">
+
+		<p>住所3:(例:ｘｘマンション701</p>
+		<input type="text" name="newAddress3" size="30" maxlength="30"><br/>
+			<br/>
+		<div ID="destination">
+			<a href="payment_delivery.php" style="text-decoration:none;">この住所を使う</a>
+		</div>
 
 	</form>
 	
