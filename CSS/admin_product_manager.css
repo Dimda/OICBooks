@@ -23,6 +23,7 @@ h2{
   height: 550px;
   margin-left: 7%;
   padding-left: 10%;
+  padding-right: 50px;
   color: #efefef;
 }
 .product-price{
@@ -42,9 +43,12 @@ a{
 
 }
 
-/*.edit :hover, .delete :hover{
+.highlighted{
   background-color: rgba(255,255,255,0.3);
-}*/
+}
+.highlighted a{
+  color: #1F4E5F;
+}
 .product-name{
   color: #1F4E5F;
 }

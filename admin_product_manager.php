@@ -39,7 +39,8 @@
                   <td class = "product-price" width = "10%">' . $row["PRODUCT_PRICE"] .'円</td>
                   <td class = "edit" width = "10%"><a href="product_edit.php?ID=' . $row["PRODUCT_ID"] . '">編集</a></td>
                   <td class = "delete" width = "10%"><a onclick="return deleteCheck()" href="delete.php?ID=' . $row["PRODUCT_ID"] . '">削除</a></td>
-                </tr>';
+                </tr>
+                ';
            }
         echo '</table>';
         $conn->close();
