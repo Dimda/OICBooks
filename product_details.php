@@ -32,7 +32,7 @@ while($row = $result->fetch_assoc()){
        <div id="add-cart">
         <form method="POST" action="add_cart.php?ID=<?php echo $ID; ?>">
           <input type="submit" name="add-cart" value="カートに追加">
-          <input type="number" min="1" name="quantity" value="1">
+          <input type="number" min="1" name="QUANTITY" value="1">
         </form>
       </div>
     </div>

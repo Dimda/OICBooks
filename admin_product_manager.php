@@ -1,16 +1,14 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <link rel="stylesheet" type="text/css" href="css/admin.css" media="all">
-  <link rel="stylesheet" type="text/css" href="css/admin_product_manager.css" media="all">
-  <title>管理者ページ</title>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.2.8/jquery.form-validator.min.js"></script>
-  <script src="scripts/admin_product_manager.js"></script>
-</head>
-<?php include("includes/admin_top.html"); ?>
-
+<?php
+$title            = '商品管理';
+$sideElement[0]   = '商品の編入、削除';
+$sideElement[1]   = '商品追加';
+$cssLink[0]       = 'admin.css';
+$cssLink[1]       = 'admin_product_manager.css';
+$scriptSource[0]  = 'https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js';
+$scriptSource[1]  = '//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.2.8/jquery.form-validator.min.js';
+$scriptSource[2]  = 'scripts/admin_product_manager.js';
+include("includes/admin_top.php");
+?>
 <div id="product-manager">
   <h2>商品の編入、削除</h2>
   <form action="admin_product_manager.php" method="post">
