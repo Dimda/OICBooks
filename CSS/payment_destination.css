@@ -1,0 +1,51 @@
+@charset "utf-8"
+* {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+html{
+  font-family: arial,sans-serif;
+  height: 100%;
+}
+body {
+	width: 80%;
+	margin: 0 auto;
+	background-color: #ffffff;
+}
+header {
+	margin: 10px;
+}
+h1 {
+	margin: 0;
+}
+#address_select {
+	height: 150px;
+  border-top: solid 1px #C6C6C6;
+  border-bottom: solid 1px #C6C6C6;
+	padding: 5px 0;
+	
+}
+
+#form{
+	font-size: 0;
+}
+
+#Customer_Name
+{
+	font-size:16px;
+	font-weight: 600;
+}
+
+#destination a
+{
+	color:white;
+	background-color: #AA812F;
+	border-radius: 5px;
+	padding:10px;
+	margin-bottom: 20px;
+	display: block;
+	text-align: center;
+	font-size: 15px;
+	width:25%;
+}
