@@ -1,15 +1,11 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <link rel="stylesheet" type="text/css" href="css/admin.css" media="all">
-  <link rel="stylesheet" type="text/css" href="css/product_edit.css" media="all">
-  <title>管理者ページ</title>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.2.8/jquery.form-validator.min.js"></script>
-</head>
-<?php include("includes/admin_top.html");
-      include("includes/connect_DB.php");
+<?php
+$title            = 'ダイレクトメール設定';
+$sideElement[0]   = 'メール送信';
+$cssLink[0]       = 'admin.css';
+$cssLink[1]       = 'product_edit.css';
+
+include("includes/admin_top.php");
+include("includes/connect_DB.php");
 ?>
 
   <div class="mail-service">

@@ -1,4 +1,23 @@
-
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <?php
+  if(isset($cssLink )){
+    foreach($cssLink as $link){
+      echo '<link rel="stylesheet" type="text/css" href="css/' . $link . '" media="all">';
+    }
+  }
+  ?>
+  <title>管理者ページ | <?php echo $title; ?></title>
+  <?php
+  if(isset($scriptSource)){
+    foreach ($scriptSource as $source) {
+      echo '<script src="' . $source . '"></script>';
+    }
+  }
+  ?>
+</head>
 <body>
   <header>
     <h2><a href="admin.php">管理者ページ</a></h2>
@@ -17,10 +36,13 @@
   <div id="sidebar">
     <nav>
       <ul>
-        <li><a href="#">test</a></li>
-        <li><a href="#">test</a></li>
-        <li><a href="#">test</a></li>
-        <li><a href="#">test</a></li>
+        <?php
+        if(isset($sideElement)){
+          foreach($sideElement as $eName){
+            echo '<li><a href="#">' . $eName . '</a></li>';
+          }
+        }
+        ?>
       </ul>
     </nav>
   </div>
