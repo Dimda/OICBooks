@@ -16,10 +16,7 @@ if ($conn->query($sql) === TRUE) {
 } else {
     echo "Error updating record: " . $conn->error;
 }
-
-
 //画像
-
 
 $target_dir = "product_image/";
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);

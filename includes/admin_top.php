@@ -37,9 +37,9 @@
     <nav>
       <ul>
         <?php
-        if(isset($sideElement)){
-          foreach($sideElement as $eName){
-            echo '<li><a href="#">' . $eName . '</a></li>';
+        if(isset($sideElement) && isset($sideElementLink)){
+          for($i=0; $i < count($sideElement); $i++){
+            echo '<li><a href="' . $sideElementLink[$i] . '">' . $sideElement[$i] . '</a></li>';
           }
         }
         ?>
@@ -47,3 +47,4 @@
     </nav>
   </div>
   <main>
+    <h2><?php echo $subtitle; ?></h2>
