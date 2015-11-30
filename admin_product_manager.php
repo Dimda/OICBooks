@@ -1,16 +1,22 @@
 <?php
-$title            = '商品管理';
-$sideElement[0]   = '商品の編入、削除';
-$sideElement[1]   = '商品追加';
-$cssLink[0]       = 'admin.css';
-$cssLink[1]       = 'admin_product_manager.css';
-$scriptSource[0]  = 'https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js';
-$scriptSource[1]  = '//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.2.8/jquery.form-validator.min.js';
-$scriptSource[2]  = 'scripts/admin_product_manager.js';
+$title              = '商品管理';
+$subtitle           = '商品編集削除';
+
+$sideElement[0]     = '商品の編入、削除';
+$sideElementLink[0] = 'admin_product_manager.php';
+$sideElement[1]     = '商品追加';
+$sideElementLink[1] = 'admin_add.php';
+
+$cssLink[0]         = 'admin.css';
+$cssLink[1]         = 'admin_product_manager.css';
+
+$scriptSource[0]    = 'https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js';
+$scriptSource[1]    = '//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.2.8/jquery.form-validator.min.js';
+$scriptSource[2]    = 'js/admin_product_manager.js';
+
 include("includes/admin_top.php");
 ?>
 <div id="product-manager">
-  <h2>商品の編入、削除</h2>
   <form action="admin_product_manager.php" method="post">
     <!--searchClickedで検索したってことを伝える-->
     <input id="search-db" placeholder="データベースを検索する" name="keyword" value = "<?php if(isset($_POST["keyword"])){ echo $_POST["keyword"];}?>">
