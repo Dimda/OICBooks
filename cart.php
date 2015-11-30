@@ -28,6 +28,9 @@
         		}
         		$conn->close();
 			?>
+			<div id="payment">
+						<a href="payment_destination.php" style="text-decoration:none;">お支払い</a>
+			</div>
 		</div>
 	</main>
 	<?php include("includes/top.html"); ?>
