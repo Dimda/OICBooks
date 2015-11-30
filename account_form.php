@@ -21,9 +21,9 @@
             '#address2'
          ],
          address : {
-            '#pref'  : '%3',
-            '#city'  : '%4',
-            '#add' : '%5'
+            '#pref' : '%3',
+            '#city' : '%4',
+            '#area' : '%5'
          }
       });
    });
@@ -38,7 +38,6 @@
 	<?php include("includes/sidebar.html"); ?>
 	<?php include("includes/header.html"); ?>
 	<?php include("includes/connect_DB.php"); ?>
-
 	<main>
 		<form id="account_form" action="account_registration.php" method="post">
 			<table>
@@ -67,7 +66,8 @@
 					<td>
 						<p><select id="pref" name="pref" class="validate[required] number"><?php include("includes/pref.html"); ?></select></p>
 						<p><input type="text" id="city" name="city" class="validate[required]"><br>市区町村名</p>
-						<p><input type="text" id="add" name="add" class="validate[required]"><br>町域番地</p>
+						<p><input type="text" id="area" name="area" class="validate[required]"><br>町域</p>
+						<p><input type="text" id="add" name="add" class="validate[required]"><br>番地・マンション名</p>
 					</td>
 				</tr>
 				<tr>
@@ -83,13 +83,12 @@
 					<td>
 						<p><input type="text" id="email" class="validate[required, custom[email]]" name="email" placeholder="半角英数字で入力してください"></p>
 						<input type="text" id="confirm_email" class="validate[required, custom[email], equals[email]]" name="confirm_email" placeholder="確認のためもう一度入力してください">
-
 					</td>
 				</tr>
 				<tr>
 					<th>性別<i>必須</i></th>
 					<td>
-						<input type="radio" class="sex validate[required]" name="sex" value="M"> 男性 <input type="radio" class="sex validate[required]" name="sex" value="F"> 女性
+						<input type="radio" class="sex validate[required]" name="sex" value="Male"> 男性 <input type="radio" class="sex validate[required]" name="sex" value="F"> 女性
 					</td>
 				</tr>
 				<tr>
@@ -113,10 +112,9 @@
 					</td>
 				</tr>
 			</table>
-			<input type="submit" name="submit" value="送信">
-			<input type="reset">
+			<button type="submit" name="submit">送信</button>
+			<button type="reset">リセット</button>
 		</form>
-
 	</main>
 
 	<?php include("includes/top.html"); ?>

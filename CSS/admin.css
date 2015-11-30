@@ -13,18 +13,19 @@ header{
   background-color: #1F4E5F;
   color: #eee;
   height: auto;
+  border-bottom: 2px solid rgba(255,255,255,0.5);
 }
-#container{
-  /*overflow: hidden;  サイドバーのあまりを隠す */
+/*#container{
+  overflow: hidden;  サイドバーのあまりを隠す 
   width: auto;
-}
+}*/
 #sidebar{
   background-color: #1F4E5F;
   height: 100%;
   width: 9rem;
   border-right: 2px solid rgba(255,255,255,0.5);
   float: left;
-  /*padding-bottom: 32768px; /* サイドバーの高さをメインと同じにする */
+  /*padding-bottom: 32768px;  /*サイドバーの高さをメインと同じにする */
   /*margin-bottom: -32768px; /* 同上 */
 }
 header a{
@@ -39,7 +40,7 @@ header li a{
   padding: 0.6vh 2vw;
 }
 header nav{
-/*  height: 30px;*/
+ height: 30px;
   border-top: 1px solid #fff;
 }
 header ul{
@@ -80,7 +81,7 @@ main{
   margin-left: calc(9rem + 2px);
   padding:30px 20px;
   width: auto;
-  height: 93%;
+  height: 100%;
   background-color: #AACFD0;
   opacity: 50%;
 }

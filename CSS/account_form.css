@@ -18,11 +18,8 @@ td {
 p {
 	margin: 3px 0;
 }
-#city {
-	width: 100%;
-}
-#add {
-	width: 100%;
+#pref, #city, #area, #add {
+	width: 50%;
 }
 #email {
 	width: 100%;
