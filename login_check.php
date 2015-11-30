@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <link rel="stylesheet" type="text/css" href="css/main.css" media="all">
-  <link rel="stylesheet" type="text/css" href="css/login.css" media="all">
+  <link rel="stylesheet" type="text/css" href="CSS/main.css" media="all">
+  <link rel="stylesheet" type="text/css" href="CSS/login.css" media="all">
   <link rel="stylesheet" type="text/css" href="CSS/main_color.css" media="all">
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
@@ -38,11 +38,28 @@
           echo $row["FIRST_NAME"].$row["LAST_NAME"];
           echo '<br>';
           echo date('Y年m月d日H時i分s秒');
-    			//session_start();
+
+          $date = date('Y-m-d H:i:s');
+          $CUSTOMER_ID = $row["CUSTOMER_ID"];
           $_SESSION["CUSTOMER_ID"] = $row["CUSTOMER_ID"];
     			$_SESSION["CUSTOMER_NAME"] = $row["FIRST_NAME"].$row["LAST_NAME"];
-          //$_SESSION["cart_product"];
-          //$_SESSION["cart_quantity"];
+
+          $sql =  "SELECT CART_ID FROM CART WHERE CUSTOMER_ID = '$CUSTOMER_ID'";
+          $result = $conn->query($sql);
+          $row = $result->fetch_assoc();
+
+          if(isset($row["CART_ID"])){
+            echo "hello!!";
+            $_SESSION["CART_ID"] = $row["CART_ID"];
+          } else{
+            echo "カート列を作成します";
+            $sql = "INSERT INTO CART (CUSTOMER_ID,CART_DATE_ADDED,CART_STATUS) VALUES ('$CUSTOMER_ID','$date','add-test')";
+            $conn->query($sql);
+            $sql =  "SELECT CART_ID FROM CART WHERE CUSTOMER_ID = '$CUSTOMER_ID'";
+            $result = $conn->query($sql);
+            $row = $result->fetch_assoc();
+            $_SESSION["CART_ID"] = $row["CART_ID"];
+          }
      		}else {
     			echo "なにもないよ";
     		}

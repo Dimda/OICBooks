@@ -1,8 +1,8 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-  <link rel="stylesheet" type="text/css" href="css/main.css" media="all">
-  <link rel="stylesheet" type="text/css" href="css/search_results.css" media="all">
+  <link rel="stylesheet" type="text/css" href="CSS/main.css" media="all">
+  <link rel="stylesheet" type="text/css" href="CSS/search_results.css" media="all">
   <link rel="stylesheet" type="text/css" href="CSS/main_color.css" media="all">
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
@@ -18,33 +18,31 @@
     	<?php
       $product_id = $_GET["ID"];
       $quantity = $_POST["QUANTITY"];
-      $date = date('Y-m-d H:i:s');
-      $customer_id = $_SESSION["CUSTOMER_ID"];
-      echo "商品番号";
-      echo "<br>";
-      echo $product_id;
-      echo "<br>";
-      echo "個数は";
-      echo "<br>";
-      echo $quantity;
-      echo "<br>";
-      echo "時間";
-      echo "<br>";
-      echo $date;
-      echo "<br>";
-      echo "顧客id";
-      echo $customer_id;
+      $cart_id = $_SESSION["CART_ID"];
 
       include("includes/connect_DB.php");
-      $sql = "INSERT INTO CUSTOMER (CUSTOMER_ID,CART_DATE_ADDED,CART_STATUS) VALUES ('$customer_id','$date','test02')";
-      $conn->query($sql);
-      if ($conn->query($sql) === TRUE) {
-        echo "Record updated successfully";
-      } else {
-        echo "Error updating record: " . $conn->error;
+      $sql =  "SELECT CART_ID FROM CART_PRODUCTS WHERE PRODUCT_ID = '$product_id'";
+      $result = $conn->query($sql);
+      $row = $result->fetch_assoc();
+
+      if(isset($row["CART_ID"])){
+        $sql =  "SELECT QUANTITY FROM CART_PRODUCTS WHERE PRODUCT_ID = '$product_id'";
+        $result = $conn->query($sql);
+        $row = $result->fetch_assoc();
+        $quantity = $row["QUANTITY"] + $quantity;
+        $sql = "UPDATE CART_PRODUCTS SET QUANTITY = '$quantity' WHERE CART_ID = '$cart_id' AND PRODUCT_ID ='$product_id'";
+        $conn->query($sql);
+      }else {
+        $sql = "INSERT INTO CART_PRODUCTS (CART_ID,PRODUCT_ID,QUANTITY) VALUES ('$cart_id','$product_id','$quantity')";
+        $conn->query($sql);
       }
+      echo "商品番号"."$product_id"."を";
+      echo "<br>";
+      echo $_POST['QUANTITY'];
+      echo "個追加しました";
+
       $conn->close();
-		?>
+		  ?>
     </div>
   </main>
  <?php include ("includes/top.html");?>
