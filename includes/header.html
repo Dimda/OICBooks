@@ -4,9 +4,9 @@
         <li>
             <?php
               session_start();
-              if (isset($_SESSION["name"])){
+              if (isset($_SESSION["CUSTOMER_NAME"])){
                 echo "<a href='#'>";
-                echo $_SESSION["name"];
+                echo $_SESSION["CUSTOMER_NAME"];
                 echo "</a>";
               }else{
                 echo "<a href='#'>";
@@ -18,7 +18,7 @@
         </li>
         <li>
           <?php
-            if (isset($_SESSION["name"])){
+            if (isset($_SESSION["CUSTOMER_NAME"])){
                     echo "<a href='cart.php'>";
                     echo "カート";
                     echo "</a>";
@@ -27,7 +27,7 @@
         </li>
         <li>
           <?php
-            if (isset($_SESSION["name"])){
+            if (isset($_SESSION["CUSTOMER_NAME"])){
                     echo "<a href='logout.php'>";
                     echo "ログアウト";
                     echo "</a>";

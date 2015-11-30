@@ -33,20 +33,16 @@
 		$date2 = date("Y/m/d", strtotime('+3 day'));
 		$date3 = date("Y/m/d", strtotime('+4 day'));
 
-		/*$datetime1 = new DateTime($date1);
-		$w1 = (int)date_format($datetime1, 'w');
+		$w1 = date('w', strtotime($date1));
+		$w2 = date('w', strtotime($date2));
+		$w3 = date('w', strtotime($date3));
 
-		$datetime1 = new DateTime($date2);
-		$w2 = (int)date_format($datetime2, 'w');
-
-		$datetime3 = new DateTime($date3);
-		$w3 = (int)date_format($datetime3, 'w');*/
 		?>
 
 		<select>
-			<option value="<?php $date1?>"><?php echo $date1?></option>
-			<option value="<?php $date2?>"><?php echo $date2?></option>
-			<option value="<?php $date3?>"><?php echo $date3?></option>
+			<option value="<?php $date1."(".$week[$w1].")"?>"><?php echo $date1."(".$week[$w1].")"?></option>
+			<option value="<?php $date2."(".$week[$w2].")"?>"><?php echo $date2."(".$week[$w2].")"?></option>
+			<option value="<?php $date3."(".$week[$w3].")"?>"><?php echo $date3."(".$week[$w3].")"?></option>
 		</select>
 
 		<!-- メモ：前のhtmlからデータを持ってくる -->

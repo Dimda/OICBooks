@@ -13,9 +13,9 @@ while($row = $result->fetch_assoc()){
 <!DOCTYPE HTML>
 <html>
  <head>
-    <link rel="stylesheet" type="text/css" href="css/main.css" media="all">
-    <link rel="stylesheet" type="text/css" href="css/sidebar.css" media="all">
-    <link rel="stylesheet" type="text/css" href="css/product_details.css" media="all">
+    <link rel="stylesheet" type="text/css" href="CSS/main.css" media="all">
+    <link rel="stylesheet" type="text/css" href="CSS/sidebar.css" media="all">
+    <link rel="stylesheet" type="text/css" href="CSS/product_details.css" media="all">
     <link rel="stylesheet" type="text/css" href="CSS/main_color.css" media="all">
     <title><?php echo $productName; ?></title>
     <meta charset="utf-8">
