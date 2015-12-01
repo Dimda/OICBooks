@@ -49,6 +49,7 @@
           $row = $result->fetch_assoc();
 
           if(isset($row["CART_ID"])){
+            // カートの状態が”完了済”の場合の実装はまだしていない。後で条件に加える
             echo "hello!!";
             $_SESSION["CART_ID"] = $row["CART_ID"];
           } else{
