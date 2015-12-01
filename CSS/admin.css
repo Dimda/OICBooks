@@ -1,5 +1,7 @@
 @charset "UTF-8";
-
+body {
+    overflow:hidden;
+}
 html{
   font-family: arial,sans-serif;
   height: 100%;
@@ -16,7 +18,7 @@ header{
   border-bottom: 2px solid rgba(255,255,255,0.5);
 }
 /*#container{
-  overflow: hidden;  サイドバーのあまりを隠す 
+  overflow: hidden;  サイドバーのあまりを隠す
   width: auto;
 }*/
 #sidebar{

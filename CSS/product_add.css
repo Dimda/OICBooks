@@ -1,14 +1,16 @@
 @charset "UTF-8";
+
 form{
   color:white;
   background-color: #79A8A9;
   margin: 0 20px 0 20px;
+  padding: 10px  20% 10px 20%;
   border-radius: 25px;
-  padding-top: 10px;
+  overflow: scroll;
+  height: 600px;
 }
 .form-contents{
-  text-align:right;
-  padding-right: 20%;
+
 }
 form h2{
   text-align: center;

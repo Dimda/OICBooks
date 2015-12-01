@@ -1,10 +1,7 @@
 @charset "UTF-8";
-.search-results{
-  width: 600px;
-  height: 300px;
-  overflow: scroll;
-}
+
 form{
+  
   color:white;
   background-color: #79A8A9;
   margin: 0 20px 0 20px;

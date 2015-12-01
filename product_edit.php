@@ -1,4 +1,5 @@
 <?php
+
 $title              = '商品管理';
 $subtitle           = '商品編集';
 
@@ -12,6 +13,7 @@ $cssLink[1]         = 'product_edit.css';
 
 $scriptSource[0]    = 'https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js';
 $scriptSource[1]    = '//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.2.8/jquery.form-validator.min.js';
+
 
 include("includes/admin_top.php");
 
