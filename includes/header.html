@@ -1,56 +1,52 @@
-  <header>
-    <nav>
-      <ul>
-        <li>
-            <?php
-              session_start();
-              if (isset($_SESSION["CUSTOMER_NAME"])){
-                echo "<a href='mypage.php'>";
-                echo $_SESSION["CUSTOMER_NAME"];
-                echo "</a>";
-              }else{
-                echo "<a href='account_form.php'>";
-                echo 'ようこそゲストさん'.'アカウント登録はこちら';
-                echo "</a>";
-              }
-              
-            ?>
-        </li>
-        <li>
-          <?php
-            if (isset($_SESSION["CUSTOMER_NAME"])){
-                    echo "<a href='cart.php'>";
-                    echo "カート";
-                    echo "</a>";
-                  }
-          ?>
-        </li>
-        <li>
-          <?php
-            if (isset($_SESSION["CUSTOMER_NAME"])){
-                    echo "<a href='logout.php'>";
-                    echo "ログアウト";
-                    echo "</a>";
-                  }else{
-                    echo "<a href='login.php'>";
-                    echo "ログイン";
-                    echo "</a>";
-                  }
-          ?>
+<header>
+  <a href="index.php"><img src="img/logo.jpg" alt="OICBooks"></a>
+  <nav>
+    <ul>
+      <li>
+        <?php
+        session_start();
+        if (isset($_SESSION["CUSTOMER_NAME"])){
+          echo '<a href="mypage.php" title="アカウント名">';
+          echo $_SESSION["CUSTOMER_NAME"]."さん";
+          echo "</a>";
+        }else{
+          echo '<a href="account_form.php" title="ゲスト">';
+          echo 'ようこそゲストさん'.'アカウント登録はこちら';
+          echo "</a>";
+        }
+        ?>
       </li>
-      </ul>
-    </nav>
-    <div id="hgroup">
-      <div id="search">
-        <form action="search_results.php" method="post" name="search">
-          <button id="book_btn">書籍名</button>
-          <button id="isbn_btn">ISBN</button><br>
-          <input id="search_bar" placeholder="Search..." name="keyword">
-          <!-- <input id="search_btn" class="btn_search fa fa-search" type="image"> -->
-          <a href=""javascript:void(0);" onclick="document.search.submit();return false;"" class="btn_search fa fa-search">
-          </a>
-        </form>
-      </div>
-      <div id=" account_name"></div>
+      <li>
+        <?php
+        if(isset($_SESSION["CUSTOMER_NAME"])){
+          echo '<a href="cart.php" title="カート">';
+          echo "CART";
+          echo "</a>";
+        }
+        ?>
+      </li>
+      <li>
+        <?php
+        if(isset($_SESSION["CUSTOMER_NAME"])){
+          echo '<a href="logout.php" title="サインアウト">';
+          echo "SIGN OUT";
+          echo "</a>";
+        }else{
+          echo '<a href="login.php" title="サインイン">';
+          echo "SIGN IN";
+          echo "</a>";
+        }
+        ?>
+      </li>
+    </ul>
+  </nav>
+  <div id="hgroup">
+    <div id="search">
+      <form action="search_results.php" method="post" name="search">
+        <input type="text" class="search_bar" id="search_bar1" placeholder="Search..." name="keyword">
+        <a href=""javascript:void(0);" onclick="document.search.submit();return false;"" class="btn_search fa fa-search">
+        </a>
+      </form>
     </div>
-  </header>
+  </div>
+</header>

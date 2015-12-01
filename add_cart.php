@@ -1,9 +1,9 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-  <link rel="stylesheet" type="text/css" href="CSS/main.css" media="all">
+  <link rel="stylesheet" type="text/css" href="CSS/default.css" media="all">
   <link rel="stylesheet" type="text/css" href="CSS/search_results.css" media="all">
-  <link rel="stylesheet" type="text/css" href="CSS/main_color.css" media="all">
+  <link rel="stylesheet" type="text/css" href="CSS/default_color.css" media="all">
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
   <title>カートに追加しました</title>
@@ -47,5 +47,7 @@
   </main>
  <?php include ("includes/top.html");?>
  <?php include("includes/footer.html"); ?>
+ <script type="text/javascript" src="js/classie.js"></script>
+ <script type="text/javascript" src="js/sidebar.js"></script>
 </body>
 </html>

@@ -2,8 +2,8 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="css/main.css">
-	<link rel="stylesheet" type="text/css" href="css/main_color.css">
+	<link rel="stylesheet" type="text/css" href="css/default.css">
+	<link rel="stylesheet" type="text/css" href="css/default_color.css">
 	<link rel="stylesheet" type="text/css" href="css/account_form.css">
 	<link rel="stylesheet" type="text/css" href="css/validationEngine.jquery.css">
 	<link rel="stylesheet" href="css/theme-default.css">
@@ -109,6 +109,8 @@
 			<button type="reset">リセット</button>
 		</form>
 	</main>
+	<script type="text/javascript" src="js/classie.js"></script>
+	<script type="text/javascript" src="js/sidebar.js"></script>
 	<script>
 	  $.validate({
 	    modules : 'security'

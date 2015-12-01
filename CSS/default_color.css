@@ -1,0 +1,44 @@
+body {
+  background-color: #ffffff;
+}
+header {
+  /*background-color: #f2f2f2;*/
+  border-bottom: 1px solid #e3e3e3;
+}
+.btn_search{
+  /*background-color: #c3c3c3;*/
+}
+.search_bar:focus{
+  background-color: #eeeeee;
+}
+.fa {
+  color: #8E8E8E;
+  background-color: white;
+}
+a[title] {
+  color: #555555;
+}
+a[title]:hover {
+  text-decoration: underline;
+}
+main {
+  /*background-color: #eeaeee;*/
+}
+#sidebar {
+  background-color: #9F1D2F;
+}
+#sidebar p, #sidebar nav a {
+  color: #ffffff;
+}
+#sidebar nav a:hover{
+  background: #AC4F5B;
+}
+#top {
+  background-color: #9F1D2F;
+}
+#top a {
+  color: #ffffff;
+}
+footer {
+  border-top: 1px solid #aa0000;
+}
