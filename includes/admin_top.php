@@ -47,4 +47,8 @@
     </nav>
   </div>
   <main>
-    <h2><?php echo $subtitle; ?></h2>
+    <h2><?php
+    if(isset($subtitle)){
+      echo $subtitle;
+    }
+    ?></h2>

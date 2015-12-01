@@ -1,15 +1,20 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <link rel="stylesheet" type="text/css" href="css/admin.css" media="all">
-  <link rel="stylesheet" type="text/css" href="css/product_edit.css" media="all">
-  <title>管理者ページ</title>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.2.8/jquery.form-validator.min.js"></script>
-</head>
-
 <?php
+$title              = '商品管理';
+$subtitle           = '商品編集';
+
+$sideElement[0]     = '商品の編入、削除';
+$sideElementLink[0] = 'admin_product_manager.php';
+$sideElement[1]     = '商品追加';
+$sideElementLink[1] = 'product_add.php';
+
+$cssLink[0]         = 'admin.css';
+$cssLink[1]         = 'product_edit.css';
+
+$scriptSource[0]    = 'https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js';
+$scriptSource[1]    = '//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.2.8/jquery.form-validator.min.js';
+
+include("includes/admin_top.php");
+
 $ID = $_GET["ID"];
 $imageErrNum = array();
 if(isset($_GET["imageErrNum"])){
@@ -27,7 +32,6 @@ while($row = $result->fetch_assoc()){
 }
 ?>
 <?php
-include("includes/admin_top.html");
 include("includes/error_messages.php");
 
 if(isset($_GET["imageErrNum"])){

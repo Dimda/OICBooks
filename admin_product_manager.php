@@ -2,10 +2,10 @@
 $title              = '商品管理';
 $subtitle           = '商品編集削除';
 
-$sideElement[0]     = '商品の編入、削除';
+$sideElement[0]     = '商品の編集、削除';
 $sideElementLink[0] = 'admin_product_manager.php';
 $sideElement[1]     = '商品追加';
-$sideElementLink[1] = 'admin_add.php';
+$sideElementLink[1] = 'product_add.php';
 
 $cssLink[0]         = 'admin.css';
 $cssLink[1]         = 'admin_product_manager.css';
