@@ -81,7 +81,7 @@ li :hover{
 }
 main{
   margin-left: calc(9rem + 2px);
-  padding:30px 20px;
+  padding:1px 20px;
   width: auto;
   height: 100%;
   background-color: #AACFD0;

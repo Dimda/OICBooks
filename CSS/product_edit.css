@@ -1,11 +1,12 @@
 @charset "UTF-8";
 
 form{
-  
+
   color:white;
   background-color: #79A8A9;
   margin: 0 20px 0 20px;
   border-radius: 25px;
+  height: 70vh;
 }
 .form-contents{
   text-align:right;
