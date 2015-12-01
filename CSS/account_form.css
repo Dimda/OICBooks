@@ -18,6 +18,10 @@ td {
 p {
 	margin: 3px 0;
 }
+input{
+	border-style: none;
+	padding: 3px;
+}
 #pref, #city, #area, #add {
 	width: 50%;
 }
@@ -27,14 +31,14 @@ p {
 #confirm_email {
 	width: 100%;
 }
-.phone_number {
-	width: 10%;
+#phone_number {
+	width: 50%;
 }
 #address1, #address2 {
-	width: 15%;
+	width: 20%;
 }
 #pass1,#pass2 {
-	width: 50%;
+	width: 100%;
 }
 .check, #pass1-error, #pass2-error {
 	color: #ff3333;

@@ -13,9 +13,9 @@
 	$phonetic     = $_POST['first_phonetic'].$_POST['last_phonetic']; //FRIGANA
 	$sex          = $_POST['sex']; //SEX
 	$birthday     = $_REQUEST['birthday'].'-'.$_REQUEST['month'].'-'.$_REQUEST['day'];//BIRTH_DATE
-	$email        = $_POST['email']; //EMAIL_ADDRESS
-	$phone_number = $_POST['phone_number1'].$_POST['phone_number2'].$_POST['phone_number3']; //PHONE_NUMBER
-	$password     = $_POST['pass1']; //PASSWORD
+	$email        = $_POST['user_email']; //EMAIL_ADDRESS
+	$phone_number = $_POST['phone_number']; //PHONE_NUMBER
+	$password     = $_POST['pass_confirmation']; //PASSWORD
 	$zip          = $_POST['address1'].$_POST['address2']; //ZIP_CODE
 	$pref         = $_POST['pref']; //ADDRESS_STREET_1
 	$city         = $_POST['city'].$_POST['area']; //ADDRESS_STREET_2
@@ -24,6 +24,7 @@
 	$pass_md5     = MD5($password);
 	$pass_str     = 'coca'.$pass_md5.'cola';
 	$pass_hash    = hash('sha256', $pass_str);
+
 	echo $first_name . '<br>';
 	echo $last_name . '<br>';
 	echo $phonetic.'<br>';

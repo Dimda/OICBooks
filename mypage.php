@@ -15,12 +15,18 @@
 	<main>
     <div id="account_service">
       <h2>アカウントサービス</h2>
-      <div id="order_history" class="box">
+      <section id="order_history">
         <h3>注文履歴</h3>
-      </div>
-      <div id="change" class="box">
-        <h3>登録内容の変更</h3>
-      </div>
+      </section>
+      <section id="change">
+        <h3>アカウント設定</h3>
+        <nav>
+          <ul>
+            <li><a href="account_update.php">名前、Eメールアドレス、携帯番号、パスワードの変更</a></li>
+          </ul>
+        </nav>
+
+      </section>
     </div>
   </main>
   <?php include ("includes/top.html");?>

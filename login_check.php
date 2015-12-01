@@ -26,7 +26,7 @@
     		echo $password;
 
     		$sql = "SELECT CUSTOMER_ID,FIRST_NAME,LAST_NAME FROM CUSTOMER
-    				WHERE EMAIL_ADDRESS = '{$email}' and 
+    				WHERE EMAIL_ADDRESS = '{$email}' and
     						PASSWORD = '$password'";
     		$result = $conn->query($sql);
     		$row = $result->fetch_assoc();
@@ -51,6 +51,8 @@
           if(isset($row["CART_ID"])){
             echo "hello!!";
             $_SESSION["CART_ID"] = $row["CART_ID"];
+            header('location: index.php');
+            exit();
           } else{
             echo "カート列を作成します";
             $sql = "INSERT INTO CART (CUSTOMER_ID,CART_DATE_ADDED,CART_STATUS) VALUES ('$CUSTOMER_ID','$date','add-test')";
@@ -59,9 +61,11 @@
             $result = $conn->query($sql);
             $row = $result->fetch_assoc();
             $_SESSION["CART_ID"] = $row["CART_ID"];
+            header('location: index.php');
+            exit();
           }
      		}else {
-    			echo "なにもないよ";
+    			echo "メールアドレスかパスワードが間違っています";
     		}
     		$conn->close();
     	?>

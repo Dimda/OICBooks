@@ -5,11 +5,11 @@
             <?php
               session_start();
               if (isset($_SESSION["CUSTOMER_NAME"])){
-                echo "<a href='#'>";
+                echo "<a href='mypage.php'>";
                 echo $_SESSION["CUSTOMER_NAME"];
                 echo "</a>";
               }else{
-                echo "<a href='#'>";
+                echo "<a href='account_form.php'>";
                 echo 'ようこそゲストさん'.'アカウント登録はこちら';
                 echo "</a>";
               }
