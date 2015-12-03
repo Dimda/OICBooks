@@ -2,11 +2,10 @@ body {
   background-color: #ffffff;
 }
 header {
-  /*background-color: #f2f2f2;*/
   border-bottom: 1px solid #e3e3e3;
 }
-.btn_search{
-  /*background-color: #c3c3c3;*/
+.search_bar{
+  border-color: #e2e2e2;
 }
 .search_bar:focus{
   background-color: #eeeeee;
@@ -20,9 +19,6 @@ a[title] {
 }
 a[title]:hover {
   text-decoration: underline;
-}
-main {
-  /*background-color: #eeaeee;*/
 }
 #sidebar {
   background-color: #9F1D2F;
