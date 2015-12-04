@@ -63,23 +63,23 @@
 
 	<h3>新しい住所を追加する</h3>
 
-	<form action="payment_delivery.php" name="newAddress" method="post" >
+	<form action="payment_delivery.php" name="Address" method="post" >
 		<p>氏名:</p>
-		<input type="text" name="newName" size="30" maxlength="25">
+		<input type="text" name="Name" size="30" maxlength="25">
 
 		<p>郵便番号:</p>
-		<input type="text" name="newZip1" size="10" maxlength="7">
+		<input type="text" name="Zip" size="10" maxlength="7">
 
 		<p>住所1:(例：大阪府大阪市)</p>
-		<input type="text" name="newAddress1" size="30" maxlength="30">
+		<input type="text" name="Address1" size="30" maxlength="30">
 
 		<p>住所2:(例:天王寺区○○)</p>
-		<input type="text" name="newAddress2" size="30" maxlength="30">
+		<input type="text" name="Address2" size="30" maxlength="30">
 
 		<p>住所3:(例:ｘｘマンション701</p>
-		<input type="text" name="newAddress3" size="30" maxlength="30"><br/>
-			<br/>
-<input type="submit" name="btn" value="送信">
+		<input type="text" name="Address3" size="30" maxlength="30"><br/>
+		<br/>
+		<input type="submit" name="btn" value="送信">
 	</form>
 
 	</body>
