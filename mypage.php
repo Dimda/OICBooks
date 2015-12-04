@@ -15,6 +15,11 @@
 	<main>
     <div id="account_service">
       <h2>アカウントサービス</h2>
+      <?php 
+        include("includes/connect_DB.php");
+        session_start();
+        echo $_SESSION["POINT"];
+      ?>
       <section id="order_history">
         <h3>注文履歴</h3>
       </section>

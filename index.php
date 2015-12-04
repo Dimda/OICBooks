@@ -30,5 +30,6 @@
       window.location = "admin.php";
     });
   </script>
+
 </body>
 </html>

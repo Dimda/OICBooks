@@ -1,5 +1,12 @@
 <header>
   <a href="index.php"><img src="img/logo.jpg" alt="OICBooks"></a>
+  <div id="search">
+    <form action="search_results.php" method="post" name="search">
+      <input type="text" class="search_bar" id="search_bar1" placeholder="Search..." name="keyword">
+      <a href=""javascript:void(0);" onclick="document.search.submit();return false;"" class="btn_search fa fa-search">
+      </a>
+    </form>
+  </div>
   <nav>
     <ul>
       <li>
@@ -40,13 +47,4 @@
       </li>
     </ul>
   </nav>
-  <div id="hgroup">
-    <div id="search">
-      <form action="search_results.php" method="post" name="search">
-        <input type="text" class="search_bar" id="search_bar1" placeholder="Search..." name="keyword">
-        <a href=""javascript:void(0);" onclick="document.search.submit();return false;"" class="btn_search fa fa-search">
-        </a>
-      </form>
-    </div>
-  </div>
 </header>

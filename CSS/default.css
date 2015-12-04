@@ -14,21 +14,26 @@ a {
   font-size: 0.8rem;
 }
 html {
+  height: 100%
 }
 body {
   width:75%;
   margin: 0 auto;
+  position: relative;
+  height:auto !important; /*IE6対策*/
+  height: 100%; /*IE6対策*/
+  min-height: 100%;
 }
 ul {
   list-style-type: none;
 }
 header {
-  padding-top: 50px;
+  height: 140px;
+  padding-top: 30px;
   width: 100%;
 }
 header img {
   margin: 10px 0 0 10px;
-  /*width: 150px;*/
   height: 80px;
 }
 header h2 {
@@ -36,7 +41,7 @@ header h2 {
 }
 header nav {
   text-align: right;
-  float:right;
+  margin-top: -100px;
 }
 header ul {
   padding-left: 0;
@@ -46,13 +51,9 @@ header li{
   display: inline-block;
   margin: 0 10px;
 }
-#hgroup{
-  clear: both;
-  padding: 10px 0;
-}
 #search{
   margin: 0 30%;
-  margin-top: -50px;
+  margin-top: -30px;
 }
 .btn_search{
   padding: 4px 10px 7px 10px;
@@ -66,7 +67,6 @@ header li{
   webkit-border-radius: 10px;
   border-style: solid;
   border-width: 1px;
-  border-color: #e2e2e2;
   padding: 5.25px 6px;
   height: 30.5px;
 }
@@ -77,15 +77,17 @@ header li{
   width: 180px;
 }
 #side_search {
-  margin: 100px 0 0 20px;
+  margin: 80px 0 0 20px;
 }
 main {
   font-family: sans-serif;
   margin: 1.5rem 0;
   width:auto;
   height: 100%;
+  padding-bottom: 100px;
 }
 .sidebar{
+  z-index: 100;
   width: 275px;
   margin-left: -200px; /* 左に隠す */
   -webkit-transition: margin-left .25s ease;
@@ -130,5 +132,9 @@ main {
   transition: margin-bottom .25s ease;
 }
 footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
   padding: 5px 0;
 }
