@@ -9,8 +9,7 @@ $sideElementLink[1] = 'product_add.php';
 
 $cssLink[0]         = 'admin_product_manager.css';
 $cssLink[1]         = 'product_add.css';
-$cssLink[2]         = 'product_manager.css';
-$cssLink[3]         = 'admin.css';
+$cssLink[2]         = 'admin.css';
 
 $scriptSource[0]    = 'https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js';
 $scriptSource[1]    = '//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.2.8/jquery.form-validator.min.js';
@@ -21,6 +20,32 @@ include("includes/connect_DB.php")
 ?>
 <form id="add-form" action="product_add_complete.php" method="post" enctype="multipart/form-data">
   <div class="form-contents">
+    <?php
+    include("includes/error_messages.php");
+
+    if(isset($_GET["imageErrNum"])){
+      echo '<div class="error-log">';
+        foreach($imageErrNum as $num){
+          if($num == 1){
+            echo $imageErrMessages[0] . "<br>";
+          }else if ($num == 2){
+            echo $imageErrMessages[1] . "<br>";
+          }else if ($num == 3){
+            echo $imageErrMessages[2] . "<br>";
+          }else if ($num == 4){
+            echo $imageErrMessages[3] . "<br>";
+          }
+        }
+      echo '</div>';
+    }
+    if(isset($_GET["success"])){
+      echo
+      '<div class="success-log">
+        更新しました。
+      </div>';
+    }
+
+    ?>
     <p>
       <div class="label"><label for="product-isbn">ISBN</label></div>
       <div class="input"><input id="product-isbn" type="text" name="productISBN" value=""></div>
@@ -44,7 +69,7 @@ include("includes/connect_DB.php")
     <p>
       <div class="label"><label for="product-category">カテゴリー</label></div>
       <div class="input">
-        <select id="product-category" name="cars">
+        <select id="product-category" name="productCategory">
           <?php
           $sql = "SELECT * FROM CATEGORY";
           $result = $conn->query($sql);
@@ -59,7 +84,7 @@ include("includes/connect_DB.php")
     <p>
       <div class="label"><label for="product-tax-rate">税率</label></div>
       <div class="input">
-        <select id="product-tax" name="cars">
+        <select id="product-tax" name="productTax">
           <?php
           $sql = "SELECT * FROM TAX_RATE";
           $result = $conn->query($sql);
@@ -74,7 +99,7 @@ include("includes/connect_DB.php")
     <p>
       <div class="label"><label for="product-publisher">出版社</label></div>
       <div class="input">
-        <select id="product-publisher" name="cars">
+        <select id="product-publisher" name="productPublisher">
           <?php
           $sql = "SELECT * FROM PUBLISHER";
           $result = $conn->query($sql);
@@ -89,6 +114,10 @@ include("includes/connect_DB.php")
     <p>
       <div class="label"><label for="product-price">価格</label></div>
       <div class="input"><input id="product-price" type="number"  name="productPrice" data-validation="number" data-validation-error-msg="数字ではありません。" value=''></div>
+    </p>
+    <p>
+      <div class="label"><label for="product-stock">在庫数</label></div>
+      <div class="input"><input id="product-stock" type="number" name="productStock" data-validation="number" data-validation-error-msg="数字ではありません。" value=""></div>
     </p>
     <p>
       <div class="label"><label for="product-keyword">検索キーワード</label></div>

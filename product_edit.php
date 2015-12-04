@@ -10,6 +10,7 @@ $sideElementLink[1] = 'product_add.php';
 
 $cssLink[0]         = 'admin.css';
 $cssLink[1]         = 'product_edit.css';
+$cssLink[2]         = 'admin_product_manager.css';
 
 $scriptSource[0]    = 'https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js';
 $scriptSource[1]    = '//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.2.8/jquery.form-validator.min.js';
@@ -33,35 +34,34 @@ while($row = $result->fetch_assoc()){
   $productPrice = $row["PRODUCT_PRICE"];
 }
 ?>
-<?php
-include("includes/error_messages.php");
-
-if(isset($_GET["imageErrNum"])){
-  echo '<div class="error-log">';
-    foreach($imageErrNum as $num){
-      if($num == 1){
-        echo $imageErrMessages[0] . "<br>";
-      }else if ($num == 2){
-        echo $imageErrMessages[1] . "<br>";
-      }else if ($num == 3){
-        echo $imageErrMessages[2] . "<br>";
-      }else if ($num == 4){
-        echo $imageErrMessages[3] . "<br>";
-      }
-    }
-  echo '</div>';
-}
-if(isset($_GET["success"])){
-  echo
-  '<div class="success-log">
-    更新しました。
-  </div>';
-}
-
-?>
 <form id="edit-form" action="product_edit_complete.php?ID=<?php echo $ID; ?>" method="post" enctype="multipart/form-data">
-  <h2>商品編集</h2>
   <div class="form-contents">
+    <?php
+    include("includes/error_messages.php");
+
+    if(isset($_GET["imageErrNum"])){
+      echo '<div class="error-log">';
+        foreach($imageErrNum as $num){
+          if($num == 1){
+            echo $imageErrMessages[0] . "<br>";
+          }else if ($num == 2){
+            echo $imageErrMessages[1] . "<br>";
+          }else if ($num == 3){
+            echo $imageErrMessages[2] . "<br>";
+          }else if ($num == 4){
+            echo $imageErrMessages[3] . "<br>";
+          }
+        }
+      echo '</div>';
+    }
+    if(isset($_GET["success"])){
+      echo
+      '<div class="success-log">
+        更新しました。
+      </div>';
+    }
+
+    ?>
     <label for="productName">商品名</label>
     <input id="product-name" type="text" name="productName" value="<?php echo "$productName"; ?>"><br>
     <label for="productDescription">商品明細</label>

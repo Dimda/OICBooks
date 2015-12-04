@@ -6,7 +6,6 @@ $productID = $_GET["ID"];
 $productName = mysqli_real_escape_string($conn, $_POST["productName"]);
 $productDescription = mysqli_real_escape_string($conn, $_POST["productDescription"]);
 $productPrice = $_POST["productPrice"];
-echo $productID;
 
 $sql = "UPDATE PRODUCT SET PRODUCT_NAME='$productName', PRODUCT_DESCRIPTION='$productDescription',
 PRODUCT_PRICE=$productPrice WHERE PRODUCT_ID=$productID";

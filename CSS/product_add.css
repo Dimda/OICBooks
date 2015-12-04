@@ -30,11 +30,13 @@ form h2{
   color: #79A8A9;
   background-color: #F4F7F7;
 }
-#product-name, #product-author, #product-date-available{
-  width: 700px;
+input{
   height: 30px;
   font-size: 15px;
   color: #79A8A9;
+}
+#product-name, #product-author, #product-date-available, #product-keyword{
+  width: 700px;
 }
 #product-description{
   margin-top: 15px;
