@@ -1,6 +1,5 @@
 <?php
 
-include("includes/admin_top.html");
 include("includes/connect_DB.php");
 $productID = $_GET["ID"];
 $productName = mysqli_real_escape_string($conn, $_POST["productName"]);
@@ -57,5 +56,4 @@ if(isset($_POST["submit"]) && is_uploaded_file ($_FILES["fileToUpload"]["tmp_nam
   header('Location: product_edit.php?ID=' . $_GET["ID"] . '&success=true');
 }
 $conn->close();
-include("includes/admin_bottom.html");
 ?>
