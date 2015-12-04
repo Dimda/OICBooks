@@ -22,7 +22,11 @@ include("includes/connect_DB.php")
   <div class="form-contents">
     <?php
     include("includes/error_messages.php");
-
+    
+    $imageErrNum = array();
+    if(isset($_GET["imageErrNum"])){
+      $imageErrNum = explode(",", $_GET["imageErrNum"]);
+    }
     if(isset($_GET["imageErrNum"])){
       echo '<div class="error-log">';
         foreach($imageErrNum as $num){
@@ -117,7 +121,7 @@ include("includes/connect_DB.php")
     </p>
     <p>
       <div class="label"><label for="product-stock">在庫数</label></div>
-      <div class="input"><input id="product-stock" type="number" name="productStock" data-validation="number" data-validation-error-msg="数字ではありません。" value=""></div>
+      <div class="input"><input id="product-stock" type="text" name="productStock" data-validation="number" data-validation-error-msg="数字ではありません。" value=""></div>
     </p>
     <p>
       <div class="label"><label for="product-keyword">検索キーワード</label></div>

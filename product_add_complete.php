@@ -25,15 +25,15 @@ VALUES ('{$product["name"]}', '{$product["stock"]}', '{$product["author"]}', '{$
 '{$product["isbn"]}', '{$product["keyword"]}')";
 
 if ($conn->query($sql) === TRUE) {
-    echo "New record created successfully";
+  $last_id = $conn->insert_id;
+  echo "New record created successfully";
 } else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
+  echo "Error: " . $sql . "<br>" . $conn->error;
 }
-
-$conn->close();
+echo $last_id;
 
 //画像
-/*
+
 $target_dir = "product_image/";
 $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
 $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
@@ -52,7 +52,6 @@ if(isset($_POST["submit"]) && is_uploaded_file ($_FILES["fileToUpload"]["tmp_nam
         array_push($imageErrNum, 2);
         $uploadOk = 0;
     }
-
     if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
     && $imageFileType != "gif" ) {
       array_push($imageErrNum, 3);
@@ -60,20 +59,18 @@ if(isset($_POST["submit"]) && is_uploaded_file ($_FILES["fileToUpload"]["tmp_nam
     }
     if ($uploadOk == 0) {
       array_push($imageErrNum, 4);
-      //header('Location: product_edit.php?ID=' . $_GET["ID"] . '&imageErrNum=' . implode(",", $imageErrNum));
+      header('Location: product_add.php?imageErrNum=' . implode(",", $imageErrNum));
     } else {
-        $matches = glob('./product_image/' . $_GET["ID"] . "*");
+        $matches = glob('./product_image/' . $last_id . "*");
         !unlink($matches[0]);
-        if (!move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], "product_image/" . $_GET["ID"] . "." . $imageFileType)) {
+        if (!move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], "product_image/" . $last_id . "." . $imageFileType)) {
           array_push($imageErrNum, 4);
         }else{
-          //header('Location: product_edit.php?ID=' . $_GET["ID"] . '&success=true');
+          header('Location: product_add.php?success=true');
         }
     }
 }else{
-  //header('Location: product_edit.php?ID=' . $_GET["ID"] . '&success=true');
+  header('Location: product_add.php?success=true');
 }
 $conn->close();
-include("includes/admin_bottom.html");
-*/
 ?>
