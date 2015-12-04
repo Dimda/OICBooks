@@ -13,18 +13,22 @@
   <?php include("includes/sidebar.html"); ?>
   <?php include("includes/header.html"); ?>
   <main>
-    <div id="login-screen">
-      <form action="login_check.php" method="post" name="login">
-        <p>
-          メールアドレス
-          <input id = "email" name="email">
-        </p>
-        <p>
-          パスワード
-          <input type="password" id = "password" name="password">
-        </p>
-        <input id="login_btn" type="submit" value="ログイン">
-      </form>
+    <div class="type-pers-parent">
+      <div class="type-pers-child">
+        <div id="login-screen">
+          <form action="login_check.php" method="post" name="login">
+            <p>
+              メールアドレス
+              <input id = "email" name="email">
+            </p>
+            <p>
+              パスワード
+              <input type="password" id = "password" name="password">
+            </p>
+              <input id="login_btn" type="submit" value="ログイン">
+          </form>
+        </div>
+      </div>
     </div>
   </main>
   <?php include("includes/footer.html"); ?>

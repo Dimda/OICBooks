@@ -18,7 +18,7 @@
 #email, #password{
   /*position: absolute;*/
   right: 10%;
-  width: 50%;
+  width: 80%;
   height: 4vw;
 }
 #login-screen p{
@@ -28,3 +28,22 @@
 #email:focus, #password:focus{
   background-color: yellow;
 }
+
+.type-pers-parent {
+    perspective: 150px;
+    -webkit-perspective: 150px;
+    height: 200px;
+    background-color: #ffffff;
+    overflow: hidden;
+  }
+  .type-pers-child {
+    text-align: justify;
+    padding: 5%;
+    -webkit-animation: typetext linear 15s infinite;
+    color: #F1C40F;
+    letter-spacing: 1px;
+  }
+  @-webkit-keyframes typetext {
+     0% {transform: rotateX(45deg) translate(0,0);}
+    100% {transform: rotateX(45deg) translate(0,-500px);}
+  }
