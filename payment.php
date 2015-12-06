@@ -19,16 +19,51 @@
 			<div id="onfirmation">
 				<div id="address" class="box">
 					<p><b>お届け先住所</b></p>
-				</div>
-				<div id="payment" class="box">
-					<p><b>お支払い方法</b></p>
-				</div>
-				<div id="point" class="box">
-					<p><b>ポイント</b></p>
+					<?php
+					session_start();
+					echo $_SESSION["address"];
+					?>
 				</div>
 			</div>
-			<div id="delivery_schedule">
-				<h3>お届け予定日: </h3>
+			<div id="onfirmation">
+				<div id="payment" class="box">
+					<p><b>お支払い方法</b>	</p>
+					<?php 
+						echo "aaaaaaaaaaaa";
+					?>
+				</div>
+			</div>
+			<div id="onfirmation">
+				<div id="point" class="box">
+					<p><b>ポイント</b></p>
+					<?php 
+						echo "aaaaaaaaaaaa";
+					?>
+				</div>
+			</div>
+			<div id="onfirmation">
+				<div id="delivery_schedule">
+					<h3>お届け予定日: </h3>
+					<?php 
+					if(isset($_POST["delivery"]))
+					{
+						$delivery = $_POST["delivery"];
+						echo $delivery;
+					}
+
+					if(isset($_POST["day_select"]))
+					{
+						$day_select = $_POST["day_select"];
+						echo $day_select;
+					}
+
+					if(isset($_POST["delivery"]))
+					{
+						$delivery = $_POST["delivery"];
+						echo $delivery;
+					}
+					?>
+				</div>
 			</div>
 		</div><div id="boxB">
 			<div id="confirm">
