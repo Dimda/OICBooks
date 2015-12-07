@@ -17,12 +17,37 @@ $scriptSource[2]    = 'js/admin_product_manager.js';
 include("includes/admin_top.php");
 ?>
 <div id="product-manager">
-  <?php
+  <ul class="search-results">
+    <?php
+    include("includes/connect_DB.php");
+    echo '<table>
+              <form action="send_publisher.php" method="post">
+             <th>商品名</th><th>価格</th><th>数量</th>';
     foreach ($_POST["check"] as $key => $value) {
-      print $key.'=>'.$value;
-      echo "<br>";
-    }
-  ?>
+      $keyword = $value;
+      $keyword = mysqli_real_escape_string($conn, $keyword);
+      $sql = "SELECT PRODUCT_ID, PRODUCT_NAME, PRODUCT_PRICE,STOCK FROM PRODUCT WHERE PRODUCT_ID = '{$keyword}'";
+      $result = $conn->query($sql);
+      while($row = $result->fetch_assoc()){
+        echo   '<tr>
+                  <td style="display:none"><input type="checkbox" class = "check" name="check[]" width = "10%" checked="checked" value=' . $row["PRODUCT_ID"] . '></td>
+                  <td class = "product-name" width = "70%"><a class = "product-name" href="product_details.php?ID=' . $row["PRODUCT_ID"] . '">' . $row["PRODUCT_NAME"] .'</a></td>
+                  <td class = "product-price" width = "10%">' . $row["PRODUCT_PRICE"] .'円</td>
+                  <td class = "product-stock" width = "10%">'.$row["STOCK"].''."冊".'</td>
+                  <td><input type="number" class = "product-stock" name="QUANTITY[]" width = "10%" value= "0" min= "0"></td>
+                </tr>
+                ';
+             }
+      }
+      echo '</table>';
+      echo '<input type="submit" value="まとめて発注" width="100%" style="margin-left: 40%;
+                    font-size: 1.4em;">';
+      echo '</form>';
+        
+      $conn->close();
+    ?>
+  </ul> 
 </div>
+
 
 <?php include("includes/admin_bottom.html");?>

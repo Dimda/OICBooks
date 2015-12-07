@@ -30,19 +30,20 @@ include("includes/admin_top.php");
       $keyword = $_POST["keyword"];
       $keyword = mysqli_real_escape_string($conn, $keyword);
       echo $keyword . "の検索結果";
-      $sql = "SELECT PRODUCT_ID, PRODUCT_NAME, PRODUCT_PRICE FROM PRODUCT WHERE PRODUCT_NAME LIKE '%{$keyword}%'";
+      $sql = "SELECT PRODUCT_ID, PRODUCT_NAME, PRODUCT_PRICE,STOCK FROM PRODUCT WHERE PRODUCT_NAME LIKE '%{$keyword}%'";
     }else{
-      $sql = "SELECT PRODUCT_ID, PRODUCT_NAME, PRODUCT_PRICE FROM PRODUCT";
+      $sql = "SELECT PRODUCT_ID, PRODUCT_NAME, PRODUCT_PRICE,STOCK FROM PRODUCT";
     }
     $result = $conn->query($sql);
     echo '<table>
               <form action="order_check.php" method="post">
-             <th></th><th>商品名</th><th>価格</th>';
+             <th></th><th>商品名</th><th>価格</th><th>数量</th>';
     while($row = $result->fetch_assoc()){
         echo   '<tr>
                   <td><input type="checkbox" class = "check" name="check[]" width = "10%" value=' . $row["PRODUCT_ID"] . '></td>
-                  <td class = "product-name" width = "80%"><a class = "product-name" href="product_details.php?ID=' . $row["PRODUCT_ID"] . '">' . $row["PRODUCT_NAME"] .'</a></td>
+                  <td class = "product-name" width = "70%"><a class = "product-name" href="product_details.php?ID=' . $row["PRODUCT_ID"] . '">' . $row["PRODUCT_NAME"] .'</a></td>
                   <td class = "product-price" width = "10%">' . $row["PRODUCT_PRICE"] .'円</td>
+                  <td class = "product-stock" width = "10%">'.$row["STOCK"].''."冊".'</td>
                   <td class = "edit" width = "10%"><a href="#?ID=' . $row["PRODUCT_ID"] . '">個別発注</a></td>
                 </tr>
                 ';
