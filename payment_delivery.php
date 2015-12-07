@@ -23,8 +23,7 @@
 		if(!empty($_POST["Name"]) && !empty($_POST["Zip"]) && !empty($_POST["Address1"]) && !empty($_POST["Address2"]))
 		{	
 			$_SESSION["address"] = $_POST["Address1"].$_POST["Address2"]."<br/>".$_POST["Address3"];
-			echo $_SESSION["address"];
-			
+			echo $_SESSION["address"];	
 		}
 		else
 		{
@@ -53,14 +52,12 @@
 
 			<h3>日にちの指定</h3>
 			<select name="day_select" >
-				<option value="<?php $date1."(".$week[$w1].")"?>"><!-- <?php echo $date1."(".$week[$w1].")"?> -->aaaa</option>
-				<option value="<?php $date2."(".$week[$w2].")"?>"><!-- <?php echo $date2."(".$week[$w2].")"?> -->bbbb</option>
-				<option value="<?php $date3."(".$week[$w3].")"?>"><!-- <?php echo $date3."(".$week[$w3].")"?> -->cccc</option>
+				<option value = <?php echo $date1."(".$week[$w1].")"?>> <?php echo $date1."(".$week[$w1].")"?></option>
+				<option value = <?php echo $date2."(".$week[$w2].")"?>> <?php echo $date2."(".$week[$w2].")"?></option>
+				<option value = <?php echo $date3."(".$week[$w3].")"?>> <?php echo $date3."(".$week[$w3].")"?></option>
 			</select>
-
 			<br/>
 			<br/>
-
 			<h3>時間の指定</h3>
 			<select name="time_select">
 				<option value="10時～12時">10時～12時</option>
@@ -70,11 +67,6 @@
 			</select><br/>
 			<br/>
 			<input type="submit" value="送信">
-
 		</form>
-		
-
-
 	</body>
-
 </html>
