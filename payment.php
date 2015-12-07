@@ -44,23 +44,23 @@
 			<div id="onfirmation">
 				<div id="delivery_schedule">
 					<h3>お届け予定日: </h3>
-					<?php 
+					<?php
 					if(isset($_POST["delivery"]))
 					{
 						$delivery = $_POST["delivery"];
 						echo $delivery;
 					}
-
+					echo "<br/>";
 					if(isset($_POST["day_select"]))
 					{
 						$day_select = $_POST["day_select"];
 						echo $day_select;
 					}
-
-					if(isset($_POST["delivery"]))
+					echo "<br/>";
+					if(isset($_POST["time_select"]))
 					{
-						$delivery = $_POST["delivery"];
-						echo $delivery;
+						$time_select = $_POST["time_select"];
+						echo $time_select;
 					}
 					?>
 				</div>
