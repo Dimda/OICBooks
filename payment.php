@@ -29,7 +29,7 @@
 				<div id="payment" class="box">
 					<p><b>お支払い方法</b>	</p>
 					<?php 
-						echo "aaaaaaaaaaaa";
+						echo "銀行ふりこみ";
 					?>
 				</div>
 			</div>
@@ -37,7 +37,13 @@
 				<div id="point" class="box">
 					<p><b>ポイント</b></p>
 					<?php 
-						echo "aaaaaaaaaaaa";
+						include("includes/connect_DB.php");
+						$id = $_SESSION["CUSTOMER_ID"];
+						$sql =  "SELECT POINT FROM CUSTOMER WHERE CUSTOMER_ID = '$id'";
+						$result = $conn->query($sql);
+            			$row = $result->fetch_assoc();
+            			echo $row["POINT"];
+            			$conn->close();
 					?>
 				</div>
 			</div>
@@ -69,9 +75,22 @@
 			<div id="confirm">
 				<a href="">注文を確定する</a>
 				<p><b>注文内容</b></p>
-				<p>商品: </p>
-				<p>配達料・手数料: </p>
-				<p id="total">注文合計: </p>
+				<p>商品: 
+					<?php
+						echo $_SESSION["SUM"].'円';
+					?>
+				</p>
+				<p>配達料・手数料: 
+					<?php
+						echo "全国一律300円";
+					?>
+				</p>
+				<p id="total">注文合計: 
+					<?php
+						$order_sum = $_SESSION["SUM"] + 300;
+						echo $order_sum.'円';
+					?>
+				</p>
 			</div>
 		</div>
 	</main>

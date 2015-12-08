@@ -28,12 +28,12 @@
           			$quantity = $row["QUANTITY"];
           			$id = $row["PRODUCT_ID"];
           			$sql = "SELECT PRODUCT_NAME, PRODUCT_PRICE  FROM PRODUCT WHERE PRODUCT_ID = '$id'";
-          			$price = $conn->query($sql);
-          			$price = $price->fetch_assoc();
-          			echo $price["PRODUCT_NAME"];
+          			$data = $conn->query($sql);
+          			$data = $data->fetch_assoc();
+          			echo $data["PRODUCT_NAME"];
           			echo '<br/>'.$quantity.'冊';
-          			echo  '<div class="product-price">¥ '. $price["PRODUCT_PRICE"].'</div></br>';
-          			$sum += $price["PRODUCT_PRICE"];
+          			echo  '<div class="product-price">¥ '. $data["PRODUCT_PRICE"]*$quantity.'</div></br>';
+          			$sum = $sum + $data["PRODUCT_PRICE"]*$quantity;
 				}
 				$_SESSION["SUM"] = $sum;
 				echo '<div class="sum">合計'.$sum."円</div><br/>";
