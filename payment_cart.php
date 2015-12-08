@@ -35,14 +35,10 @@
           			echo  '<div class="product-price">¥ '. $price["PRODUCT_PRICE"].'</div></br>';
           			$sum += $price["PRODUCT_PRICE"];
 				}
+				$_SESSION["SUM"] = $sum;
 				echo '<div class="sum">合計'.$sum."円</div><br/>";
 				echo '<a href="payment_destination.php" style="text-decoration:none;">ＯＫ</a>';
 				echo '<a href="cart.php" style="text-decoration:none;">変更</a>';
-
-				echo '<form action="payment_destination.php" method="POST">';
-				echo '<input type="hidden" name="sum" value="echo $sum"/>';
-				echo '<input type="submit" value="送信"/>';
-				echo '</form>';
 			?>
 
 		</div>
