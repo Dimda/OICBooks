@@ -40,7 +40,7 @@
         //SMTP接続
         $mail->IsSMTP();
         $mail->SMTPAuth = TRUE;
-        $mail->SMTPDebug = 2;
+        //$mail->SMTPDebug = 2;
         $mail->SMTPSecure = 'ssl';
         $mail->Host = 'smtp.googlemail.com';
         $mail->Port = 465;
@@ -55,7 +55,7 @@
 
         //メール送信
         if ($mail->Send()){
-            echo 'Mail send Success!';
+            //echo 'Mail send Success!';
             $sql = "SELECT STOCK FROM PRODUCT WHERE PRODUCT_ID = '{$check[$i]}'";
             $result = $conn->query($sql);
             while($row = $result->fetch_assoc()){
@@ -64,8 +64,10 @@
             $product_stock = $quantity[$i] + $product_stock;
             $sql = "UPDATE PRODUCT SET STOCK = '{$product_stock}' WHERE PRODUCT_ID = '{$check[$i]}'";
             $conn->query($sql);
+            header('location: product_order.php');
         } else {
         //エラー処理
+            echo "えらーだぜぇ";
         }
 	}
     exit;
