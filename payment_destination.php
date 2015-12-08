@@ -33,6 +33,14 @@
 				$addressStreet2 = $row["ADDRESS_STREET_2"];
 				$addressStreet3 = $row["ADDRESS_STREET_3"];
 
+				if(isset($_POST["sum"]))
+				{
+				$sum = $_POST["sum"];
+				echo $sum;
+			}
+			else{
+				echo "aaaa";
+			}
 			}
 
 			$conn->close();
