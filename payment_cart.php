@@ -21,27 +21,28 @@
 				include("includes/connect_DB.php");
 				$sum = 0;
 				$cart_id = $_SESSION["CART_ID"];
-				$sql = "SELECT PRODUCT_NAME,QUANTITY FROM PRODUCTS WHERE PRODUCT_ID = (SELECT PRODUCT_ID FROM CART_PRODUCT WHERE CART_ID = '$cart_id' )";
+				$sql = "SELECT PRODUCT_ID,QUANTITY FROM CART_PRODUCTS WHERE CART_ID = '$cart_id'";
 				$result = $conn->query($sql);
 				while($row = $result->fetch_assoc()){
-				$matches = glob('./product_image/' . $row["PRODUCT_ID"] . "*");
 					echo  '<div id="box">';
-					echo $row["PRODUCT_NAME"];
-          			echo "<br>";
-					echo "個数は";
-          			echo $row["QUANTITY"];
-          			echo "<br>";
+          			$quantity = $row["QUANTITY"];
           			$id = $row["PRODUCT_ID"];
-          			$sql = "SELECT PRODUCT_PRICE FROM PRODUCT WHERE PRODUCT_ID = '$id'";
+          			$sql = "SELECT PRODUCT_NAME, PRODUCT_PRICE  FROM PRODUCT WHERE PRODUCT_ID = '$id'";
           			$price = $conn->query($sql);
           			$price = $price->fetch_assoc();
+          			echo $price["PRODUCT_NAME"];
+          			echo '<br/>'.$quantity.'冊';
           			echo  '<div class="product-price">¥ '. $price["PRODUCT_PRICE"].'</div></br>';
-          			echo "合計".$price["PRODUCT_PRICE"]*$row["QUANTITY"]."円";
-          			echo '<br>';
-          			echo '<form method="POST" action="cart_delete.php?ID='.$id.'">';
+          			$sum += $price["PRODUCT_PRICE"];
 				}
+				echo '<div class="sum">合計'.$sum."円</div><br/>";
+				echo '<a href="payment_destination.php" style="text-decoration:none;">ＯＫ</a>';
+				echo '<a href="cart.php" style="text-decoration:none;">変更</a>';
 
-				echo '<a href="payment_destination.php" style="text-decoration:none;">お支払い</a>';
+				echo '<form action="payment_destination.php" method="POST">';
+				echo '<input type="hidden" name="sum" value="echo $sum"/>';
+				echo '<input type="submit" value="送信"/>';
+				echo '</form>';
 			?>
 
 		</div>

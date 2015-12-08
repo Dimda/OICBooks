@@ -21,8 +21,16 @@ h1 {
 }
 #cart_select {
 	height: 150px;
-  border-top: solid 1px #C6C6C6;
-  border-bottom: solid 1px #C6C6C6;
+	border-top: solid 1px #C6C6C6;
 	padding: 5px 0;
 	
+}
+.quantity{
+	margin-left: auto;
+}
+.sum{
+	border-top: solid 1px #C6C6C6;
+}
+a{
+	margin-right: 30px;
 }
