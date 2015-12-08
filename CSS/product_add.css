@@ -4,10 +4,10 @@ form{
   color:white;
   background-color: #79A8A9;
   margin: 0 20px 0 20px;
-  padding: 10px  20% 10px 20%;
+  padding: 10px  20% 40px 20%;
   border-radius: 25px;
   overflow: scroll;
-  height: 65vh;
+  height: 75%;
 }
 .form-contents{
 
@@ -44,9 +44,6 @@ input{
   height: 350px;
   font-size: 15px;
   overflow:scroll;
-}
-#product-price{
-  margin-right: 58%;
 }
 #file-upload{
 }

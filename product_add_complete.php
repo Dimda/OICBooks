@@ -61,8 +61,6 @@ if(isset($_POST["submit"]) && is_uploaded_file ($_FILES["fileToUpload"]["tmp_nam
       array_push($imageErrNum, 4);
       header('Location: product_add.php?imageErrNum=' . implode(",", $imageErrNum));
     } else {
-        $matches = glob('./product_image/' . $last_id . "*");
-        !unlink($matches[0]);
         if (!move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], "product_image/" . $last_id . "." . $imageFileType)) {
           array_push($imageErrNum, 4);
         }else{
