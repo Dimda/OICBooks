@@ -25,7 +25,7 @@
     		echo '<br>';
     		echo $password;
 
-    		$sql = "SELECT CUSTOMER_ID,FIRST_NAME,LAST_NAME FROM CUSTOMER
+    		$sql = "SELECT CUSTOMER_ID,FIRST_NAME,LAST_NAME,ZIP_CODE,ADDRESS_STREET_1,ADDRESS_STREET_2,ADDRESS_STREET_3,EMAIL_ADDRESS FROM CUSTOMER
     				WHERE EMAIL_ADDRESS = '{$email}' and
     						PASSWORD = '$password'";
     		$result = $conn->query($sql);
@@ -43,6 +43,8 @@
           $CUSTOMER_ID = $row["CUSTOMER_ID"];
           $_SESSION["CUSTOMER_ID"] = $row["CUSTOMER_ID"];
     			$_SESSION["CUSTOMER_NAME"] = $row["FIRST_NAME"].$row["LAST_NAME"];
+          $_SESSION["BILLING_ADDRESS"] = $row["ZIP_CODE"].$row["ADDRESS_STREET_1"].$row["ADDRESS_STREET_2"].$row["ADDRESS_STREET_3"];
+          $_SESSION["EMAIL_ADDRESS"] = $row["EMAIL_ADDRESS"];
 
           $sql =  "SELECT CART_ID FROM CART WHERE CUSTOMER_ID = '$CUSTOMER_ID'";
           $result = $conn->query($sql);
