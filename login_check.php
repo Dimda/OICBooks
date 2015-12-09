@@ -50,12 +50,12 @@
 
           if(isset($row["CART_ID"])){
             // カートの状態が”完了済”の場合の実装はまだしていない。後で条件に加える
-            echo "hello!!";
+            //echo "hello!!";
             $_SESSION["CART_ID"] = $row["CART_ID"];
             header('location: index.php');
             exit();
           } else{
-            echo "カート列を作成します";
+            //echo "カート列を作成します";
             $sql = "INSERT INTO CART (CUSTOMER_ID,CART_DATE_ADDED,CART_STATUS) VALUES ('$CUSTOMER_ID','$date','add-test')";
             $conn->query($sql);
             $sql =  "SELECT CART_ID FROM CART WHERE CUSTOMER_ID = '$CUSTOMER_ID'";

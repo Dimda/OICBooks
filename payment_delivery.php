@@ -17,17 +17,12 @@
 
 		<?php 
 		session_start();
-
-		$_SESSION["address"] = NULL;
 		
 		if(!empty($_POST["Name"]) && !empty($_POST["Zip"]) && !empty($_POST["Address1"]) && !empty($_POST["Address2"]))
 		{	
-			$_SESSION["address"] = $_POST["Address1"].$_POST["Address2"]."<br/>".$_POST["Address3"];
-			echo $_SESSION["address"];	
-		}
-		else
-		{
-			echo "すべて記入してください";
+			$_SESSION["address"] = $_POST["Address1"].$_POST["Address2"].$_POST["Address3"];
+			$_SESSION["delivery_name"] = $_POST["Name"]; 
+			$_SESSION["delivery_zip"] = $_POST["Zip"];
 		}
 
 		date_default_timezone_set('Asia/Tokyo');
