@@ -28,7 +28,7 @@
 #email:focus, #password:focus{
   background-color: yellow;
 }
-
+/*
 .type-pers-parent {
     perspective: 150px;
     -webkit-perspective: 150px;
@@ -46,4 +46,4 @@
   @-webkit-keyframes typetext {
      0% {transform: rotateX(45deg) translate(0,0);}
     100% {transform: rotateX(45deg) translate(0,-500px);}
-  }
+  }*/

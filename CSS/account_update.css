@@ -1,0 +1,16 @@
+@charset "utf-8";
+
+#container {
+	margin: 0 auto;
+	width: 50%;
+	border: 1px solid black;
+	border-radius: 10px;
+}
+ul#account_edit {
+	padding-left: 0;
+}
+li.border {
+	padding: 10px;
+	border-bottom: 1px solid black;
+}
+
