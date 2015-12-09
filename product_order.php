@@ -1,6 +1,6 @@
 <?php
-$title              = '在庫情報';
-$subtitle           = '在庫情報編集';
+$title              = '商品の発注';
+$subtitle           = '商品の発注';
 
 $sideElement[0]     = '在庫情報の編集';
 $sideElementLink[0] = 'admin_stock_manager.php';
@@ -17,7 +17,7 @@ $scriptSource[2]    = 'js/admin_product_manager.js';
 include("includes/admin_top.php");
 ?>
 <div id="product-manager">
-  <form action="admin_stock_manager.php" method="post">
+  <form action="admin_product_manager.php" method="post">
     <!--searchClickedで検索したってことを伝える-->
     <input id="search-db" placeholder="データベースを検索する" name="keyword" value = "<?php if(isset($_POST["keyword"])){ echo $_POST["keyword"];}?>">
     <input id="search-btn" type="submit" value="検索">
@@ -34,26 +34,29 @@ include("includes/admin_top.php");
     }else{
       $sql = "SELECT PRODUCT_ID, PRODUCT_NAME, PRODUCT_PRICE,STOCK FROM PRODUCT";
     }
-
     $result = $conn->query($sql);
     echo '<table>
-            <th>商品名</th><th>価格</th><th>在庫数</th><th>  </th>';
+              <form action="order_check.php" method="post">
+             <th></th><th>商品名</th><th>価格</th><th>数量</th>';
     while($row = $result->fetch_assoc()){
         echo   '<tr>
-        
+                  <td><input type="checkbox" class = "check" name="check[]" width = "10%" value=' . $row["PRODUCT_ID"] . '></td>
                   <td class = "product-name" width = "70%"><a class = "product-name" href="product_details.php?ID=' . $row["PRODUCT_ID"] . '">' . $row["PRODUCT_NAME"] .'</a></td>
                   <td class = "product-price" width = "10%">' . $row["PRODUCT_PRICE"] .'円</td>
-                  <form method="POST" action="product_change.php?ID='.$row["PRODUCT_ID"].'">
-                  <td><input type="number" class = "product-stock" name="QUANTITY" width = "10%" value='.$row["STOCK"].'></td>
-                  <td width = "10%"><input type="submit" value="編集"></td>
-                  </form>
+                  <td class = "product-stock" width = "10%">'.$row["STOCK"].''."冊".'</td>
+                  <td class = "edit" width = "10%"><a href="#?ID=' . $row["PRODUCT_ID"] . '">個別発注</a></td>
                 </tr>
                 ';
            }
-        echo '</table>';
+           echo '</table>';
+           echo '<input type="submit" value="まとめて発注" width="100%" style="margin-left: 40%;
+                    font-size: 1.4em;">';
+           echo '</form>';
+        
         $conn->close();
     ?>
-  </ul>
+  </ul> 
 </div>
+
 
 <?php include("includes/admin_bottom.html");?>

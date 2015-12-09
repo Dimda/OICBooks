@@ -62,7 +62,7 @@
         		echo $sum;
         		echo "円です";
         		echo '<br>';
-        		echo '<a href="payment_destination.php" style="text-decoration:none;">お支払い</a>';
+        		echo '<a href="payment_cart.php" style="text-decoration:none;">お支払い</a>';
         		echo "</div>";
         	}
 		?>

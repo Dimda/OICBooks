@@ -1,5 +1,0 @@
-cd OICBooks
-git add -A
-git commit -m "メッセージ"
-git push
-git pull

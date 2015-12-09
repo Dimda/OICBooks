@@ -23,6 +23,10 @@ include("includes/connect_DB.php")
     <?php
     include("includes/error_messages.php");
 
+    $imageErrNum = array();
+    if(isset($_GET["imageErrNum"])){
+      $imageErrNum = explode(",", $_GET["imageErrNum"]);
+    }
     if(isset($_GET["imageErrNum"])){
       echo '<div class="error-log">';
         foreach($imageErrNum as $num){
@@ -48,23 +52,23 @@ include("includes/connect_DB.php")
     ?>
     <p>
       <div class="label"><label for="product-isbn">ISBN</label></div>
-      <div class="input"><input id="product-isbn" type="text" name="productISBN" value=""></div>
+      <div class="input"><input id="product-isbn" type="number" name="productISBN" data-validation="number" data-validation-error-msg="数字ではありません。" required="required"></div>
     </p>
     <p>
       <div class="label"><label for="product-name">商品名</label></div>
-      <div class="input"><input id="product-name" type="text" name="productName" value=""></div>
+      <div class="input"><input id="product-name" type="text" name="productName" data-validation-error-msg="商品名を入力してください" required="required"></div>
     </p>
     <p>
       <div class="label"><label for="product-author">作者名</label></div>
-      <div class="input"><input id="product-author" type="text" name="productAuthor" value=""></div>
+      <div class="input"><input id="product-author" type="text" name="productAuthor" data-validation-error-msg="作者名を入力してください"　required="required"></div>
     </p>
     <p>
       <div class="label"><label for="product-date-available">発売日</label></div>
-      <div class="input"><input id="product-date-available" data-validation="birthdate" data-validation-help="yyyy-mm-dd の形式" name="productDateAvailable" value=""></div>
+      <div class="input"><input id="product-date-available" data-validation="birthdate" data-validation-help="yyyy-mm-dd の形式" data-validation-error-msg="発売日を入力してください" name="productDateAvailable" required="required"></div>
     </p>
     <p>
       <div class="label"><label for="product-description">商品明細</label></div>
-      <div class="input"><textarea id="product-description" type="text" cols="30" rows="15" name="productDescription"></textarea></div>
+      <div class="input"><textarea id="product-description" type="text" cols="30" rows="15" name="productDescription" data-validation-error-msg="商品明細を入力してください" required="required"></textarea></div>
     </p>
     <p>
       <div class="label"><label for="product-category">カテゴリー</label></div>
@@ -113,11 +117,11 @@ include("includes/connect_DB.php")
     </p>
     <p>
       <div class="label"><label for="product-price">価格</label></div>
-      <div class="input"><input id="product-price" type="number"  name="productPrice" data-validation="number" data-validation-error-msg="数字ではありません。" value=''></div>
+      <div class="input"><input id="product-price" type="number"  name="productPrice" data-validation="number" data-validation-error-msg="数字ではありません。" required="required"></div>
     </p>
     <p>
       <div class="label"><label for="product-stock">在庫数</label></div>
-      <div class="input"><input id="product-stock" type="number" name="productStock" data-validation="number" data-validation-error-msg="数字ではありません。" value=""></div>
+      <div class="input"><input id="product-stock" type="number" name="productStock" data-validation="number" data-validation-error-msg="数字ではありません。" required="required"></div>
     </p>
     <p>
       <div class="label"><label for="product-keyword">検索キーワード</label></div>
@@ -138,6 +142,7 @@ include("includes/connect_DB.php")
 <?php include("includes/admin_bottom.html"); ?>
 <script>
   $.validate({
-  form : '#add-form'
+    modules : 'html5'
+
   });
 </script>

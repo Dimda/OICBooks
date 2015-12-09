@@ -1,0 +1,36 @@
+@charset "utf-8"
+* {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+html{
+  font-family: arial,sans-serif;
+  height: 100%;
+}
+body {
+	width: 80%;
+	margin: 0 auto;
+	background-color: #ffffff;
+}
+header {
+	margin: 10px;
+}
+h1 {
+	margin: 0;
+}
+#cart_select {
+	height: 150px;
+	border-top: solid 1px #C6C6C6;
+	padding: 5px 0;
+	
+}
+.quantity{
+	margin-left: auto;
+}
+.sum{
+	border-top: solid 1px #C6C6C6;
+}
+a{
+	margin-right: 30px;
+}

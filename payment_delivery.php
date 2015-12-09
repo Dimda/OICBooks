@@ -18,37 +18,13 @@
 		<?php 
 		session_start();
 		
-		if(isset($_POST["Address1"]))
-		{	$_SESSION["address"] = $_POST["Address1"].$_POST["Address2"].$_POST["Address3"];
-			echo "ふるいの";
-			echo $_SESSION["address"];
-		}
-		elseif(isset($_POST["newAddress1"]))
-		{	$_SESSION["Newadd"] = $_POST["newAddress1"].$_POST["newAddress2"].$_POST["newAddress3"];
-			echo "新しいの";
-			echo $_SESSION["Newadd"];
-
-		}
-		else
-		{
-			echo "aaaa";
+		if(!empty($_POST["Name"]) && !empty($_POST["Zip"]) && !empty($_POST["Address1"]) && !empty($_POST["Address2"]))
+		{	
+			$_SESSION["address"] = $_POST["Address1"].$_POST["Address2"].$_POST["Address3"];
+			$_SESSION["delivery_name"] = $_POST["Name"]; 
+			$_SESSION["delivery_zip"] = $_POST["Zip"];
 		}
 
-
-		?>
-
-		<div id="delivery_select">
-			<form method="post" action="">
-				<p id="delivery">配送業者をお選びください<br/>
-				<input type="radio" name="q1" value="ヤマト運輸" checked>ヤマト運輸<br/>
-				<input type="radio" name="q1" value="佐川急便" >佐川急便<br/>
-				<input type="radio" name="q1" value="日本郵便" >日本郵便<br/>
-				</p>
-			</form>
-		</div>
-
-
-		<?php
 		date_default_timezone_set('Asia/Tokyo');
 		$week = array("日", "月", "火", "水", "木", "金", "土");
 		$date1 = date("Y/m/d", strtotime('+2 day'));
@@ -58,33 +34,34 @@
 		$w1 = date('w', strtotime($date1));
 		$w2 = date('w', strtotime($date2));
 		$w3 = date('w', strtotime($date3));
-
 		?>
 
-
-		<h3>日にちの指定</h3>
-		<select>
-			<option value="<?php $date1."(".$week[$w1].")"?>"><?php echo $date1."(".$week[$w1].")"?></option>
-			<option value="<?php $date2."(".$week[$w2].")"?>"><?php echo $date2."(".$week[$w2].")"?></option>
-			<option value="<?php $date3."(".$week[$w3].")"?>"><?php echo $date3."(".$week[$w3].")"?></option>
-		</select>
-
-		<br/>
-		<br/>
-
-		<h3>時間の指定</h3>
-		<select>
-		<option value="10時～12時">10時～12時</option>
-		<option value="12時～14時">12時～14時</option>
-		<option value="16時～18時">16時～18時</option>
-		<option value="18時～20時">18時～20時</option>
-		</select>
-
-		<div ID="payment">
-				<a href="payment.php" style="text-decoration:none;">指定決定</a>
+		<form method="post" action="payment.php">
+			<div id="delivery_select">
+				<p>配送業者をお選びください<br/>
+				<input type="radio" name="delivery" value="ヤマト運輸" checked>ヤマト運輸<br/>
+				<input type="radio" name="delivery" value="佐川急便" >佐川急便<br/>
+				<input type="radio" name="delivery" value="日本郵便" >日本郵便<br/>
+				</p>
 			</div>
 
-
+			<h3>日にちの指定</h3>
+			<select name="day_select" >
+				<option value = <?php echo $date1."(".$week[$w1].")"?>> <?php echo $date1."(".$week[$w1].")"?></option>
+				<option value = <?php echo $date2."(".$week[$w2].")"?>> <?php echo $date2."(".$week[$w2].")"?></option>
+				<option value = <?php echo $date3."(".$week[$w3].")"?>> <?php echo $date3."(".$week[$w3].")"?></option>
+			</select>
+			<br/>
+			<br/>
+			<h3>時間の指定</h3>
+			<select name="time_select">
+				<option value="10時～12時">10時～12時</option>
+				<option value="12時～14時">12時～14時</option>
+				<option value="16時～18時">16時～18時</option>
+				<option value="18時～20時">18時～20時</option>
+			</select><br/>
+			<br/>
+			<input type="submit" value="送信">
+		</form>
 	</body>
-
 </html>

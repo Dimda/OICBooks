@@ -27,6 +27,7 @@
 }
 #email:focus, #password:focus{
   background-color: yellow;
+<<<<<<< HEAD
 }
 /*
 .type-pers-parent {
@@ -47,3 +48,6 @@
      0% {transform: rotateX(45deg) translate(0,0);}
     100% {transform: rotateX(45deg) translate(0,-500px);}
   }*/
+=======
+}
+>>>>>>> c8cff23be94df11c0d2c23b34cbc696d6efe3764

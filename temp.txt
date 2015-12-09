@@ -1,9 +1,0 @@
-//画像以外の項目
-echo "aaa";
-$productName = mysqli_real_escape_string($conn, $_POST("productName"));
-$productDetails = mysqli_real_escape_string($conn, $_POST("productDetails"));
-$productPrice = mysqli_real_escape_string($conn, $_POST("productPrice");
-
-echo $productName;
-echo $productDetails;
-echo $productPrice;
