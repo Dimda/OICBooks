@@ -8,6 +8,7 @@
 	<?php
 	include("includes/connect_DB.php");
 	ini_set( 'display_errors', 1 );
+	session_start();
 	$first_name   = $_POST['first_name']; //FIRST_NAME
 	$last_name    = $_POST['last_name']; //LAST_NAME
 	$phonetic     = $_POST['first_phonetic'].$_POST['last_phonetic']; //FRIGANA
@@ -37,13 +38,16 @@
 	echo $mailmagazine.'<br>';
 	echo $birthday . '<br>';
 
-	mysql_set_charset('utf8');
-  $sql = "INSERT INTO customer (FIRST_NAME, LAST_NAME, FURIGANA, SEX, BIRTH_DATE, EMAIL_ADDRESS, PHONE_NUMBER, PASSWORD, ZIP_CODE, ADDRESS_STREET_1, ADDRESS_STREET_2, ADDRESS_STREET_3, EMAIL_PERMIT) VALUES ('$first_name', '$last_name', '$phonetic', '$sex', '$birthday', '$email', '$phone_number', '$pass_hash', '$zip', '$pref', '$city', '$mansion', '$mailmagazine')";
-  if($conn->query($sql)){
-  	echo "success";
-  } else {
-  	echo "failure";
-  }
+	if($_SESSION["first_name"] != $first_name){
+		//mysql_set_charset('utf8');
+	 	$sql = "INSERT INTO customer (FIRST_NAME, LAST_NAME, FURIGANA, SEX, BIRTH_DATE, EMAIL_ADDRESS, PHONE_NUMBER, PASSWORD, ZIP_CODE, ADDRESS_STREET_1, ADDRESS_STREET_2, ADDRESS_STREET_3, EMAIL_PERMIT) VALUES ('$first_name', '$last_name', '$phonetic', '$sex', '$birthday', '$email', '$phone_number', '$pass_hash', '$zip', '$pref', '$city', '$mansion', '$mailmagazine')";
+	 	if($conn->query($sql)){
+	  		echo "success";
+	 	} else {
+	  		echo "failure";
+		}
+	 	$_SESSION["first_name"] = $first_name;
+	}
   $conn -> close();
 	?>
 </body>
