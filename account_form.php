@@ -31,6 +31,7 @@
 	<?php include("includes/sidebar.html"); ?>
 	<?php include("includes/header.html"); ?>
 	<?php include("includes/connect_DB.php"); ?>
+	<?php $_SESSION["first_name"] = "aaa"; ?>
 	<main>
 		<form id="account_form" action="account_registration.php" method="post">
 			<table>
