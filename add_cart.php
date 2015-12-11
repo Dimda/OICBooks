@@ -21,19 +21,19 @@
       $cart_id = $_SESSION["CART_ID"];
 
       include("includes/connect_DB.php");
-      $sql =  "SELECT CART_ID FROM CART_PRODUCTS WHERE PRODUCT_ID = '$product_id' and CART_ID = 
-      (SELECT CART_ID FROM CART WHERE CART_STATUS <> 'FINISH')";
+      $sql =  "SELECT CART_ID FROM CART_PRODUCTS WHERE PRODUCT_ID = '$product_id' and CART_ID =
+      (SELECT CART_ID FROM CART WHERE CART_STATUS <> 'FINISH' and CART_ID = '$cart_id')";
       $result = $conn->query($sql);
       $row = $result->fetch_assoc();
 
       if(isset($row["CART_ID"])){
         $sql =  "SELECT QUANTITY FROM CART_PRODUCTS WHERE PRODUCT_ID = '$product_id'and CART_ID = 
-      (SELECT CART_ID FROM CART WHERE CART_STATUS <> 'FINISH')";
+      (SELECT CART_ID FROM CART WHERE CART_STATUS <> 'FINISH' and CART_ID = '$cart_id')";
         $result = $conn->query($sql);
         $row = $result->fetch_assoc();
         $quantity = $row["QUANTITY"] + $quantity;
         $sql = "UPDATE CART_PRODUCTS SET QUANTITY = '$quantity' WHERE CART_ID = '$cart_id' AND PRODUCT_ID ='$product_id'and CART_ID = 
-      (SELECT CART_ID FROM CART WHERE CART_STATUS <> 'FINISH')";
+      (SELECT CART_ID FROM CART WHERE CART_STATUS <> 'FINISH' and CART_ID = '$cart_id')";
         $conn->query($sql);
       }else {
         $sql = "INSERT INTO CART_PRODUCTS (CART_ID,PRODUCT_ID,QUANTITY) VALUES ('$cart_id','$product_id','$quantity')";
