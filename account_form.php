@@ -5,8 +5,7 @@
 	<link rel="stylesheet" type="text/css" href="css/default.css">
 	<link rel="stylesheet" type="text/css" href="css/default_color.css">
 	<link rel="stylesheet" type="text/css" href="css/account_form.css">
-	<!-- <link rel="stylesheet" type="text/css" href="css/validationEngine.jquery.css"> -->
-	<link rel="stylesheet" href="css/theme-default.css">
+	<link rel="stylesheet" type="text/css" href="css/theme-default.css">
 	<script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.2.8/jquery.form-validator.min.js"></script> 
 	<script type="text/javascript" src="http://jpostal.googlecode.com/svn/trunk/jquery.jpostal.js"></script>

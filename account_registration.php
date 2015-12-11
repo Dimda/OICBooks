@@ -38,7 +38,8 @@
 	echo $birthday . '<br>';
 
 	mysql_set_charset('utf8');
-  $sql = "INSERT INTO customer (FIRST_NAME, LAST_NAME, FURIGANA, SEX, BIRTH_DATE, EMAIL_ADDRESS, PHONE_NUMBER, PASSWORD, ZIP_CODE, ADDRESS_STREET_1, ADDRESS_STREET_2, ADDRESS_STREET_3, EMAIL_PERMIT) VALUES ('$first_name', '$last_name', '$phonetic', '$sex', '$birthday', '$email', '$phone_number', '$pass_hash', '$zip', '$pref', '$city', '$mansion', '$mailmagazine')";
+  $sql = "INSERT INTO customer (FIRST_NAME, LAST_NAME, FURIGANA, SEX, BIRTH_DATE, EMAIL_ADDRESS, PHONE_NUMBER, PASSWORD, ZIP_CODE, ADDRESS_STREET_1, ADDRESS_STREET_2, ADDRESS_STREET_3, EMAIL_PERMIT) 
+  			VALUES ('$first_name', '$last_name', '$phonetic', '$sex', '$birthday', '$email', '$phone_number', '$pass_hash', '$zip', '$pref', '$city', '$mansion', '$mailmagazine')";
   if($conn->query($sql)){
   	echo "success";
   } else {
