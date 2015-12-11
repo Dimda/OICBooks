@@ -14,7 +14,7 @@ body{
 }
 header{
   position: fixed;
-  z-index: 9999;
+  z-index: 10;
   background-color: #1F4E5F;
   color: #eee;
   height: auto;
@@ -27,8 +27,8 @@ header{
 }*/
 #sidebar{
   position: fixed;
-  z-index: 9999;
-  margin-top: 86px;
+  z-index: 9;
+  padding-top: 86px;
   background-color: #1F4E5F;
   height: 100%;
   width: 9rem;
