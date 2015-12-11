@@ -18,6 +18,11 @@
 
       <section id="order_history">
         <h3>注文履歴</h3>
+        <nav>
+          <ul>
+            <li><a href="#">注文履歴の表示</a></li>
+          </ul>
+        </nav>
       </section>
       <section id="change">
         <h3>アカウント設定</h3>

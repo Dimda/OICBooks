@@ -5,7 +5,7 @@
 	<link rel="stylesheet" type="text/css" href="css/default.css">
 	<link rel="stylesheet" type="text/css" href="css/default_color.css">
 	<link rel="stylesheet" type="text/css" href="css/account_form.css">
-	<link rel="stylesheet" type="text/css" href="css/validationEngine.jquery.css">
+	<!-- <link rel="stylesheet" type="text/css" href="css/validationEngine.jquery.css"> -->
 	<link rel="stylesheet" href="css/theme-default.css">
 	<script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.2.8/jquery.form-validator.min.js"></script> 
@@ -60,8 +60,8 @@
 					<td>
 						<p><select id="pref" name="pref" data-validation="required" data-validation-error-msg="都道府県を選択してください"><?php include("includes/pref.html"); ?></select></p>
 						<p><input type="text" id="city" name="city" class="" data-validation="required" data-validation-error-msg="市区町村を入力してください" placeholder="市区町村"></p>
-						<p><input type="text" id="area" name="area" class="" data-validation="required" data-validation-error-msg="町域を入力してください" placeholder="町域"></p>
-						<p><input type="text" id="add" name="add" class="" data-validation="required" data-validation-error-msg="番地・マンション名を入力してください" placeholder="番地・マンション名"></p>
+						<p><input type="text" id="area" name="area" class="" data-validation="required" data-validation-error-msg="町域・番地を入力してください" placeholder="町域"></p>
+						<p><input type="text" id="mansion" name="mansion" class="" data-validation-error-msg="マンション名を入力してください" placeholder="マンション名"></p>
 					</td>
 				</tr>
 				<tr>
@@ -105,8 +105,8 @@
 					</td>
 				</tr>
 			</table>
-			<button type="submit" name="submit">送信</button>
-			<button type="reset">リセット</button>
+			<input type="submit" name="submit">送信</input>
+			<input type="reset">リセット</input>
 		</form>
 	</main>
 	<script type="text/javascript" src="js/classie.js"></script>

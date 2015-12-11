@@ -97,7 +97,7 @@
 			</div>
 		</div><div id="boxB">
 			<div id="confirm">
-				<a href="">注文を確定する</a>
+				<a href="order_complete.php">注文を確定する</a>
 				<p><b>注文内容</b></p>
 				<p>商品合計: 
 					<?php
@@ -112,25 +112,30 @@
 				<p>使用POINT 
 					<?php
 						if(isset($_POST["point"])){
-							echo "-".$_POST["point"];
+							$_SESSION["take_customer_point"] = $_POST["point"];
+							echo "-".$_SESSION["take_customer_point"];
 						}else{
-							echo "-"."0";
+							$_SESSION["take_customer_point"] = 0;
+							echo "-".$_SESSION["take_customer_point"];
 						}
 					?>
 				</p>
 				<p id="total">注文合計: 
 					<?php
 						if(isset($_POST["point"])){
-							$order_sum = $_SESSION["SUM"] + 300 -$_POST["point"];
+							$_SESSION["order_sum"] = $_SESSION["SUM"] + 300 -$_POST["point"];
 						}else{
-							$order_sum = $_SESSION["SUM"] + 300;
+							$_SESSION["order_sum"] = $_SESSION["SUM"] + 300;
 						}
-						echo $order_sum.'円';
+						echo $_SESSION["order_sum"].'円';
+
 					?>
 				</p>
 				<p>付与POINT 
 					<?php
-						echo floor($order_sum * 0.05);
+						$_SESSION["add_customer_point"] = floor($_SESSION["order_sum"] * 0.05);
+						echo $_SESSION["add_customer_point"];
+
 					?>
 				</p>
 			</div>
