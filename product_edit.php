@@ -32,6 +32,20 @@ while($row = $result->fetch_assoc()){
   $productName = $row["PRODUCT_NAME"];
   $productDescription = $row["PRODUCT_DESCRIPTION"];
   $productPrice = $row["PRODUCT_PRICE"];
+  $product = array(
+    "isbn" =>                $row["PRODUCT_ISBN"],
+    "name" =>                $row["PRODUCT_NAME"],
+    "author" =>              $row["PRODUCT_AUTHOR"],
+    "price" =>               $row["PRODUCT_PRICE"],
+    "description" =>         $row["PRODUCT_DESCRIPTION"],
+    "dateAvailabe" =>        $row["PRODUCT_DATE_AVAILABLE"],
+    "changeDate" =>          $row["PRODUCT_CHANGE_DATE"],
+    "category" =>            $row["CATEGORY_ID"],
+    "tax" =>                 $row["TAX_RATE_CODE"],
+    "publisher" =>           $row["PUBLISHER_ID"],
+    "stock" =>               $row["PRODUCT_ISBN"],
+    "keyword" =>             $row["KEYWORD"]
+  );
 }
 ?>
 <form id="edit-form" action="product_edit_complete.php?ID=<?php echo $ID; ?>" method="post" enctype="multipart/form-data">
@@ -71,6 +85,90 @@ while($row = $result->fetch_assoc()){
     <label id="file-upload" for="fileToUpload">画像ファイル</label>
     <input type="file" name="fileToUpload">
     <label for="fileToUpload" id="file-description">jpg, jpeg, png, gif　ファイル 5mb まで</label><br>
+
+    <p>
+      <div class="label"><label for="product-isbn" value="<?php echo "$product->isbn"; ?>">ISBN</label></div>
+      <div class="input"><input id="product-isbn" type="number" name="productISBN" data-validation="number" data-validation-error-msg="数字ではありません。" required="required"></div>
+    </p>
+    <p>
+      <div class="label"><label for="product-name">商品名</label></div>
+      <div class="input"><input id="product-name" type="text" name="productName" data-validation-error-msg="商品名を入力してください" required="required"></div>
+    </p>
+    <p>
+      <div class="label"><label for="product-author">作者名</label></div>
+      <div class="input"><input id="product-author" type="text" name="productAuthor" data-validation-error-msg="作者名を入力してください"　required="required"></div>
+    </p>
+    <p>
+      <div class="label"><label for="product-date-available">発売日</label></div>
+      <div class="input"><input id="product-date-available" data-validation="birthdate" data-validation-help="yyyy-mm-dd の形式" data-validation-error-msg="発売日を入力してください" name="productDateAvailable" required="required"></div>
+    </p>
+    <p>
+      <div class="label"><label for="product-description">商品明細</label></div>
+      <div class="input"><textarea id="product-description" type="text" cols="30" rows="15" name="productDescription" data-validation-error-msg="商品明細を入力してください" required="required"></textarea></div>
+    </p>
+    <p>
+      <div class="label"><label for="product-category">カテゴリー</label></div>
+      <div class="input">
+        <select id="product-category" name="productCategory">
+          <?php
+          $sql = "SELECT * FROM CATEGORY";
+          $result = $conn->query($sql);
+          while($row = $result->fetch_assoc()){
+            echo '<option value="' . $row['CATEGORY_ID'] . '">' . $row["CATEGORY_NAME"] .'</option>';
+          }
+          ?>
+          <option value="new">新規</option>
+        </select>
+      </div>
+    </p>
+    <p>
+      <div class="label"><label for="product-tax-rate">税率</label></div>
+      <div class="input">
+        <select id="product-tax" name="productTax">
+          <?php
+          $sql = "SELECT * FROM TAX_RATE";
+          $result = $conn->query($sql);
+          while($row = $result->fetch_assoc()){
+            echo '<option value="' . $row['TAX_RATE_CODE'] . '">' . (int)substr($row["TAX_RATE"], -2) .'%</option>';
+          }
+          ?>
+          <option value="new">新規</option>
+        </select>
+      </div>
+    </p>
+    <p>
+      <div class="label"><label for="product-publisher">出版社</label></div>
+      <div class="input">
+        <select id="product-publisher" name="productPublisher">
+          <?php
+          $sql = "SELECT * FROM PUBLISHER";
+          $result = $conn->query($sql);
+          while($row = $result->fetch_assoc()){
+            echo '<option value="' . $row['PUBLISHER_ID'] . '">' . $row["PUBLISHER_NAME"] .'</option>';
+          }
+          ?>
+          <option value="new">新規</option>
+        </select>
+      </div>
+    </p>
+    <p>
+      <div class="label"><label for="product-price">価格</label></div>
+      <div class="input"><input id="product-price" type="number"  name="productPrice" data-validation="number" data-validation-error-msg="数字ではありません。" required="required"></div>
+    </p>
+    <p>
+      <div class="label"><label for="product-stock">在庫数</label></div>
+      <div class="input"><input id="product-stock" type="number" name="productStock" data-validation="number" data-validation-error-msg="数字ではありません。" required="required"></div>
+    </p>
+    <p>
+      <div class="label"><label for="product-keyword">検索キーワード</label></div>
+      <div class="input"><input id="product-keyword" type="text" name="productKeyword" value=""></div>
+    </p>
+    <p>
+      <div class="label"><label id="file-upload" for="fileToUpload">画像ファイル</label></div>
+      <div class="input"><input type="file" name="fileToUpload"></div>
+      <label for="fileToUpload" id="file-description">jpg, jpeg, png, gif　ファイル 5mb まで</label>
+    </p>
+  </div>
   </div>
   <div id="bott-buttons">
     <input type="submit" value="登録" class="button" name="submit" >

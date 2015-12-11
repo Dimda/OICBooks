@@ -1,18 +1,14 @@
 @charset "UTF-8";
 
 form{
-  overflow: scroll;
   color:white;
   background-color: #79A8A9;
   margin: 0 20px 0 20px;
   border-radius: 25px;
-  height: 65vh;
   padding-top: 10px;
+  padding: 10px 0 0 20%;
 }
-.form-contents{
-  text-align:right;
-  padding-right: 20%;
-}
+
 form h2{
   text-align: center;
 }
@@ -42,7 +38,6 @@ form h2{
   width: 700px;
   height: 350px;
   font-size: 15px;
-  overflow:scroll;
 }
 #product-price{
   margin-right: 58%;

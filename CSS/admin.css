@@ -1,6 +1,6 @@
 @charset "UTF-8";
 body {
-    overflow:hidden;
+
 }
 html{
   font-family: arial,sans-serif;
@@ -13,9 +13,12 @@ body{
   width: 100%;
 }
 header{
+  position: fixed;
+  z-index: 9999;
   background-color: #1F4E5F;
   color: #eee;
   height: auto;
+  width: 100%;
   border-bottom: 2px solid rgba(255,255,255,0.5);
 }
 /*#container{
@@ -23,6 +26,9 @@ header{
   width: auto;
 }*/
 #sidebar{
+  position: fixed;
+  z-index: 9999;
+  margin-top: 86px;
   background-color: #1F4E5F;
   height: 100%;
   width: 9rem;
@@ -82,9 +88,9 @@ li :hover{
 }
 main{
   margin-left: calc(9rem + 2px);
-  padding:1px 20px;
+  padding:80px 20px;
   width: auto;
-  height: 100%;
+  height: auto;
   background-color: #AACFD0;
   opacity: 50%;
 }
