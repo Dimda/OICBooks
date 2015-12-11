@@ -46,21 +46,19 @@
           $_SESSION["BILLING_ADDRESS"] = $row["ZIP_CODE"].$row["ADDRESS_STREET_1"].$row["ADDRESS_STREET_2"].$row["ADDRESS_STREET_3"];
           $_SESSION["EMAIL_ADDRESS"] = $row["EMAIL_ADDRESS"];
 
-          $sql =  "SELECT CART_ID FROM CART WHERE CUSTOMER_ID = '$CUSTOMER_ID'";
+          $sql =  "SELECT CART_ID FROM CART WHERE CUSTOMER_ID = '$CUSTOMER_ID' and CART_STATUS <> 'FINISH' ";
           $result = $conn->query($sql);
           $row = $result->fetch_assoc();
 
           if(isset($row["CART_ID"])){
-            // カートの状態が”完了済”の場合の実装はまだしていない。後で条件に加える
-            //echo "hello!!";
             $_SESSION["CART_ID"] = $row["CART_ID"];
             header('location: index.php');
             exit();
           } else{
-            //echo "カート列を作成します";
+            //"カート列を作成します";
             $sql = "INSERT INTO CART (CUSTOMER_ID,CART_DATE_ADDED,CART_STATUS) VALUES ('$CUSTOMER_ID','$date','add-test')";
             $conn->query($sql);
-            $sql =  "SELECT CART_ID FROM CART WHERE CUSTOMER_ID = '$CUSTOMER_ID'";
+            $sql =  "SELECT CART_ID FROM CART WHERE CUSTOMER_ID = '$CUSTOMER_ID' and CART_STATUS <> 'FINISH'";
             $result = $conn->query($sql);
             $row = $result->fetch_assoc();
             $_SESSION["CART_ID"] = $row["CART_ID"];
