@@ -1,5 +1,4 @@
 <?php
-
 $title              = '商品管理';
 $subtitle           = '商品編集';
 
@@ -18,6 +17,15 @@ $scriptSource[1]    = '//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.
 
 include("includes/admin_top.php");
 
+function findCurrentValue(&$id, &$name, &$currentID){
+  if($id == $currentID){
+    echo '<option value="' . $id . '" selected="selected">' . $name .'</option>';
+  }else{
+    echo '<option value="' . $id . '">' . $name .'</option>';
+  }
+
+}
+
 $ID = $_GET["ID"];
 $imageErrNum = array();
 if(isset($_GET["imageErrNum"])){
@@ -26,7 +34,7 @@ if(isset($_GET["imageErrNum"])){
 
 
 include("includes/connect_DB.php");
-$sql = "SELECT PRODUCT_NAME, PRODUCT_PRICE, PRODUCT_DESCRIPTION FROM PRODUCT WHERE PRODUCT_ID = $ID";
+$sql = "SELECT * FROM PRODUCT WHERE PRODUCT_ID = $ID";
 $result = $conn->query($sql);
 while($row = $result->fetch_assoc()){
   $productName = $row["PRODUCT_NAME"];
@@ -76,45 +84,35 @@ while($row = $result->fetch_assoc()){
     }
 
     ?>
-    <label for="productName">商品名</label>
-    <input id="product-name" type="text" name="productName" value="<?php echo "$productName"; ?>"><br>
-    <label for="productDescription">商品明細</label>
-    <textarea id="product-description" type="text" cols="30" rows="15" name="productDescription"><?php echo "$productDescription"; ?></textarea><br>
-    <label for="productPrice">価格</label>
-    <input id="product-price" type="number"  name="productPrice" data-validation="number" data-validation-error-msg="数字ではありません。" value='<?php echo "$productPrice";?>'><br>
-    <label id="file-upload" for="fileToUpload">画像ファイル</label>
-    <input type="file" name="fileToUpload">
-    <label for="fileToUpload" id="file-description">jpg, jpeg, png, gif　ファイル 5mb まで</label><br>
-
     <p>
-      <div class="label"><label for="product-isbn" value="<?php echo "$product->isbn"; ?>">ISBN</label></div>
-      <div class="input"><input id="product-isbn" type="number" name="productISBN" data-validation="number" data-validation-error-msg="数字ではありません。" required="required"></div>
+      <div class="label"><label for="product-isbn" >ISBN</label></div>
+      <div class="input"><input id="product-isbn" name="productISBN" required="required" value= "<?php echo $product['isbn']; ?>"></div>
     </p>
     <p>
       <div class="label"><label for="product-name">商品名</label></div>
-      <div class="input"><input id="product-name" type="text" name="productName" data-validation-error-msg="商品名を入力してください" required="required"></div>
+      <div class="input"><input id="product-name" type="text" name="productName" data-validation-error-msg="商品名を入力してください" required="required" value= "<?php echo $product['name']; ?>"></div>
     </p>
     <p>
       <div class="label"><label for="product-author">作者名</label></div>
-      <div class="input"><input id="product-author" type="text" name="productAuthor" data-validation-error-msg="作者名を入力してください"　required="required"></div>
+      <div class="input"><input id="product-author" type="text" name="productAuthor" data-validation-error-msg="作者名を入力してください"　required="required" value= "<?php echo $product['author']; ?>"></div>
     </p>
     <p>
       <div class="label"><label for="product-date-available">発売日</label></div>
-      <div class="input"><input id="product-date-available" data-validation="birthdate" data-validation-help="yyyy-mm-dd の形式" data-validation-error-msg="発売日を入力してください" name="productDateAvailable" required="required"></div>
+      <div class="input"><input id="product-date-available" data-validation="birthdate" data-validation-help="yyyy-mm-dd の形式" data-validation-error-msg="発売日を入力してください" name="productDateAvailable" required="required" value= "<?php echo $product['dateAvailabe']; ?>"></div>
     </p>
     <p>
       <div class="label"><label for="product-description">商品明細</label></div>
-      <div class="input"><textarea id="product-description" type="text" cols="30" rows="15" name="productDescription" data-validation-error-msg="商品明細を入力してください" required="required"></textarea></div>
+      <div class="input"><textarea id="product-description" type="text" cols="30" rows="15" name="productDescription" data-validation-error-msg="商品明細を入力してください" required="required"> <?php echo $product['description']; ?> </textarea></div>
     </p>
     <p>
       <div class="label"><label for="product-category">カテゴリー</label></div>
       <div class="input">
-        <select id="product-category" name="productCategory">
+        <select id="product-category" name="productCategory" >
           <?php
           $sql = "SELECT * FROM CATEGORY";
           $result = $conn->query($sql);
           while($row = $result->fetch_assoc()){
-            echo '<option value="' . $row['CATEGORY_ID'] . '">' . $row["CATEGORY_NAME"] .'</option>';
+            findCurrentValue($row['CATEGORY_ID'], $row['CATEGORY_NAME'], $product['category']);
           }
           ?>
           <option value="new">新規</option>
@@ -129,7 +127,9 @@ while($row = $result->fetch_assoc()){
           $sql = "SELECT * FROM TAX_RATE";
           $result = $conn->query($sql);
           while($row = $result->fetch_assoc()){
-            echo '<option value="' . $row['TAX_RATE_CODE'] . '">' . (int)substr($row["TAX_RATE"], -2) .'%</option>';
+            $taxPercent = (int)substr($row["TAX_RATE"], -2) . "%";
+            findCurrentValue($row['TAX_RATE_CODE'], $taxPercent, $product['tax']);
+            /*echo '<option value="' . $row['TAX_RATE_CODE'] . '">' . (int)substr($row["TAX_RATE"], -2) .'%</option>';*/
           }
           ?>
           <option value="new">新規</option>

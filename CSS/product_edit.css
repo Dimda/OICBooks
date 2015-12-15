@@ -27,6 +27,18 @@ form h2{
   color: #79A8A9;
   background-color: #F4F7F7;
 }
+input{
+  height: 30px;
+  font-size: 15px;
+  color: #79A8A9;
+}
+#product-name, #product-author, #product-date-available, #product-keyword{
+  width: 700px;
+}
+#product-name, #product-description, #product-price{
+  color: #79A8A9;
+  background-color: #F4F7F7;
+}
 #product-name{
   width: 700px;
   height: 30px;
