@@ -3,14 +3,26 @@
 #container {
 	margin: 0 auto;
 	width: 50%;
-	border: 1px solid black;
-	border-radius: 10px;
 }
 ul#account_edit {
-	padding-left: 0;
+	border: 1px solid black;
+	border-radius: 10px;
+	padding-left: 10px;
+	padding-bottom: 15px;
 }
 li.border {
-	padding: 10px;
+	/*padding: 10px;*/
 	border-bottom: 1px solid black;
 }
-
+a.btn{
+	background-color: #9F1D2F;
+}
+.btn{
+	color: white;
+	padding: 5px 10px 5px 10px;
+	text-align: right;
+	border-radius: 5px;
+}
+.right{
+	/*text-align: right;*/
+}

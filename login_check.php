@@ -18,16 +18,17 @@
     		include("includes/connect_DB.php");
     		$email = $_POST["email"];
     		$email = mysqli_real_escape_string($conn, $email);
-    		$password = $_POST["password"];
-    		$password = mysqli_real_escape_string($conn, $password);
+    		$password = mysqli_real_escape_string($conn, $_POST["password"]);
+        $pass_md5     = MD5($password);
+        $pass_hash    = hash('sha256', 'coca'.$pass_md5.'cola');
 
-    		echo $email;
-    		echo '<br>';
-    		echo $password;
+    		// echo $email;
+    		// echo '<br>';
+    		// echo $pass_hash;
 
     		$sql = "SELECT CUSTOMER_ID,FIRST_NAME,LAST_NAME,ZIP_CODE,ADDRESS_STREET_1,ADDRESS_STREET_2,ADDRESS_STREET_3,EMAIL_ADDRESS FROM CUSTOMER
     				WHERE EMAIL_ADDRESS = '{$email}' and
-    						PASSWORD = '$password'";
+    						PASSWORD = '$pass_hash'";
     		$result = $conn->query($sql);
     		$row = $result->fetch_assoc();
     		echo '<br>';

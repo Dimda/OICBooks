@@ -19,15 +19,15 @@
 		<form action="update_submit.php" method="POST">
 			<p>
 				<label for="pass">現在のパスワード</label><br>
-				<input type="password" name="pass" data-validation="required" data-validation-error-msg="パスワードを入力してください" maxlength="12">
+				<input type="password" name="pass" size="30" data-validation="required" data-validation-error-msg="パスワードを入力してください" maxlength="12">
 			</p>
 			<p>
 				<label for="new_pass">新しいパスワード</label><br>
-				<input type="password" name="new_pass_confirmation" data-validation="length" data-validation-length="6-12" data-validation-strength="2" data-validation-error-msg="パスワードを入力してください" maxlength="12" placeholder="6文字以上12文字以下">
+				<input type="password" name="new_pass_confirmation" size="30" data-validation="length" data-validation-length="6-12" data-validation-strength="2" data-validation-error-msg="パスワードを入力してください" maxlength="12" placeholder="6文字以上12文字以下">
 			</p>
 			<p>
 				<label for="confirm_new_pass">新しいパスワード(確認)</label><br>
-				<input type="password" name="new_pass" data-validation="confirmation" data-validation-error-msg="パスワードが一致しません" maxlength="12" placeholder="確認のためもう一度入力してください">
+				<input type="password" name="new_pass" size="30" data-validation="confirmation" data-validation-error-msg="パスワードが一致しません" maxlength="12" placeholder="確認のためもう一度入力してください">
 			</p>
 			<input type="submit">
 		</form>

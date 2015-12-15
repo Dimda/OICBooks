@@ -23,8 +23,7 @@
 	$mansion      = $_POST['mansion']; //ADDRESS_STREET_3
 	$mailmagazine = $_POST['mailmagazine']; //EMAIL_PERMIT
 	$pass_md5     = MD5($password);
-	$pass_str     = 'coca'.$pass_md5.'cola';
-	$pass_hash    = hash('sha256', $pass_str);
+	$pass_hash    = hash('sha256', 'coca'.$pass_md5.'cola');
 
 	echo $first_name . '<br>';
 	echo $last_name . '<br>';

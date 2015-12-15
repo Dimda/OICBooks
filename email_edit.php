@@ -18,15 +18,15 @@
 		<form action="update_submit.php" method="POST">
 		<p>
 			<label for="user_email">新しいEメールアドレス</label><br>
-			<input type="text" id="email" name="user_email" data-validation="email" data-validation-error-msg="メールアドレスを入力してください" placeholder="半角英数字で入力してください">
+			<input type="text" id="email" name="user_email" size="30" data-validation="email" data-validation-error-msg="メールアドレスを入力してください" placeholder="半角英数字で入力してください">
 		</p>
 		<p>
 			<label for="repeat">新しいEメールアドレスの再入力</label><br>
-			<input type="text" id="confirm_email" name="repeat" data-validation="confirmation email" data-validation-error-msg="メールアドレスが一致しません" data-validation-confirm="user_email" placeholder="確認のためもう一度入力してください">
+			<input type="text" id="confirm_email" name="repeat" size="30" data-validation="confirmation email" data-validation-error-msg="メールアドレスが一致しません" data-validation-confirm="user_email" placeholder="確認のためもう一度入力してください">
 			</p>
 		<p>
 			<label for="pass">現在のパスワード</label><br>
-			<input type="password" id="pass" name="pass" data-validation="length" data-validation-length="6-12" data-validation-strength="2" data-validation-error-msg="パスワードを入力してください" maxlength="12">
+			<input type="password" id="pass" name="pass" size="30" data-validation="length" data-validation-length="6-12" data-validation-strength="2" data-validation-error-msg="パスワードを入力してください" maxlength="12">
 		</p>
 		<input type="submit">
 		</form>

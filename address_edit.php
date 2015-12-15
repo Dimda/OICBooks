@@ -34,7 +34,7 @@
 		<form action="update_submit.php" method="POST">
 			<p>
 				<label for="">郵便番号</label><br>
-				〒 <input type="text" id="address1" name="address1" data-validation="number" data-validation-error-msg="郵便番号を入力してください" maxlength="3"> - <input type="text" id="address2" name="address2" data-validation="number" data-validation-error-msg="郵便番号を入力してください" maxlength="4">
+				〒 <input type="text" id="address1" name="address1" size="10" data-validation="number" data-validation-error-msg="郵便番号を入力してください" maxlength="3"> - <input type="text" id="address2" name="address2" size="10" data-validation="number" data-validation-error-msg="郵便番号を入力してください" maxlength="4">
 			</p>
 			<p>
 				<label for="pref">都道府県</label><br>

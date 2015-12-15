@@ -21,8 +21,6 @@ body {
   width:75%;
   margin: 0 auto;
   position: relative;
-  height:auto !important; /*IE6対策*/
-  height: 100%; /*IE6対策*/
   min-height: 100%;
 }
 ul {
@@ -138,4 +136,12 @@ footer {
   width: 100%;
   height: 50px;
   padding: 5px 0;
+}
+@media (max-width: 1015px){
+  body{
+    width: 900px;
+  }
+  header, main, footer{
+    margin-left: 100px;
+  }
 }

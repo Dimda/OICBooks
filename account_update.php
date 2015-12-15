@@ -24,32 +24,31 @@
 
 				while($row = $result->fetch_assoc()){
 					echo '<ul id="account_edit">';
-					echo "<li class='border'><span><p><strong>名前</strong></p>";
+					echo "<li class='border'><p><strong>名前</strong></p>";
 					echo $row["FIRST_NAME"].$row["LAST_NAME"]." (".$row["FURIGANA"].")";
-					echo '<a href="name_edit.php">編集</a></span></li>';
+					echo '<div class="btn"><a href="name_edit.php" class="btn">編集</a></div></li>';
 
-					echo "<li class='border'><span><p><strong>Eメールアドレス</strong></p>";
+					echo "<li class='border'><p><strong>Eメールアドレス</strong></p>";
 					echo $row["EMAIL_ADDRESS"];
-					echo '<a href="email_edit.php">編集</a></span></li>';
+					echo '<div class="btn"><a href="email_edit.php" class="btn">編集</a></div></li>';
 
-					echo "<li class='border'><span><p><strong>電話番号</strong></p>";
+					echo "<li class='border'><p><strong>電話番号</strong></p>";
 					if(strlen($row["PHONE_NUMBER"]) == 10){
 						echo substr($row["PHONE_NUMBER"], 0, 2) . "-" . substr($row["PHONE_NUMBER"], -8, 4) . "-" . substr($row["PHONE_NUMBER"], -4, 4);
 					}
 					if(strlen($row["PHONE_NUMBER"]) == 11){
 						echo substr($row["PHONE_NUMBER"], 0, 3) . "-" . substr($row["PHONE_NUMBER"], -8, 4) . "-" . substr($row["PHONE_NUMBER"], -4, 4);
 					}
-					// echo $row["PHONE_NUMBER"];
-					echo '<a href="phonenumber_edit.php">編集</a></span></li>';
+					echo '<div class="btn"><a href="phonenumber_edit.php" class="btn">編集</a></div></li>';
 
-					echo "<li class='border'><span><p><strong>住所</strong></p>";
+					echo "<li class='border'><p><strong>住所</strong></p>";
 					echo substr($row["ZIP_CODE"], 0, 3)."-".substr($row["ZIP_CODE"], -4, 4)."<br>".$row["ADDRESS_STREET_1"].$row["ADDRESS_STREET_2"].$row["ADDRESS_STREET_3"];
-					echo '<a href="address_edit.php">編集</a></span></li>';
+					echo '<div class="btn"><a href="address_edit.php" class="btn">編集</a></div></li>';
 
-					echo "<li><span><p><strong>現在のパスワード</strong></p>";
-					echo str_repeat('*', strlen($row["PASSWORD"]));
-					echo '<a href="password_edit.php">編集</a></span></li>';
-					echo "</ul>";
+					echo "<li><p><strong>パスワードの変更</strong></p>";
+					// echo str_repeat('*', strlen($row["PASSWORD"]));
+					echo '<div class="btn"><a href="password_edit.php" class="btn">編集</a></div></li>';
+					echo '</ul>';
 				}
 			$conn->close();
 			}
@@ -57,8 +56,8 @@
 				echo "セッションが取得できません";
 			}
 			?>
+		<div class="btn"><a href="index.php" class="btn">終了</a></div>
 		</div>
-		<a href="index.php">終了</a>
 	</main>
 	<?php include("includes/top.html"); ?>
 	<?php include("includes/footer.html"); ?>
