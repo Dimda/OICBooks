@@ -15,6 +15,7 @@
 	$time_select  = $_SESSION["time_select"];
 	$billing_address = $_SESSION["BILLING_ADDRESS"];
 	$delivery_address = $_SESSION["delivery_zip"].$_SESSION["address"];
+	$email_message ="";
 
 	//orderテーブル追加
 	$sql =  "INSERT INTO `order` (`ORDER_ID`, `CUSTOMER_ID`, `BILLING_NAME`, `DELIVERY_NAME`, `EMAIL_ADDRESS`, `PURCHASE_DATE`, `ORDER_STATUS_DESCRIPTION`, `BILLING_ADDRESS`, `DELIVERY_ADDRESS`)
@@ -34,6 +35,9 @@
 		while($row = $product_detail->fetch_assoc()){
 			$product_name = $row["PRODUCT_NAME"];
 			$product_price= $row["PRODUCT_PRICE"];
+			$price_sum    = $product_price * $quantity;
+			$email_message= $email_message."
+			「{$product_name}」を{$quantity}冊 小計{$price_sum}円";
 		}
 		$sql =  "INSERT INTO `ordered_product` (`ORDERED_PRODUCT_ID`, `PRODUCT_ID`, `PRODUCT_NAME`, `PRODUCT_PRICE`, `QUANTITY`, `ORDER_ID`)
 	 				VALUES (NULL, '$product_id','$product_name','$product_price','$quantity','$order_id');";
@@ -68,6 +72,8 @@
     $message = "
     {$date}に伺いました
     ご購入ありがとうございました
+    {$email_message}
+    配送料は300円です
     合計金額は{$order_sum}円です
     配達業者は{$delivery}です
     お届け日時は{$day_select}の{$time_select}で伺いました
