@@ -7,9 +7,18 @@
   </div>
   <nav>
     <ul>
-      <li><a href="#">aa</a></li>
-      <li><a href="#">bb</a></li>
-      <li><a href="#">cc</a></li>
+      <?php
+        include("includes/connect_DB.php");
+
+        $sql = "SELECT CATEGORY_NAME FROM CATEGORY";
+        $result = $conn->query($sql);
+
+        while($row = $result->fetch_assoc()){
+          echo '<li><a href="#">'.$row["CATEGORY_NAME"].'</a></li>';
+        }
+        $conn->close();
+
+      ?>
     </ul>
   </nav>
 </div>
