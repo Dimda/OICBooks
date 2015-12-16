@@ -51,7 +51,7 @@ while($row = $result->fetch_assoc()){
     "category" =>            $row["CATEGORY_ID"],
     "tax" =>                 $row["TAX_RATE_CODE"],
     "publisher" =>           $row["PUBLISHER_ID"],
-    "stock" =>               $row["PRODUCT_ISBN"],
+    "stock" =>               $row["stock"],
     "keyword" =>             $row["KEYWORD"]
   );
 }
@@ -153,14 +153,14 @@ while($row = $result->fetch_assoc()){
     </p>
     <p>
       <div class="label"><label for="product-price">価格</label></div>
-      <div class="input"><input id="product-price" type="number"  name="productPrice" data-validation="number" data-validation-error-msg="数字ではありません。" required="required"></div>
+      <div class="input"><input id="product-price" type="number"  name="productPrice" data-validation="number" data-validation-error-msg="数字ではありません。" required="required" value= "<?php echo $product['price']; ?>"></div>
     </p>
     <p>
       <div class="label"><label for="product-stock">在庫数</label></div>
-      <div class="input"><input id="product-stock" type="number" name="productStock" data-validation="number" data-validation-error-msg="数字ではありません。" required="required"></div>
+      <div class="input"><input id="product-stock" type="number" name="productStock" data-validation="number" data-validation-error-msg="数字ではありません。" required="required" value= "<?php echo $product['stock']; ?>"></div>
     </p>
     <p>
-      <div class="label"><label for="product-keyword">検索キーワード</label></div>
+      <div class="label"><label for="product-keyword" value= "<?php echo $product['keyword']; ?>">検索キーワード</label></div>
       <div class="input"><input id="product-keyword" type="text" name="productKeyword" value=""></div>
     </p>
     <p>

@@ -14,6 +14,40 @@ if ($conn->query($sql) === TRUE) {
 } else {
     echo "Error updating record: " . $conn->error;
 }
+//new
+include("includes/connect_DB.php");
+date_default_timezone_set('Asia/Tokyo');
+$date = date('Y-d-m h:i:s', time());
+$product = array(
+  "isbn" =>                $_POST["productISBN"],
+  "name" =>                $_POST["productName"],
+  "author" =>              $_POST["productAuthor"],
+  "price" =>               $_POST["productPrice"],
+  "description" =>         $_POST["productDescription"],
+  "dateAvailabe" =>        $_POST["productDateAvailable"],
+  "changeDate" =>          $date,
+  "category" =>            $_POST["productCategory"],
+  "tax" =>                 $_POST["productTax"],
+  "publisher" =>           $_POST["productPublisher"],
+  "stock" =>               $_POST["productStock"],
+  "keyword" =>             $_POST["productKeyword"]
+);
+echo $date . '<br>';
+$sql = "UPDATE PRODUCT SET (PRODUCT_NAME, STOCK, PRODUCT_AUTHOR, PRODUCT_PRICE,
+PRODUCT_DESCRIPTION, PRODUCT_DATE_AVAILABLE, PRODUCT_CHANGE_DATE, CATEGORY_ID, TAX_RATE_CODE,
+PUBLISHER_ID, PRODUCT_ISBN, KEYWORD)
+VALUES ('{$product["name"]}', '{$product["stock"]}', '{$product["author"]}', '{$product["price"]}', '{$product["description"]}',
+'{$product["dateAvailabe"]}', '{$product["changeDate"]}', '{$product["category"]}', '{$product["tax"]}', '{$product["publisher"]}',
+'{$product["isbn"]}', '{$product["keyword"]}') WHERE PRODUCT_ID=$productID";
+
+if ($conn->query($sql) === TRUE) {
+  $last_id = $conn->insert_id;
+  echo "New record created successfully";
+} else {
+  echo "Error: " . $sql . "<br>" . $conn->error;
+}
+
+
 //画像
 
 $target_dir = "product_image/";
