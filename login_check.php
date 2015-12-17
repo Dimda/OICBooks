@@ -22,6 +22,7 @@
         $pass_md5     = MD5($password);
         $pass_hash    = hash('sha256', 'coca'.$pass_md5.'cola');
 
+
     		// echo $email;
     		// echo '<br>';
     		// echo $pass_hash;

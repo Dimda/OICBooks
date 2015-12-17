@@ -125,4 +125,5 @@
     }
 	$conn -> close();
 	header('location: index.php');
+	exit();
 ?>
