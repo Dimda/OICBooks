@@ -9,6 +9,7 @@
 	$order_sum	  =	$_SESSION["order_sum"];
 	$delivery     = $_SESSION["delivery"];
 	$delivery_name= $_SESSION["delivery_name"];
+	date_default_timezone_set('Asia/Tokyo');
 	$date 		  = date('Y-m-d H:i:s');
 	$order_status_description = "test";
 	$day_select   = $_SESSION["day_select"];
