@@ -15,7 +15,6 @@
 	<main>
     <div id="account_service">
       <h2>アカウントサービス</h2>
-
       <section id="order_history">
         <h3>注文履歴</h3>
         <nav>
@@ -28,7 +27,7 @@
         <h3>アカウント設定</h3>
         <nav>
           <ul>
-            <li><a href="account_update.php">登録情報の変更</a></li>
+            <li><a href="account_update.php">アカウント登録情報の変更</a></li>
           </ul>
         </nav>
 

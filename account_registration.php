@@ -3,12 +3,19 @@
 <head>
 	<meta charset="utf-8">
 	<title>アカウント登録</title>
+	<script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
+	<script type="text/javascript" src="js/jquery.cbkonami.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="CSS/default.css" media="all">
+	<link rel="stylesheet" type="text/css" href="CSS/top_page.css" media="all">
+	<link rel="stylesheet" type="text/css" href="CSS/default_color.css" media="all">
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 </head>
 <body>
 	<?php
+	include("includes/header.html");
+	include("includes/sidebar.html");
 	include("includes/connect_DB.php");
 	ini_set( 'display_errors', 1 );
-	session_start();
 	$first_name   = $_POST['first_name']; //FIRST_NAME
 	$last_name    = $_POST['last_name']; //LAST_NAME
 	$phonetic     = $_POST['first_phonetic'].$_POST['last_phonetic']; //FRIGANA
@@ -33,7 +40,6 @@
 	echo $zip.'<br>';
 	echo $email.'<br>';
 	echo $sex.'<br>';
-	echo $password.'<br>';
 	echo $mailmagazine.'<br>';
 	echo $birthday . '<br>';
 
@@ -49,5 +55,14 @@
 	}
   $conn -> close();
 	?>
+	<?php include ("includes/top.html"); ?>
+	<?php include("includes/footer.html"); ?>
+	<script type="text/javascript" src="js/classie.js"></script>
+	<script type="text/javascript" src="js/sidebar.js"></script>
+	<script>
+	  $(window).cbKonami(function () {
+	    window.location = "admin.php";
+	  });
+	</script>
 </body>
 </html>

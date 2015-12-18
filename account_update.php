@@ -14,25 +14,27 @@
 	<?php include("includes/header.html"); ?>
 	<?php include("includes/connect_DB.php"); ?>
 	<main>
-		<h1>アカウント設定の変更</h1>
 		<div id="container">
+		<h1>アカウント設定の変更</h1>
 			<?php
 			ini_set( 'display_errors', 1 );
 			if($id = $_SESSION["CUSTOMER_ID"]){
-				$sql = "SELECT CUSTOMER_ID, FIRST_NAME, LAST_NAME, FURIGANA, SEX, BIRTH_DATE, EMAIL_ADDRESS, PHONE_NUMBER, PASSWORD, ZIP_CODE, ADDRESS_STREET_1, ADDRESS_STREET_2, ADDRESS_STREET_3, EMAIL_PERMIT FROM CUSTOMER WHERE CUSTOMER_ID = '$id'";
+				$sql = "SELECT CUSTOMER_ID, FIRST_NAME, LAST_NAME, FURIGANA, SEX, BIRTH_DATE, EMAIL_ADDRESS, PHONE_NUMBER, PASSWORD, ZIP_CODE, ADDRESS_STREET_1, ADDRESS_STREET_2, ADDRESS_STREET_3, EMAIL_PERMIT FROM customer WHERE CUSTOMER_ID = '$id'";
 				$result = $conn->query($sql);
 
 				while($row = $result->fetch_assoc()){
-					echo '<ul id="account_edit">';
-					echo "<li class='border'><p><strong>名前</strong></p>";
+					echo '<ul>';
+					echo '<li><p><strong>名前</strong></p>';
 					echo $row["FIRST_NAME"].$row["LAST_NAME"]." (".$row["FURIGANA"].")";
 					echo '<div class="btn"><a href="name_edit.php" class="btn">編集</a></div></li>';
+					echo '<div class="border"></div>';
 
-					echo "<li class='border'><p><strong>Eメールアドレス</strong></p>";
+					echo '<li><p><strong>Eメールアドレス</strong></p>';
 					echo $row["EMAIL_ADDRESS"];
 					echo '<div class="btn"><a href="email_edit.php" class="btn">編集</a></div></li>';
+					echo '<div class="border"></div>';
 
-					echo "<li class='border'><p><strong>電話番号</strong></p>";
+					echo '<li><p><strong>電話番号</strong></p>';
 					if(strlen($row["PHONE_NUMBER"]) == 10){
 						echo substr($row["PHONE_NUMBER"], 0, 2) . "-" . substr($row["PHONE_NUMBER"], -8, 4) . "-" . substr($row["PHONE_NUMBER"], -4, 4);
 					}
@@ -40,12 +42,25 @@
 						echo substr($row["PHONE_NUMBER"], 0, 3) . "-" . substr($row["PHONE_NUMBER"], -8, 4) . "-" . substr($row["PHONE_NUMBER"], -4, 4);
 					}
 					echo '<div class="btn"><a href="phonenumber_edit.php" class="btn">編集</a></div></li>';
+					echo '<div class="border"></div>';
 
-					echo "<li class='border'><p><strong>住所</strong></p>";
+					echo '<li><p><strong>住所</strong></p>';
 					echo substr($row["ZIP_CODE"], 0, 3)."-".substr($row["ZIP_CODE"], -4, 4)."<br>".$row["ADDRESS_STREET_1"].$row["ADDRESS_STREET_2"].$row["ADDRESS_STREET_3"];
 					echo '<div class="btn"><a href="address_edit.php" class="btn">編集</a></div></li>';
+					echo '<div class="border"></div>';
 
-					echo "<li><p><strong>パスワードの変更</strong></p>";
+					echo '<li><p><strong>メールマガジンの配布</strong></p>';
+					if($row["EMAIL_PERMIT"] == 1){
+						echo '受け取る';
+					}
+					if($row["EMAIL_PERMIT"] == 0){
+						echo '受け取らない';
+					}
+					// var_dump($row["EMAIL_PERMIT"]);
+					echo '<div class="btn"><a href="mailmagazine_edit.php" class="btn">編集</a></div></li>';
+					echo '<div class="border"></div>';
+
+					echo '<li><p><strong>パスワードの変更</strong></p>';
 					// echo str_repeat('*', strlen($row["PASSWORD"]));
 					echo '<div class="btn"><a href="password_edit.php" class="btn">編集</a></div></li>';
 					echo '</ul>';

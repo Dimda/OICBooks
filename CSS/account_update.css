@@ -4,15 +4,13 @@
 	margin: 0 auto;
 	width: 50%;
 }
-ul#account_edit {
+#container li{
+	padding-left: 10px;
+}
+#container ul {
 	border: 1px solid black;
 	border-radius: 10px;
-	padding-left: 10px;
-	padding-bottom: 15px;
-}
-li.border {
-	/*padding: 10px;*/
-	border-bottom: 1px solid black;
+	padding-left: 0px;
 }
 a.btn{
 	background-color: #9F1D2F;
@@ -23,6 +21,6 @@ a.btn{
 	text-align: right;
 	border-radius: 5px;
 }
-.right{
-	/*text-align: right;*/
+.border {
+	border-bottom: 1px solid black;
 }

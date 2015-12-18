@@ -35,13 +35,16 @@ if ($id = $_SESSION["CUSTOMER_ID"]){
 		$sql = "UPDATE customer SET ZIP_CODE = '$zip', ADDRESS_STREET_1 = '$pref', ADDRESS_STREET_2 = '$city', ADDRESS_STREET_3 = '$mansion' WHERE CUSTOMER_ID = '$id'";
 	}
 
+	if($mailmagazine == 0 or $mailmagazine == 1){
+		$sql = "UPDATE customer SET EMAIL_PERMIT = '$mailmagazine' WHERE CUSTOMER_ID = '$id'";
+	}
+
 	if($password && $new_password){
 		$sql = "UPDATE customer SET PASSWORD = '$new_password' WHERE CUSTOMER_ID = '$id' AND PASSWORD = '$password'";
 	}
 
 	$conn -> query($sql);
 	$conn -> close();
-
 }
 header('Location: account_update.php');
 ?>
