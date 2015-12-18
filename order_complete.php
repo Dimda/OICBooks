@@ -39,8 +39,8 @@
 			$email_message= $email_message."
 			「{$product_name}」を{$quantity}冊 小計{$price_sum}円";
 		}
-		$sql =  "INSERT INTO `ordered_product` (`ORDERED_PRODUCT_ID`, `PRODUCT_ID`, `PRODUCT_NAME`, `PRODUCT_PRICE`, `QUANTITY`, `ORDER_ID`)
-	 				VALUES (NULL, '$product_id','$product_name','$product_price','$quantity','$order_id');";
+		$sql =  "INSERT INTO `ordered_product` (`ORDERED_PRODUCT_ID`, `PRODUCT_ID`, `PRODUCT_NAME`, `PRODUCT_PRICE`, `QUANTITY`,`PURCHASE_DATE`, `ORDER_ID`)
+	 				VALUES (NULL, '$product_id','$product_name','$product_price','$quantity','$date','$order_id');";
 		$conn->query($sql);
 	}
 
