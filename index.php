@@ -8,7 +8,7 @@
   <link rel="stylesheet" type="text/css" href="CSS/top_page.css" media="all">
   <link rel="stylesheet" type="text/css" href="CSS/default_color.css" media="all">
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-  <title>OICBooksへようこそ</title>
+  <title>OICBooks</title>
 </head>
 <body>
 
