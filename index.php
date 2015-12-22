@@ -36,7 +36,6 @@
     $(document).ready(function(){
       $('.slider1').bxSlider({
         auto: true,
-
         mode: 'fade',
         minSlides: 1,
         maxSlides: 1,

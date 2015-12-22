@@ -125,6 +125,6 @@
       //エラー処理
     }
 	$conn -> close();
-	header('location: index.php');
+	header('location: thanks.php');
 	exit();
 ?>

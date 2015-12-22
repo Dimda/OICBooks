@@ -7,7 +7,7 @@
   <link rel="stylesheet" type="text/css" href="CSS/default_color.css" media="all">
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
-  <title>ログイン</title>
+  <title>サインイン</title>
 </head>
 <body>
   <?php include("includes/sidebar.html"); ?>

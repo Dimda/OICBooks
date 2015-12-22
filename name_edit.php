@@ -26,7 +26,7 @@
 			<input type="text" class="phonetic" name="first_phonetic" data-validation="required" maxlength="30" data-validation-error-msg="フリガナを入力してください" placeholder="セイ">
 			<input type="text" class="phonetic" name="last_phonetic" data-validation="required" maxlength="30" data-validation-error-msg="フリガナを入力してください" placeholder="メイ">
 		</p>
-		<input type="submit"></input>
+		<input type="submit">
 		</form>
 	</main>
 	<?php include("includes/top.html"); ?>

@@ -100,13 +100,13 @@
 				<tr>
 					<th>メールマガジンの送付について<i>必須</i></th>
 					<td>
-						<input type="radio" name="mailmagazine" data-validation="required" data-validation-error-msg="選択してください" value="1"> 受け取る 
-						<input type="radio" name="mailmagazine" data-validation="required" data-validation-error-msg="選択してください"　value="1"> 受け取らない
+						<input type="radio" name="mailmagazine" data-validation="required" data-validation-error-msg="選択してください" value="1"> 受け取る
+						<input type="radio" name="mailmagazine" data-validation="required" data-validation-error-msg="選択してください" value="0"> 受け取らない
 					</td>
 				</tr>
 			</table>
-			<input type="submit" name="submit">送信</input>
-			<input type="reset">リセット</input>
+			<input type="submit">
+			<input type="reset">
 		</form>
 	</main>
 	<script type="text/javascript" src="js/classie.js"></script>
