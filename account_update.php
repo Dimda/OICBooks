@@ -17,7 +17,6 @@
 		<div id="container">
 		<h1>アカウント設定の変更</h1>
 			<?php
-			ini_set( 'display_errors', 1 );
 			if($id = $_SESSION["CUSTOMER_ID"]){
 				$sql = "SELECT CUSTOMER_ID, FIRST_NAME, LAST_NAME, FURIGANA, SEX, BIRTH_DATE, EMAIL_ADDRESS, PHONE_NUMBER, PASSWORD, ZIP_CODE, ADDRESS_STREET_1, ADDRESS_STREET_2, ADDRESS_STREET_3, EMAIL_PERMIT FROM customer WHERE CUSTOMER_ID = '$id'";
 				$result = $conn->query($sql);

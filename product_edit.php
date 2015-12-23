@@ -13,6 +13,7 @@ $cssLink[2]         = 'admin_product_manager.css';
 
 $scriptSource[0]    = 'https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js';
 $scriptSource[1]    = '//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.2.8/jquery.form-validator.min.js';
+$scriptSource[2]    = 'js/addOtherOption.js';
 
 
 include("includes/admin_top.php");
@@ -107,7 +108,7 @@ while($row = $result->fetch_assoc()){
     <p>
       <div class="label"><label for="product-category">カテゴリー</label></div>
       <div class="input">
-        <select id="product-category" name="productCategory" >
+        <select id="product-category" name="productCategory" onchange='CheckOther(this.value);'>
           <?php
           $sql = "SELECT * FROM CATEGORY";
           $result = $conn->query($sql);
@@ -181,4 +182,13 @@ while($row = $result->fetch_assoc()){
   $.validate({
   form : '#edit-form'
   });
+  function CheckOther(val){
+   var element=document.getElementById('product-category');
+   if(val=='new'){
+     element.style.display='block';
+     console.log("成功");
+   }else{
+     element.style.display='none';
+   }
+  }
 </script>
