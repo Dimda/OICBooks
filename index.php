@@ -18,7 +18,7 @@
     <div id="advertisements" class="box"></div>
     <div id="new" class="link"><a href="#"><h3>新着商品</h3></a></div><div id="discount" class="link"><a href="#"><h3>セール商品</h3></a></div>
     <div id="sales" class="box"></div>
-    <h2>おすすめ商品</h2>
+    <h2>ランキング</h2>
     <div id="recommended" class="box">
       <?php include ("includes/ranking.php"); ?>
     </div>
