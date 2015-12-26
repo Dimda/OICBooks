@@ -4,14 +4,13 @@
 	<meta charset="UTF-8">
 	<title>アカウント設定の変更</title>
 	<link rel="stylesheet" type="text/css" href="css/default.css" media="all">
-	<link rel="stylesheet" type="text/css" href="css/mypage.css" media="all">
 	<link rel="stylesheet" type="text/css" href="CSS/default_color.css" media="all">
 	<link rel="stylesheet" type="text/css" href="css/account_update.css" media="all">
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 </head>
 <body>
-	<?php include("includes/sidebar.html"); ?>
 	<?php include("includes/header.html"); ?>
+	<?php include("includes/sidebar.html"); ?>
 	<?php include("includes/connect_DB.php"); ?>
 	<main>
 		<div id="container">
@@ -20,7 +19,6 @@
 			if($id = $_SESSION["CUSTOMER_ID"]){
 				$sql = "SELECT CUSTOMER_ID, FIRST_NAME, LAST_NAME, FURIGANA, SEX, BIRTH_DATE, EMAIL_ADDRESS, PHONE_NUMBER, PASSWORD, ZIP_CODE, ADDRESS_STREET_1, ADDRESS_STREET_2, ADDRESS_STREET_3, EMAIL_PERMIT FROM customer WHERE CUSTOMER_ID = '$id'";
 				$result = $conn->query($sql);
-
 				while($row = $result->fetch_assoc()){
 					echo '<ul>';
 					echo '<li><p><strong>名前</strong></p>';
