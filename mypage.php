@@ -20,7 +20,7 @@
         $id = $_SESSION["CUSTOMER_ID"];
         $result = $conn->query("SELECT FIRST_NAME, LAST_NAME, `POINT` FROM customer WHERE CUSTOMER_ID = $id");
         while($row = $result->fetch_assoc()){
-          echo $row["FIRST_NAME"].$row["LAST_NAME"]."さんのポイント:".$row["POINT"].'<br>';
+          echo $row["FIRST_NAME"].$row["LAST_NAME"]."さんのポイント数は ".$row["POINT"].'<br>';
         }
       $conn->close();
       ?>
