@@ -16,4 +16,5 @@ if (!unlink($matches[0])){
   echo ("Deleted $file");
 }
 $conn->close();
+header('Location: admin_product_manager.php');
 ?>

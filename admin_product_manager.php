@@ -53,3 +53,8 @@ include("includes/admin_top.php");
 </div>
 
 <?php include("includes/admin_bottom.html");?>
+<script>
+  function deleteCheck() {
+    return confirm("本当に削除しますか。");
+  }
+</script>
