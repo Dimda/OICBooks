@@ -12,9 +12,18 @@
 <body>
   <?php include("includes/sidebar.html"); ?>
   <?php include("includes/header.html"); ?>
+  <?php include("includes/connect_DB.php"); ?>
 	<main>
     <div id="account_service">
       <h2>アカウントサービス</h2>
+      <?php
+        $id = $_SESSION["CUSTOMER_ID"];
+        $result = $conn->query("SELECT FIRST_NAME, LAST_NAME, `POINT` FROM customer WHERE CUSTOMER_ID = $id");
+        while($row = $result->fetch_assoc()){
+          echo $row["FIRST_NAME"].$row["LAST_NAME"]."さんのポイント数は ".$row["POINT"].'<br>';
+        }
+      $conn->close();
+      ?>
       <section id="order_history">
         <h3>注文履歴</h3>
         <nav>

@@ -6,7 +6,7 @@
   <link rel="stylesheet" type="text/css" href="CSS/default_color.css" media="all">
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
-  <title>検索結果</title>
+  <title>カテゴリ検索結果</title>
   <meta charset="utf-8">
 </head>
 <body>
@@ -16,15 +16,12 @@
     <div id="search-results">
       <?php
         include("includes/connect_DB.php");
-        $keyword = $_POST["keyword"];
-        $keyword = mysqli_real_escape_string($conn, $keyword);
-        echo "<p>" . $keyword . "の検索結果</p>";
+        $category_id = $_GET["ID"];
+        $category_name = $_GET["NAME"];
+        echo "<p>" . $category_name . "の検索結果</p>";
 
-        if($keyword == ""){
-          $sql = "SELECT PRODUCT_ID, PRODUCT_NAME, PRODUCT_PRICE FROM PRODUCT";
-        }else{
-          $sql = "SELECT PRODUCT_ID, PRODUCT_NAME, PRODUCT_PRICE FROM PRODUCT WHERE PRODUCT_NAME LIKE '%{$keyword}%' OR PRODUCT_AUTHOR LIKE '%{$keyword}%'";
-        }
+        
+        $sql = "SELECT PRODUCT_ID, PRODUCT_NAME, PRODUCT_PRICE FROM PRODUCT WHERE CATEGORY_ID = '{$category_id}'";
         $result = $conn->query($sql);
 
         while($row = $result->fetch_assoc()){

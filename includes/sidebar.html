@@ -10,11 +10,11 @@
       <?php
         include("includes/connect_DB.php");
 
-        $sql = "SELECT CATEGORY_NAME FROM CATEGORY";
+        $sql = "SELECT CATEGORY_NAME,CATEGORY_ID FROM CATEGORY";
         $result = $conn->query($sql);
 
         while($row = $result->fetch_assoc()){
-          echo '<li><a href="#">'.$row["CATEGORY_NAME"].'</a></li>';
+          echo '<li><a href="category_search.php?ID='.$row["CATEGORY_ID"].'&NAME='.$row["CATEGORY_NAME"].'">'.$row["CATEGORY_NAME"].'</a></li>';
         }
         $conn->close();
 
