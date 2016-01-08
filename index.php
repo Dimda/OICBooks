@@ -24,11 +24,11 @@
     </div>
 
     <div id="new" class="link"><a href="#"><h3>新着商品</h3></a></div>
-    <div id="sales" class="box">
+    <div id="sales" class="boxdayo">
         <?php include ("includes/newproduct.php"); ?>
     </div>
     <h2>ランキング</h2>
-    <div id="recommended" class="box">
+    <div id="recommended" class="boxdayo">
       <?php include ("includes/ranking.php"); ?>
     </div>
   </main>
