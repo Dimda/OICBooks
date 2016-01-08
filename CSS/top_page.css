@@ -4,6 +4,7 @@
 }
 #sales{
   height: 250px;
+  overflow-y: scroll;
 }
 /*新着商品*/
 #recommended{
@@ -23,7 +24,7 @@
   border: solid 1px black;
   padding: 0.3rem;
   text-align: center;
-  width: 50%;
+  width: 100%;
 }
 main a{
   color:black;

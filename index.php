@@ -18,13 +18,15 @@
   <?php include("includes/sidebar.html"); ?>
   <main>
     <div class="slider1">
-      <div class="slide"><img src="img/tagsale2.jpg" height="400px" width="1000px"/></div>
-      <div class="slide"><img src="img/100011.jpg" height="400px" width="400px" /></div>
-      <div class="slide"><img src="img/100012.jpg" height="400px" width="400px" /></div>
+      <div class="slide"><img src="img/add-1.jpg" height="400px" width="1000px"/></div>
+      <div class="slide"><img src="img/add-2.jpg" height="400px" width="400px" /></div>
+      <div class="slide"><img src="img/add-3.jpg" height="400px" width="400px" /></div>
     </div>
 
-    <div id="new" class="link"><a href="#"><h3>新着商品</h3></a></div><div id="discount" class="link"><a href="#"><h3>セール商品</h3></a></div>
-    <div id="sales" class="box"></div>
+    <div id="new" class="link"><a href="#"><h3>新着商品</h3></a></div>
+    <div id="sales" class="box">
+        <?php include ("includes/newproduct.php"); ?>
+    </div>
     <h2>ランキング</h2>
     <div id="recommended" class="box">
       <?php include ("includes/ranking.php"); ?>

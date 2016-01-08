@@ -9,5 +9,5 @@
   <script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.2.8/jquery.form-validator.min.js"></script>
 </head>
   <?php include("includes/admin_top.php") ?>
-  <h1>
+  <h1>管理者ページへようこそ。</h1>
   <?php include("includes/admin_bottom.html") ?>
