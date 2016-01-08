@@ -9,10 +9,9 @@
     while($row = $result->fetch_assoc()){
 
       echo '<a href="product_details.php?ID=' . $row["PRODUCT_ID"] . '">'
-      .date('Y年n月j日', strtotime($row["PRODUCT_DATE_AVAILABLE"])). "　" .$row["PRODUCT_NAME"]."<br><br>";
+      .date('Y年n月j日', strtotime($row["PRODUCT_DATE_AVAILABLE"])). "　" .$row["PRODUCT_NAME"]."</a><br><br>";
       $i+= 1;
-      if($i >10)
-        break;
+     
     }
     $conn->close();
 ?>
