@@ -18,8 +18,11 @@
         include("includes/connect_DB.php");
         $keyword = $_POST["keyword"];
         $keyword = mysqli_real_escape_string($conn, $keyword);
+        $pattern = '/^978-/';
+        $replacement = '978';
+        
         echo "<p>" . $keyword . "の検索結果</p>";
-
+        $keyword = preg_replace($pattern, $replacement, $keyword);
         if($keyword == ""){
           $sql = "SELECT PRODUCT_ID, PRODUCT_NAME, PRODUCT_PRICE FROM PRODUCT";
         }else{
