@@ -6,7 +6,7 @@
 
     $i=1;
     while($row = $result->fetch_assoc()){
-      echo '<a href="product_details.php?ID=' . $row["PRODUCT_ID"] . '">'.$i." 位 ".$row["PRODUCT_NAME"]."<br><br>";
+      echo '<a href="product_details.php?ID=' . $row["PRODUCT_ID"] . '">'.$i." 位 ".$row["PRODUCT_NAME"]."</a><br><br>";
       $i+= 1;
       if($i >10)
       	break;
