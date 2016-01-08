@@ -44,7 +44,7 @@ include("includes/admin_top.php");
                   <td class = "product-name" width = "70%"><a class = "product-name" href="product_details.php?ID=' . $row["PRODUCT_ID"] . '">' . $row["PRODUCT_NAME"] .'</a></td>
                   <td class = "product-price" width = "10%">' . $row["PRODUCT_PRICE"] .'円</td>
                   <td class = "product-stock" width = "10%">'.$row["STOCK"].''."冊".'</td>
-                  <td class = "edit" width = "10%"><a href="#?ID=' . $row["PRODUCT_ID"] . '">個別発注</a></td>
+                  <td class = "edit" width = "10%"><a href="order_check_individual.php?ID=' . $row["PRODUCT_ID"] . '">個別発注</a></td>
                 </tr>
                 ';
            }

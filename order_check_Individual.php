@@ -1,7 +1,4 @@
 <?php
-if($_POST["check"] == ""){
-      header('location: product_order.php');
-    }
 $title              = '発注確認';
 $subtitle           = '発注確認';
 
@@ -26,8 +23,7 @@ include("includes/admin_top.php");
     echo '<table>
               <form action="send_publisher.php" method="post">
              <th>商品名</th><th>価格</th><th>数量</th>';
-    foreach ($_POST["check"] as $key => $value) {
-      $keyword = $value;
+      $keyword = $_GET["ID"];
       $keyword = mysqli_real_escape_string($conn, $keyword);
       $sql = "SELECT PRODUCT_ID, PRODUCT_NAME, PRODUCT_PRICE,STOCK FROM PRODUCT WHERE PRODUCT_ID = '{$keyword}'";
       $result = $conn->query($sql);
@@ -41,7 +37,6 @@ include("includes/admin_top.php");
                 </tr>
                 ';
              }
-      }
       echo '</table>';
       echo '<input type="submit" value="まとめて発注" width="100%" style="margin-left: 40%;
                     font-size: 1.4em;">';
