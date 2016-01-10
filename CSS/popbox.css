@@ -3,6 +3,7 @@
   text-align:center;
   position:relative;
   z-index: 10000;
+  max-width: 130px;
 }
 
   .collapse { position:relative; }

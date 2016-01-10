@@ -73,7 +73,7 @@
 					<th>メールアドレス<i>*</i></th>
 					<td>
 						<p><input type="text" id="email" name="user_email" data-validation="email" data-validation-error-msg="メールアドレスを入力してください" placeholder="例) your@email.com"></p>
-						<input type="text" id="confirm_email" name="repeat" data-validation="confirmation" data-validation-error-msg="メールアドレスが一致しません" data-validation-confirm="user_email" placeholder="例) your@email.com">
+						<input type="text" id="confirm_email" name="repeat" data-validation="confirmation" data-validation-error-msg="メールアドレスが一致しません" data-validation-confirm="user_email" placeholder="確認のためもう一度入力してください">
 					</td>
 				</tr>
 				<tr>

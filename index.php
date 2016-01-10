@@ -10,6 +10,9 @@
   <link rel="stylesheet" type="text/css" href="CSS/default_color.css" media="all">
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
   <link href="js/Slider/jquery.bxslider.css" rel="stylesheet" />
+  <script>
+  window.alert("このページは学校の課題作品です","width=160,height=300");
+  </script>
   <title>OICBooksへようこそ</title>
 </head>
 <body>

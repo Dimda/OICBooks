@@ -106,11 +106,13 @@ main {
   text-align: center;
 }
 #sidebar ul {
-  margin-top: 30px;
+  margin-top: 80px;
 }
 #sidebar nav a {
+  width: 170px;
   display: block;
   font-size: 0.9rem;
+  margin: 10px 0;
 }
 #top{
   position: fixed;

@@ -16,7 +16,6 @@ while($row = $result->fetch_assoc()){
 <html>
 <head>
   <link rel="stylesheet" type="text/css" href="CSS/default.css" media="all">
-  <link rel="stylesheet" type="text/css" href="CSS/sidebar.css" media="all">
   <link rel="stylesheet" type="text/css" href="CSS/product_details.css" media="all">
   <link rel="stylesheet" type="text/css" href="CSS/default_color.css" media="all">
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
@@ -33,7 +32,7 @@ while($row = $result->fetch_assoc()){
       <div id="product-name"><?php echo $productName; ?></div>
       <div id ="product-author"><?php echo $productAuthor; ?>(著)</div>
       <div id="product-stock">
-        価格：<span id="product-price"><?php echo $productPrice; ?>円</span>
+        価格：<span id="product-price">¥<?php echo $productPrice; ?></span>
         <?php
         if($productStock > 0){
           if($productStock <= 10){

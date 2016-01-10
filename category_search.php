@@ -21,15 +21,16 @@
         echo "<p>" . $category_name . "の検索結果</p>";
 
         
-        $sql = "SELECT PRODUCT_ID, PRODUCT_NAME, PRODUCT_PRICE FROM PRODUCT WHERE CATEGORY_ID = '{$category_id}'";
+        $sql = "SELECT PRODUCT_ID, PRODUCT_NAME, PRODUCT_PRICE, PRODUCT_AUTHOR FROM PRODUCT WHERE CATEGORY_ID = '{$category_id}'";
         $result = $conn->query($sql);
 
         while($row = $result->fetch_assoc()){
           $matches = glob('./product_image/' . $row["PRODUCT_ID"] . "*");
           echo  '<div id="box">';
-          echo  '<img class="product-picture" src="' . $matches[0] . '"></br>';
-          echo  '<a class = "product-name" href="product_details.php?ID=' . $row["PRODUCT_ID"] . '">' . $row["PRODUCT_NAME"] .'</a></br>';
-          echo  '<div class="product-price">¥ '. $row["PRODUCT_PRICE"] .'</div></br>';
+          echo  '<img id="product-picture" src="' . $matches[0] . '"></br>';
+          echo  '<a id = "product-name" href="product_details.php?ID=' . $row["PRODUCT_ID"] . '">' . $row["PRODUCT_NAME"] .'</a></br>';
+          echo  '<div id="product-author">'.$row["PRODUCT_AUTHOR"].'</div>';
+          echo  '<div id="product-price">¥ '. $row["PRODUCT_PRICE"] .'</div></br>';
           echo  '</div>';
         }
         $conn->close();
