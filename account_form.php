@@ -38,8 +38,8 @@
 				<tr>
 					<th>名前<i>*</i></th>
 					<td>
-						<input type="text" class="name" name="first_name" data-validation="required" data-validation-error-msg="姓を入力してください" maxlength="20" placeholder="例) 田中" autofocus> 
-						<input type="text" class="name" name="last_name" data-validation="required" data-validation-error-msg="名を入力してください" maxlength="20" placeholder="例) 太郎">
+						姓 <input type="text" class="name" name="first_name" data-validation="required" data-validation-error-msg="姓を入力してください" maxlength="20" placeholder="例) 田中" autofocus> 
+						名 <input type="text" class="name" name="last_name" data-validation="required" data-validation-error-msg="名を入力してください" maxlength="20" placeholder="例) 太郎">
 					</td>
 				</tr>
 				<tr>
@@ -58,9 +58,9 @@
 					<th>住所<i>*</i></th>
 					<td>
 						<p><select id="pref" name="pref" data-validation="required" data-validation-error-msg="都道府県を選択してください"><?php include("includes/pref.html"); ?></select></p>
-						<p><input type="text" id="city" name="city" data-validation="required" data-validation-error-msg="市区町村を入力してください" placeholder="市区町村"></p>
-						<p><input type="text" id="area" name="area" data-validation="required" data-validation-error-msg="町域・番地を入力してください" placeholder="町域"></p>
-						<p><input type="text" id="mansion" name="mansion" data-validation-error-msg="マンション名を入力してください" placeholder="マンション名"></p>
+						市区町村<p><input type="text" id="city" name="city" data-validation="required" data-validation-error-msg="市区町村を入力してください" placeholder="例) 大阪市平野区"></p>
+						町域・番地<p><input type="text" id="area" name="area" data-validation="required" data-validation-error-msg="町域・番地を入力してください" placeholder="例) 瓜破1-2-3"></p>
+						マンション名<p><input type="text" id="mansion" name="mansion" data-validation-error-msg="マンション名を入力してください"></p>
 					</td>
 				</tr>
 				<tr>
