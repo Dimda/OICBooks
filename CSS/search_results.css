@@ -7,21 +7,24 @@
 	padding: 10px 50px 10px 0;
 	/*margin: 0 1px;*/
 }
-.product-picture {
+#product-picture {
 	margin-bottom: 15px;
 	max-width :150px;
 	height: 200px;
 }
-.product-name{
+#product-name{
 	/*margin-bottom: 10px;*/
 	color: #b0966d;
 }
-.product-name:hover {
+#product-name:hover {
 	opacity: 0.8;
 }
-.product-price{
-	margin-top: 10px;
+#product-price{
+margin-top: 10px;
   font-size: 20pt;
   color: #AA512F;
   font-size: 15px;
+}
+#product-author{
+	font-size: 0.7em;
 }

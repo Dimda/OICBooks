@@ -1,26 +1,33 @@
-
+#account_form {
+	margin: 0 auto;
+	width: 700px;
+}
 table {
-	border: 1px solid black;
-	table-layout: fixed;
-	width: auto;
 	text-align: left;
+	border-collapse: collapse;
 }
 th {
 	padding: 10px;
-	background-color: #BFC2DF;
+	border-bottom: 1px solid #e3e3e3;
+	/*background-color: #BFC2DF;*/
 	font-size: 12px;
 }
 td {
 	font-size: 10px;
-	background-color: #DEDFEF;
+	border-bottom: 1px solid #e3e3e3;
+	/*background-color: #DEDFEF;*/
 	padding: 3px;
 }
 p {
 	margin: 3px 0;
 }
-input{
-	border-style: none;
-	padding: 3px;
+#account_form input{
+	border: solid 1px #e3e3e3;
+	border-radius: 3px;
+	padding: 8px;
+}
+#account_form input:focus {
+    border:solid 1px #EEA34A;
 }
 #pref, #city, #area, #add {
 	width: 50%;
@@ -44,10 +51,18 @@ input{
 	color: #ff3333;
 }
 table i {
-	color: white;
-	background-color: #ff3333;
+	color: #ff3333;
+	/*background-color: #ff3333;*/
 	padding: 2px;
-	font-size: 0.8em;
+	font-size: 1em;
 	float: right;
 	margin-left: 10px;
+}
+input[type="submit"], input[type="reset"] {
+	margin-top: 10px;
+	cursor: pointer;
+	/*padding: 0 300px;*/
+}
+input[type="submit"]:hover, input[type="reset"]:hover {
+	background-color: #e1e1e1;
 }

@@ -18,7 +18,7 @@
 	ini_set( 'display_errors', 1 );
 	$first_name   = $_POST['first_name']; //FIRST_NAME
 	$last_name    = $_POST['last_name']; //LAST_NAME
-	$phonetic     = $_POST['first_phonetic'].$_POST['last_phonetic']; //FRIGANA
+	$phonetic     = $_POST['phonetic']; //FRIGANA
 	$sex          = $_POST['sex']; //SEX
 	$birthday     = $_POST['birthday'].'-'.$_POST['month'].'-'.$_POST['day'];//BIRTH_DATE
 	$email        = $_POST['user_email']; //EMAIL_ADDRESS

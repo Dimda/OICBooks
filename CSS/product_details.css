@@ -1,17 +1,45 @@
 @charset "UTF-8";
-main{
-  background-color: #F9F3CF;
+
+#add-cart{
+	margin: 5px;
+}
+#exist{
+	color:#23AC0E;
+}
+#nothing{
+	color:#C7243A;
 }
 #product-info-wrapper{
-
+	margin: 10px;
 }
 #product-image{
 
 }
+#block{
+	margin-left: 10px;
+	overflow: hidden;
+}
 #product-name{
-
+	margin-bottom: 3px;
+	font-size: 1.2em;
+	font-weight: bold;
+}
+#product-author{
+	margin-bottom: 15px;
+	font-size: 0.7em;
+}
+#product-stock{
+	margin-bottom: 5px;
+}
+#product-description{
+	font-size: 0.8em;
+}
+.product-picture{
+	float: left;
+	max-width :200px;
+	margin-right: 10px;
 }
 #product-price{
-  color: #AA812F;
-  font-size: 30pt;
+  color: #AA512F;
+  font-size: 1.2em;
 }

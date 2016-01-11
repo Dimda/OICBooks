@@ -70,12 +70,7 @@ header li{
   border-width: 1px;
   padding: 5.25px 6px;
   height: 30.5px;
-}
-#search_bar1{
   width:300px;
-}
-#search_bar2{
-  width: 180px;
 }
 #side_search {
   margin: 80px 0 0 20px;
@@ -111,11 +106,13 @@ main {
   text-align: center;
 }
 #sidebar ul {
-  margin-top: 30px;
+  margin-top: 80px;
 }
 #sidebar nav a {
+  width: 170px;
   display: block;
   font-size: 0.9rem;
+  margin: 10px 0;
 }
 #top{
   position: fixed;
