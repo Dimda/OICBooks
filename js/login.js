@@ -15,7 +15,7 @@ $(document).ready(function(){
   });
 });
 
-
+/*
 $(document).ready(function(){
 $("#add_err").css('display', 'none', 'important');
 $("#login").click(function(){
@@ -26,15 +26,15 @@ $("#login").click(function(){
    url: "login.php",
 data: "name="+username+"&pwd="+password,
    success: function(html){
-if(html=='true')    {
-//$("#add_err").html("right username or password");
-window.location="dashboard.php";
-}
-else    {
-$("#add_err").css('display', 'inline', 'important');
-$("#add_err").html("<img src='images/alert.png' />Wrong username or password");
-}
-   },
+    if(html=='true')    {
+    //$("#add_err").html("right username or password");
+    window.location="dashboard.php";
+    }
+    else    {
+    $("#add_err").css('display', 'inline', 'important');
+    $("#add_err").html("<img src='images/alert.png' />Wrong username or password");
+  }
+},
    beforeSend:function()
    {
 $("#add_err").css('display', 'inline', 'important');
@@ -45,5 +45,4 @@ return false;
 });
 });
 
-
-Read more: http://www.ondeweb.in/ajax-login-form-with-jquery-and-php/#ixzz3wdN8sKns
+*/

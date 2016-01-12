@@ -1,9 +1,9 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-  <link rel="stylesheet" type="text/css" href="CSS/default.css" media="all">
-  <link rel="stylesheet" type="text/css" href="CSS/search_results.css" media="all">
-  <link rel="stylesheet" type="text/css" href="CSS/default_color.css" media="all">
+  <link rel="stylesheet" type="text/css" href="css/default.css" media="all">
+  <link rel="stylesheet" type="text/css" href="css/search_results.css" media="all">
+  <link rel="stylesheet" type="text/css" href="css/default_color.css" media="all">
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
   <title>カートに追加しました</title>

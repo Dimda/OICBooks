@@ -5,7 +5,7 @@
 	<title>アカウント設定の変更</title>
 	<link rel="stylesheet" type="text/css" href="css/default.css" media="all">
 	<link rel="stylesheet" type="text/css" href="css/mypage.css" media="all">
-	<link rel="stylesheet" type="text/css" href="CSS/default_color.css" media="all">
+	<link rel="stylesheet" type="text/css" href="css/default_color.css" media="all">
 	<link rel="stylesheet" type="text/css" href="css/theme-default.css" media="all">
 	<script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.2.8/jquery.form-validator.min.js"></script>

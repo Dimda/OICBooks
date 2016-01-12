@@ -5,7 +5,7 @@
 	<title>アカウント設定の変更</title>
 	<link rel="stylesheet" type="text/css" href="css/default.css" media="all">
 	<link rel="stylesheet" type="text/css" href="css/mypage.css" media="all">
-	<link rel="stylesheet" type="text/css" href="CSS/default_color.css" media="all">
+	<link rel="stylesheet" type="text/css" href="css/default_color.css" media="all">
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="css/theme-default.css" media="all">
 	<script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>

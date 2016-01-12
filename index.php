@@ -5,9 +5,9 @@
   <script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
   <script type="text/javascript" src="js/jquery.cbkonami.min.js"></script>
   <script src="js/Slider/jquery.bxslider.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="CSS/default.css" media="all">
-  <link rel="stylesheet" type="text/css" href="CSS/top_page.css" media="all">
-  <link rel="stylesheet" type="text/css" href="CSS/default_color.css" media="all">
+  <link rel="stylesheet" type="text/css" href="css/default.css" media="all">
+  <link rel="stylesheet" type="text/css" href="css/top_page.css" media="all">
+  <link rel="stylesheet" type="text/css" href="css/default_color.css" media="all">
   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
   <link href="js/Slider/jquery.bxslider.css" rel="stylesheet" />
   <script>
@@ -39,6 +39,7 @@
   <?php include("includes/footer.html"); ?>
   <script type="text/javascript" src="js/classie.js"></script>
   <script type="text/javascript" src="js/sidebar.js"></script>
+  <script type="text/javascript" src="js/login.js"></script>
   <script>
     $(document).ready(function(){
       $('.slider1').bxSlider({

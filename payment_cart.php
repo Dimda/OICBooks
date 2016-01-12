@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8">
 		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-		<link rel="stylesheet" href="CSS/payment_cart.css">
+		<link rel="stylesheet" href="css/payment_cart.css">
 		<title>支払いページ</title>
 	</head>
 	<body>

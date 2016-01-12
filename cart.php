@@ -2,9 +2,9 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<link rel="stylesheet" href="CSS/default_color.css">
-	<link rel="stylesheet" href="CSS/default.css">
-	<link rel="stylesheet" href="CSS/cart.css">
+	<link rel="stylesheet" href="css/default_color.css">
+	<link rel="stylesheet" href="css/default.css">
+	<link rel="stylesheet" href="css/cart.css">
 	<link rel="stylesheet" type="text/css" href="css/search_results.css" media="all">
    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
