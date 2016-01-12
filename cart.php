@@ -20,7 +20,7 @@
 				include("includes/connect_DB.php");
 				$sum = 0;
 				$cart_id = $_SESSION["CART_ID"];
-				$sql = "SELECT PRODUCT_ID,QUANTITY FROM CART_PRODUCTS WHERE CART_ID = '$cart_id'";
+				$sql = "SELECT PRODUCT_ID,QUANTITY FROM cart_product WHERE CART_ID = '$cart_id'";
 				$result = $conn->query($sql);
 				while($row = $result->fetch_assoc()){
 					$matches = glob('./product_image/' . $row["PRODUCT_ID"] . "*");
@@ -32,7 +32,7 @@
           			echo $row["QUANTITY"];
           			echo "<br>";
           			$id = $row["PRODUCT_ID"];
-          			$sql = "SELECT PRODUCT_PRICE FROM PRODUCT WHERE PRODUCT_ID = '$id'";
+          			$sql = "SELECT PRODUCT_PRICE FROM product WHERE PRODUCT_ID = '$id'";
           			$price = $conn->query($sql);
           			$price = $price->fetch_assoc();
           			echo  '<div class="product-price">¥ '. $price["PRODUCT_PRICE"].'</div></br>';
