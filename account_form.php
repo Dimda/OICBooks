@@ -3,11 +3,11 @@
 <head>
 	<meta charset="utf-8">
 	<script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
-	<link rel="stylesheet" type="text/css" href="css/default.css">
+	<link rel="stylesheet" type="text/" href="css/default.css">
 	<link rel="stylesheet" type="text/css" href="css/default_color.css">
 	<link rel="stylesheet" type="text/css" href="css/account_form.css">
 	<link rel="stylesheet" type="text/css" href="css/theme-default.css">
-	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.2.8/jquery.form-validator.min.js"></script> 
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.2.8/jquery.form-validator.min.js"></script>
 	<script type="text/javascript" src="http://jpostal.googlecode.com/svn/trunk/jquery.jpostal.js"></script>
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 	<title>アカウントフォーム</title>
@@ -38,14 +38,14 @@
 				<tr>
 					<th>名前<i>*</i></th>
 					<td>
-						姓 <input type="text" class="name" name="first_name" data-validation="required" data-validation-error-msg="姓を入力してください" maxlength="20" placeholder="例) 田中" autofocus> 
+						姓 <input type="text" class="name" name="first_name" data-validation="required" data-validation-error-msg="姓を入力してください" maxlength="20" placeholder="例) 田中" autofocus>
 						名 <input type="text" class="name" name="last_name" data-validation="required" data-validation-error-msg="名を入力してください" maxlength="20" placeholder="例) 太郎">
 					</td>
 				</tr>
 				<tr>
 					<th>フリガナ<i>*</i></th>
 					<td>
-						<input type="text" class="phonetic" name="phonetic" data-validation="required" maxlength="30" data-validation-error-msg="フリガナを入力してください" placeholder="例) タナカタロウ"> 
+						<input type="text" class="phonetic" name="phonetic" data-validation="required" maxlength="30" data-validation-error-msg="フリガナを入力してください" placeholder="例) タナカタロウ">
 					</td>
 				</tr>
 				<tr>
@@ -79,7 +79,7 @@
 				<tr>
 					<th>性別<i>*</i></th>
 					<td>
-						<input type="radio" class="sex" name="sex" data-validation="required" data-validation-error-msg="選択してください" value="Male"> 男性 
+						<input type="radio" class="sex" name="sex" data-validation="required" data-validation-error-msg="選択してください" value="Male"> 男性
 						<input type="radio" class="sex" name="sex" data-validation="required" data-validation-error-msg="選択してください" value="F"> 女性
 					</td>
 				</tr>

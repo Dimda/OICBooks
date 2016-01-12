@@ -1,21 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <link rel="stylesheet" type="text/css" href="css/default.css" media="all">
-  <link rel="stylesheet" type="text/css" href="css/login.css" media="all">
-  <link rel="stylesheet" type="text/css" href="css/default_color.css" media="all">
-  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-  <script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
-  <title>サインイン</title>
-</head>
-<body>
-  <?php include("includes/sidebar.html"); ?>
-  <?php include("includes/header.html"); ?>
-  <main>
-    <div id="login-screen">
     	<?php
     		include("includes/connect_DB.php");
+        session_start();
     		$email = $_POST["email"];
     		$email = mysqli_real_escape_string($conn, $email);
     		$password = mysqli_real_escape_string($conn, $_POST["password"]);
@@ -32,15 +17,9 @@
     						PASSWORD = '$pass_hash'";
     		$result = $conn->query($sql);
     		$row = $result->fetch_assoc();
-    		echo '<br>';
-    		echo '<br>';
     		if(isset($row["CUSTOMER_ID"])){
-    			echo $row["CUSTOMER_ID"];
-          echo '<br>';
-          echo $row["FIRST_NAME"].$row["LAST_NAME"];
-          echo '<br>';
-          echo date('Y年m月d日H時i分s秒');
-
+    			echo 'true';
+          $_SESSION["test"] = "it works!";
           $date = date('Y-m-d H:i:s');
           $CUSTOMER_ID = $row["CUSTOMER_ID"];
           $_SESSION["CUSTOMER_ID"] = $row["CUSTOMER_ID"];
@@ -54,7 +33,7 @@
 
           if(isset($row["CART_ID"])){
             $_SESSION["CART_ID"] = $row["CART_ID"];
-            header('location: index.php');
+            //header('location: index.php');
             exit();
           } else{
             //"カート列を作成します";
@@ -64,18 +43,11 @@
             $result = $conn->query($sql);
             $row = $result->fetch_assoc();
             $_SESSION["CART_ID"] = $row["CART_ID"];
-            header('location: index.php');
+            //header('location: index.php');
             exit();
           }
      		}else {
-    			echo "メールアドレスかパスワードが間違っています";
+    			echo 'false';
     		}
     		$conn->close();
     	?>
-    </div>
-  </main>
-  <?php include("includes/footer.html"); ?>
-  <script type="text/javascript" src="js/classie.js"></script>
-  <script type="text/javascript" src="js/sidebar.js"></script>
-</body>
-</html>

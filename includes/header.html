@@ -51,13 +51,14 @@
                       <div class="arrow"></div>
                         <div class="arrow-border"></div>
                           <form action="login_check.php" method="post" name="login">
+                            <div class="err" id="add_err"></div>
                             <p>
                               メールアドレス
-                              <input id = "email" name="email">
+                              <input id = "email" name="email" type="email" required>
                             </p>
                             <p>
                               パスワード
-                              <input type="password" id = "password" name="password">
+                              <input type="password" id = "password" name="password" required>
                             </p>
                               <input id="login_btn" type="submit" value="ログイン">
                             </form>
