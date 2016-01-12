@@ -5,7 +5,7 @@
       <?php
         include("includes/connect_DB.php");
 
-        $sql = "SELECT CATEGORY_NAME,CATEGORY_ID FROM CATEGORY";
+        $sql = "SELECT CATEGORY_NAME,CATEGORY_ID FROM category";
         $result = $conn->query($sql);
 
         while($row = $result->fetch_assoc()){
