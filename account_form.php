@@ -80,7 +80,7 @@
 					<th>性別<i>*</i></th>
 					<td>
 						<input type="radio" class="sex" name="sex" data-validation="required" data-validation-error-msg="選択してください" value="Male"> 男性 
-						<input type="radio" class="sex" name="sex" data-validation="required" data-validation-error-msg="選択してください" value="F"> 女性
+						<input type="radio" class="sex" name="sex" data-validation="required" data-validation-error-msg="選択してください" value="Female"> 女性
 					</td>
 				</tr>
 				<tr>
