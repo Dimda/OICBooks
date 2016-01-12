@@ -20,8 +20,7 @@
 }
 .link{
   display: inline-block;
-  background-color: #DDBC89;
-  border: solid 1px black;
+  border-bottom: solid 1px #e2e2e2;
   padding: 0.3rem;
   text-align: center;
   width: 100%;
@@ -33,10 +32,7 @@ h2{
   font-size: 1.3rem;
   margin-bottom: 0.2rem;
 }
-h3{
-  font-size: 1rem;
-  margin: 0;
-}
+
 
 .jcarousel {
     position: relative;
