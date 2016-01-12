@@ -1,7 +1,7 @@
 <?php
 	include("includes/connect_DB.php");
 
-    $sql = "SELECT PRODUCT_NAME,PRODUCT_ID,SUM(QUANTITY) FROM ORDERED_PRODUCT GROUP BY PRODUCT_ID ORDER BY SUM(QUANTITY) DESC";
+    $sql = "SELECT PRODUCT_NAME,PRODUCT_ID,SUM(QUANTITY) FROM ordered_product GROUP BY PRODUCT_ID ORDER BY SUM(QUANTITY) DESC";
     $result = $conn->query($sql);
 
     $i=1;

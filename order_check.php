@@ -29,7 +29,7 @@ include("includes/admin_top.php");
     foreach ($_POST["check"] as $key => $value) {
       $keyword = $value;
       $keyword = mysqli_real_escape_string($conn, $keyword);
-      $sql = "SELECT PRODUCT_ID, PRODUCT_NAME, PRODUCT_PRICE,STOCK FROM PRODUCT WHERE PRODUCT_ID = '{$keyword}'";
+      $sql = "SELECT PRODUCT_ID, PRODUCT_NAME, PRODUCT_PRICE,STOCK FROM product WHERE PRODUCT_ID = '{$keyword}'";
       $result = $conn->query($sql);
       while($row = $result->fetch_assoc()){
         echo   '<tr>

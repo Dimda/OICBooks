@@ -30,9 +30,9 @@ include("includes/admin_top.php");
       $keyword = $_POST["keyword"];
       $keyword = mysqli_real_escape_string($conn, $keyword);
       echo $keyword . "の検索結果";
-      $sql = "SELECT PRODUCT_ID, PRODUCT_NAME, PRODUCT_PRICE FROM PRODUCT WHERE PRODUCT_NAME LIKE '%{$keyword}%'";
+      $sql = "SELECT PRODUCT_ID, PRODUCT_NAME, PRODUCT_PRICE FROM product WHERE PRODUCT_NAME LIKE '%{$keyword}%'";
     }else{
-      $sql = "SELECT PRODUCT_ID, PRODUCT_NAME, PRODUCT_PRICE FROM PRODUCT";
+      $sql = "SELECT PRODUCT_ID, PRODUCT_NAME, PRODUCT_PRICE FROM product";
     }
     $result = $conn->query($sql);
     echo '<table>

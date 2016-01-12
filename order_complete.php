@@ -24,13 +24,13 @@
 	$conn->query($sql);
 	$order_id = $conn->insert_id;
 	$cart_id = $_SESSION["CART_ID"];
-	$sql = "SELECT PRODUCT_ID,QUANTITY FROM CART_PRODUCTS WHERE CART_ID = '$cart_id'";
+	$sql = "SELECT PRODUCT_ID,QUANTITY FROM cart_product WHERE CART_ID = '$cart_id'";
 	$result = $conn->query($sql);
 	//ordered_productテーブル追加
 	while($row = $result->fetch_assoc()){
 		$product_id = $row["PRODUCT_ID"];
 		$quantity = $row["QUANTITY"];
-		$sql = "SELECT PRODUCT_NAME,PRODUCT_PRICE FROM PRODUCT WHERE PRODUCT_ID = '$product_id'";
+		$sql = "SELECT PRODUCT_NAME,PRODUCT_PRICE FROM product WHERE PRODUCT_ID = '$product_id'";
 		$product_detail = $conn->query($sql);
 
 		while($row = $product_detail->fetch_assoc()){
@@ -46,25 +46,25 @@
 	}
 
 	//cart_status更新：終了
-	$sql =  "UPDATE CART SET CART_STATUS = 'FINISH' WHERE CART_ID = '$cart_id'";
+	$sql =  "UPDATE cart SET CART_STATUS = 'FINISH' WHERE CART_ID = '$cart_id'";
 	$conn->query($sql);
 	//新しいカートを割り当て
-	$sql = "INSERT INTO CART (CUSTOMER_ID,CART_DATE_ADDED,CART_STATUS) VALUES ('$customer_id','$date','add-test')";
+	$sql = "INSERT INTO cart (CUSTOMER_ID,CART_DATE_ADDED,CART_STATUS) VALUES ('$customer_id','$date','add-test')";
 	$conn->query($sql);
 	//新しいセッションidを割り当て
-	$sql =  "SELECT CART_ID FROM CART WHERE CUSTOMER_ID = '$customer_id' and CART_STATUS <> 'FINISH'";
+	$sql =  "SELECT CART_ID FROM cart WHERE CUSTOMER_ID = '$customer_id' and CART_STATUS <> 'FINISH'";
 	$result = $conn->query($sql);
 	$row = $result->fetch_assoc();
 
 		$_SESSION["CART_ID"] = $row["CART_ID"];
 	
 	//ポイントの割り当て
-	$sql =  "SELECT POINT FROM CUSTOMER WHERE CUSTOMER_ID = '$customer_id'";
+	$sql =  "SELECT POINT FROM customer WHERE CUSTOMER_ID = '$customer_id'";
 	$result = $conn->query($sql);
 	$row = $result->fetch_assoc();
 
 	$point_result = $row["POINT"] - $_SESSION["take_customer_point"] + $_SESSION["add_customer_point"];
-	$sql =  "UPDATE CUSTOMER SET POINT = '$point_result'WHERE CUSTOMER_ID = '$customer_id'";
+	$sql =  "UPDATE customer SET POINT = '$point_result'WHERE CUSTOMER_ID = '$customer_id'";
 	$conn->query($sql);
 
 	//自動メール送信

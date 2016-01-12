@@ -17,7 +17,7 @@ $product = array(
   "keyword" =>             $_POST["productKeyword"]
 );
 echo $date . '<br>';
-$sql = "INSERT INTO PRODUCT (PRODUCT_NAME, STOCK, PRODUCT_AUTHOR, PRODUCT_PRICE,
+$sql = "INSERT INTO product (PRODUCT_NAME, STOCK, PRODUCT_AUTHOR, PRODUCT_PRICE,
 PRODUCT_DESCRIPTION, PRODUCT_DATE_AVAILABLE, PRODUCT_CHANGE_DATE, CATEGORY_ID, TAX_RATE_CODE,
 PUBLISHER_ID, PRODUCT_ISBN, KEYWORD)
 VALUES ('{$product["name"]}', '{$product["stock"]}', '{$product["author"]}', '{$product["price"]}', '{$product["description"]}',

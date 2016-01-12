@@ -24,9 +24,9 @@
         echo "<p>" . $keyword . "の検索結果</p>";
         $keyword = preg_replace($pattern, $replacement, $keyword);
         if($keyword == ""){
-          $sql = "SELECT PRODUCT_ID, PRODUCT_NAME, PRODUCT_PRICE, PRODUCT_AUTHOR FROM PRODUCT";
+          $sql = "SELECT PRODUCT_ID, PRODUCT_NAME, PRODUCT_PRICE, PRODUCT_AUTHOR FROM product";
         }else{
-          $sql = "SELECT PRODUCT_ID, PRODUCT_NAME, PRODUCT_PRICE, PRODUCT_AUTHOR FROM PRODUCT WHERE PRODUCT_NAME LIKE '%{$keyword}%'";
+          $sql = "SELECT PRODUCT_ID, PRODUCT_NAME, PRODUCT_PRICE, PRODUCT_AUTHOR FROM product WHERE PRODUCT_NAME LIKE '%{$keyword}%'";
         }
         $result = $conn->query($sql);
 

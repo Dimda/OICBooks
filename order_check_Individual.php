@@ -25,7 +25,7 @@ include("includes/admin_top.php");
              <th>商品名</th><th>価格</th><th>数量</th>';
       $keyword = $_GET["ID"];
       $keyword = mysqli_real_escape_string($conn, $keyword);
-      $sql = "SELECT PRODUCT_ID, PRODUCT_NAME, PRODUCT_PRICE,STOCK FROM PRODUCT WHERE PRODUCT_ID = '{$keyword}'";
+      $sql = "SELECT PRODUCT_ID, PRODUCT_NAME, PRODUCT_PRICE,STOCK FROM product WHERE PRODUCT_ID = '{$keyword}'";
       $result = $conn->query($sql);
       while($row = $result->fetch_assoc()){
         echo   '<tr>

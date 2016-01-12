@@ -42,7 +42,7 @@
 					<?php 
 						include("includes/connect_DB.php");
 						$id = $_SESSION["CUSTOMER_ID"];
-						$sql =  "SELECT POINT FROM CUSTOMER WHERE CUSTOMER_ID = '$id'";
+						$sql =  "SELECT POINT FROM customer WHERE CUSTOMER_ID = '$id'";
 						$result = $conn->query($sql);
             			$row = $result->fetch_assoc();
             			echo "現在所有POINTは".$row["POINT"]."です";

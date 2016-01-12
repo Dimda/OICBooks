@@ -34,7 +34,7 @@
   {
     $before = $_POST["before"];
     $after = $_POST["after"];
-	  $sql = "SELECT SUM(PRODUCT_PRICE*QUANTITY) FROM ORDERED_PRODUCT WHERE PURCHASE_DATE BETWEEN '{$before}' AND '{$after}'";
+	  $sql = "SELECT SUM(PRODUCT_PRICE*QUANTITY) FROM ordered_product WHERE PURCHASE_DATE BETWEEN '{$before}' AND '{$after}'";
     $result = $conn->query($sql);
     while($row = $result->fetch_assoc()){
       echo "売り上げは".$row["SUM(PRODUCT_PRICE*QUANTITY)"]."円です";

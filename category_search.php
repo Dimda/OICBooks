@@ -21,7 +21,7 @@
         echo "<p>" . $category_name . "の検索結果</p>";
 
         
-        $sql = "SELECT PRODUCT_ID, PRODUCT_NAME, PRODUCT_PRICE, PRODUCT_AUTHOR FROM PRODUCT WHERE CATEGORY_ID = '{$category_id}'";
+        $sql = "SELECT PRODUCT_ID, PRODUCT_NAME, PRODUCT_PRICE, PRODUCT_AUTHOR FROM product WHERE CATEGORY_ID = '{$category_id}'";
         $result = $conn->query($sql);
 
         while($row = $result->fetch_assoc()){
