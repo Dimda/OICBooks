@@ -2,7 +2,7 @@
 $ID = $_GET["ID"];
 include("includes/connect_DB.php");
 
-$sql = "SELECT PRODUCT_NAME, PRODUCT_PRICE, PRODUCT_DESCRIPTION, PRODUCT_AUTHOR, STOCK, PRODUCT_DATE_AVAILABLE FROM product WHERE PRODUCT_ID = $ID";
+$sql = "SELECT PRODUCT_NAME, PRODUCT_PRICE, PRODUCT_DESCRIPTION, PRODUCT_AUTHOR, stock, PRODUCT_DATE_AVAILABLE FROM product WHERE PRODUCT_ID = $ID";
 $result = $conn->query($sql);
 $matches = glob('./product_image/' . $_GET["ID"] . "*");
 while($row = $result->fetch_assoc()){
