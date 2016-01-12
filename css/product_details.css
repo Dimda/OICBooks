@@ -12,9 +12,6 @@
 #product-info-wrapper{
 	margin: 10px;
 }
-#product-image{
-
-}
 #block{
 	margin-left: 10px;
 	overflow: hidden;
@@ -42,4 +39,20 @@
 #product-price{
   color: #AA512F;
   font-size: 1.2em;
+}
+#product-data-available{
+	margin-left: 10px;
+	font-size: 0.7em;
+	color: #717171;
+}
+#pdatails input[type="submit"]{
+	vertical-align: middle;
+	font-size: 15px;
+	border-style: none;
+	cursor: pointer;
+	background-color: #DECA98;
+	border-radius: 3px;
+}
+#pdatails input[type="submit"]:hover{
+	background-color: #E1D6BD;
 }

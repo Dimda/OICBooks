@@ -5,7 +5,7 @@ mysql_set_charset('utf8');
 $first_name       = mysqli_real_escape_string($conn, $_POST["first_name"]);
 $last_name        = mysqli_real_escape_string($conn, $_POST["last_name"]);
 $phonetic         = mysqli_real_escape_string($conn, $_POST["first_phonetic"].$_POST["last_phonetic"]);
-$new_email        = mysqli_real_escape_string($conn, $_POST["user_email"]);
+$new_email        = mysqli_real_escape_string($conn, $_POST["comfirm_email"]);
 $password         = $_POST["pass"];
 $new_password     = $_POST["new_pass"];
 $phone_number     = $_POST['phone_number'];
@@ -20,7 +20,7 @@ if ($id = $_SESSION["CUSTOMER_ID"]){
 
 	if($first_name && $last_name && $phonetic){
 		$sql = "UPDATE customer SET FIRST_NAME = '$first_name', LAST_NAME = '$last_name', FURIGANA = '$phonetic' WHERE CUSTOMER_ID = '$id'";
-			$_SESSION["CUSTOMER_NAME"] = $_POST["first_name"].$_POST["last_name"];
+		$_SESSION["CUSTOMER_NAME"] = $_POST["first_name"].$_POST["last_name"];
 	}
 
 	if($new_email && $password){
@@ -43,8 +43,8 @@ if ($id = $_SESSION["CUSTOMER_ID"]){
 		$sql = "UPDATE customer SET PASSWORD = '$new_password' WHERE CUSTOMER_ID = '$id' AND PASSWORD = '$password'";
 	}
 
-	$conn -> query($sql);
-	$conn -> close();
+	$conn->query($sql);
+	$conn->close();
 }
 header('Location: account_update.php');
 ?>

@@ -15,7 +15,7 @@
 	<?php include("includes/connect_DB.php"); ?>
 	<main>
 
-		<table class="v">
+		<table>
 			<tr>
 				<th>注文日</th>
 				<th>商品名</th>
@@ -24,7 +24,10 @@
 			<?php
 			ini_set( 'display_errors', 1 );
 			if($id = $_SESSION["CUSTOMER_ID"]){
-				$sql = "SELECT `PRODUCT_NAME`, `PURCHASE_DATE`, `PRODUCT_PRICE` FROM `ordered_product` NATURAL JOIN `product` WHERE `ORDER_ID` IN (SELECT `ORDER_ID` FROM `order` WHERE `CUSTOMER_ID` = $id) ORDER BY `PURCHASE_DATE` DESC";
+				$sql = "SELECT `PRODUCT_NAME`, `PURCHASE_DATE`, `PRODUCT_PRICE` FROM `ordered_product` 
+					NATURAL JOIN `product` WHERE `ORDER_ID` IN 
+					(SELECT `ORDER_ID` FROM `order` WHERE `CUSTOMER_ID` = $id) 
+					ORDER BY `PURCHASE_DATE` DESC";
 				$result = $conn->query($sql);
 				while($row = $result->fetch_assoc()){
 					?>

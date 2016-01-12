@@ -1,15 +1,15 @@
 .popbox {
-  margin:0px auto;
+  margin-right:0px auto;
   text-align:center;
   position:relative;
   z-index: 10000;
-  max-width: 130px;
+  /*max-width: 130px;*/
 }
 
   .collapse { position:relative; }
 
   .open {
-
+    padding:0;
   }
 
     .box {
