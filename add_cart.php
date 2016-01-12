@@ -21,10 +21,7 @@
       $cart_id = $_SESSION["CART_ID"];
 
       include("includes/connect_DB.php");
-<<<<<<< HEAD
-=======
-
->>>>>>> a44404c8440524e2244cefcfaec4163b9f1adbdf
+      
       $sql =  "SELECT CART_ID FROM cart_products WHERE PRODUCT_ID = '$product_id' and CART_ID =
       (SELECT CART_ID FROM cart WHERE CART_STATUS <> 'FINISH' and CART_ID = '$cart_id')";
 
