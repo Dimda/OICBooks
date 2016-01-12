@@ -35,7 +35,7 @@ if(isset($_GET["imageErrNum"])){
 
 
 include("includes/connect_DB.php");
-$sql = "SELECT * FROM PRODUCT WHERE PRODUCT_ID = $ID";
+$sql = "SELECT * FROM product WHERE PRODUCT_ID = $ID";
 $result = $conn->query($sql);
 while($row = $result->fetch_assoc()){
   $productName = $row["PRODUCT_NAME"];
@@ -110,7 +110,7 @@ while($row = $result->fetch_assoc()){
       <div class="input">
         <select id="product-category" name="productCategory" onchange='CheckOther(this.value);'>
           <?php
-          $sql = "SELECT * FROM CATEGORY";
+          $sql = "SELECT * FROM category";
           $result = $conn->query($sql);
           while($row = $result->fetch_assoc()){
             findCurrentValue($row['CATEGORY_ID'], $row['CATEGORY_NAME'], $product['category']);
@@ -125,7 +125,7 @@ while($row = $result->fetch_assoc()){
       <div class="input">
         <select id="product-tax" name="productTax">
           <?php
-          $sql = "SELECT * FROM TAX_RATE";
+          $sql = "SELECT * FROM tax_rate";
           $result = $conn->query($sql);
           while($row = $result->fetch_assoc()){
             $taxPercent = (int)substr($row["TAX_RATE"], -2) . "%";
@@ -142,7 +142,7 @@ while($row = $result->fetch_assoc()){
       <div class="input">
         <select id="product-publisher" name="productPublisher">
           <?php
-          $sql = "SELECT * FROM PUBLISHER";
+          $sql = "SELECT * FROM publisher";
           $result = $conn->query($sql);
           while($row = $result->fetch_assoc()){
             echo '<option value="' . $row['PUBLISHER_ID'] . '">' . $row["PUBLISHER_NAME"] .'</option>';
@@ -158,7 +158,7 @@ while($row = $result->fetch_assoc()){
     </p>
     <p>
       <div class="label"><label for="product-stock">在庫数</label></div>
-      <div class="input"><input id="product-stock" type="number" name="productStock" data-validation="number" data-validation-error-msg="数字ではありません。" required="required" value= "<?php echo $product['stock']; ?>"></div>
+      <div class="input"><input id="product-stock" type="number" name="productstock" data-validation="number" data-validation-error-msg="数字ではありません。" required="required" value= "<?php echo $product['stock']; ?>"></div>
     </p>
     <p>
       <div class="label"><label for="product-keyword" value= "<?php echo $product['keyword']; ?>">検索キーワード</label></div>

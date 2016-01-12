@@ -21,13 +21,13 @@
 				include("includes/connect_DB.php");
 				$sum = 0;
 				$cart_id = $_SESSION["CART_ID"];
-				$sql = "SELECT PRODUCT_ID,QUANTITY FROM CART_PRODUCTS WHERE CART_ID = '$cart_id'";
+				$sql = "SELECT PRODUCT_ID,QUANTITY FROM cart_products WHERE CART_ID = '$cart_id'";
 				$result = $conn->query($sql);
 				while($row = $result->fetch_assoc()){
 					echo  '<div id="box">';
           			$quantity = $row["QUANTITY"];
           			$id = $row["PRODUCT_ID"];
-          			$sql = "SELECT PRODUCT_NAME, PRODUCT_PRICE  FROM PRODUCT WHERE PRODUCT_ID = '$id'";
+          			$sql = "SELECT PRODUCT_NAME, PRODUCT_PRICE  FROM product WHERE PRODUCT_ID = '$id'";
           			$data = $conn->query($sql);
           			$data = $data->fetch_assoc();
           			echo $data["PRODUCT_NAME"];

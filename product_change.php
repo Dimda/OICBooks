@@ -2,7 +2,7 @@
 include("includes/connect_DB.php");
 $ID = $_GET["ID"];
 $quantity = $_POST["QUANTITY"];
-$sql =  "UPDATE PRODUCT SET STOCK = '$quantity' WHERE PRODUCT_ID = '$ID'";
+$sql =  "UPDATE product SET stock = '$quantity' WHERE PRODUCT_ID = '$ID'";
 $conn->query($sql);
 $conn->close();
 

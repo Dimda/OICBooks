@@ -75,7 +75,7 @@ include("includes/connect_DB.php")
       <div class="input">
         <select id="product-category" name="productCategory">
           <?php
-          $sql = "SELECT * FROM CATEGORY";
+          $sql = "SELECT * FROM category";
           $result = $conn->query($sql);
           while($row = $result->fetch_assoc()){
             echo '<option value="' . $row['CATEGORY_ID'] . '">' . $row["CATEGORY_NAME"] .'</option>';
@@ -90,7 +90,7 @@ include("includes/connect_DB.php")
       <div class="input">
         <select id="product-tax" name="productTax">
           <?php
-          $sql = "SELECT * FROM TAX_RATE";
+          $sql = "SELECT * FROM tax_rate";
           $result = $conn->query($sql);
           while($row = $result->fetch_assoc()){
             echo '<option value="' . $row['TAX_RATE_CODE'] . '">' . (int)substr($row["TAX_RATE"], -2) .'%</option>';
@@ -105,7 +105,7 @@ include("includes/connect_DB.php")
       <div class="input">
         <select id="product-publisher" name="productPublisher">
           <?php
-          $sql = "SELECT * FROM PUBLISHER";
+          $sql = "SELECT * FROM publisher";
           $result = $conn->query($sql);
           while($row = $result->fetch_assoc()){
             echo '<option value="' . $row['PUBLISHER_ID'] . '">' . $row["PUBLISHER_NAME"] .'</option>';
@@ -121,7 +121,7 @@ include("includes/connect_DB.php")
     </p>
     <p>
       <div class="label"><label for="product-stock">在庫数</label></div>
-      <div class="input"><input id="product-stock" type="number" name="productStock" data-validation="number" data-validation-error-msg="数字ではありません。" required="required"></div>
+      <div class="input"><input id="product-stock" type="number" name="productstock" data-validation="number" data-validation-error-msg="数字ではありません。" required="required"></div>
     </p>
     <p>
       <div class="label"><label for="product-keyword">検索キーワード</label></div>

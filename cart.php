@@ -5,10 +5,9 @@
 	<link rel="stylesheet" href="css/default_color.css">
 	<link rel="stylesheet" href="css/default.css">
 	<link rel="stylesheet" href="css/cart.css">
-	<link rel="stylesheet" type="text/css" href="css/search_results.css" media="all">
-   <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+ <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 
-	<title>カート</title>
+ <title>カート</title>
 </head>
 <body>
 	<?php include("includes/sidebar.html"); ?>
@@ -20,7 +19,7 @@
 				include("includes/connect_DB.php");
 				$sum = 0;
 				$cart_id = $_SESSION["CART_ID"];
-				$sql = "SELECT PRODUCT_ID,QUANTITY FROM CART_PRODUCTS WHERE CART_ID = '$cart_id'";
+				$sql = "SELECT PRODUCT_ID,QUANTITY FROM cart_products WHERE CART_ID = '$cart_id'";
 				$result = $conn->query($sql);
 				while($row = $result->fetch_assoc()){
 					$matches = glob('./product_image/' . $row["PRODUCT_ID"] . "*");
@@ -32,7 +31,7 @@
           			echo $row["QUANTITY"];
           			echo "<br>";
           			$id = $row["PRODUCT_ID"];
-          			$sql = "SELECT PRODUCT_PRICE FROM PRODUCT WHERE PRODUCT_ID = '$id'";
+          			$sql = "SELECT PRODUCT_PRICE FROM product WHERE PRODUCT_ID = '$id'";
           			$price = $conn->query($sql);
           			$price = $price->fetch_assoc();
           			echo  '<div class="product-price">¥ '. $price["PRODUCT_PRICE"].'</div></br>';

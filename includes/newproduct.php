@@ -1,7 +1,7 @@
 <?php
   include("includes/connect_DB.php");
 
-    $sql = "SELECT PRODUCT_NAME, PRODUCT_ID, PRODUCT_DATE_AVAILABLE FROM PRODUCT 
+    $sql = "SELECT PRODUCT_NAME, PRODUCT_ID, PRODUCT_DATE_AVAILABLE FROM product 
             ORDER BY PRODUCT_DATE_AVAILABLE DESC,PRODUCT_ID DESC";
     $result = $conn->query($sql);
 

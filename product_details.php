@@ -1,7 +1,8 @@
 <?php
 $ID = $_GET["ID"];
 include("includes/connect_DB.php");
-$sql = "SELECT PRODUCT_NAME, PRODUCT_PRICE, PRODUCT_DESCRIPTION, PRODUCT_AUTHOR, STOCK FROM PRODUCT WHERE PRODUCT_ID = $ID";
+
+$sql = "SELECT PRODUCT_NAME, PRODUCT_PRICE, PRODUCT_DESCRIPTION, PRODUCT_AUTHOR, stock, PRODUCT_DATE_AVAILABLE FROM product WHERE PRODUCT_ID = $ID";
 $result = $conn->query($sql);
 $matches = glob('./product_image/' . $_GET["ID"] . "*");
 while($row = $result->fetch_assoc()){
@@ -9,7 +10,8 @@ while($row = $result->fetch_assoc()){
   $productDescription = $row["PRODUCT_DESCRIPTION"];
   $productPrice = $row["PRODUCT_PRICE"];
   $productAuthor = $row["PRODUCT_AUTHOR"];
-  $productStock = $row["STOCK"];
+  $productstock = $row["stock"];
+  $productDateAvailable = $row["PRODUCT_DATE_AVAILABLE"];
 }
 ?>
 <!DOCTYPE HTML>
@@ -31,13 +33,14 @@ while($row = $result->fetch_assoc()){
      <div id="product-picture"><img class="product-picture" src="<?php echo $matches[0] ?>"></div>
      <div id="block">
       <div id="product-name"><?php echo $productName; ?></div>
-      <div id ="product-author"><?php echo $productAuthor; ?>(著)</div>
+      <span id ="product-author"><?php echo $productAuthor; ?>(著)</span>
+      <span id="product-data-available"><?php echo $productDateAvailable?></span>
       <div id="product-stock">
         価格：<span id="product-price">¥<?php echo $productPrice; ?></span>
         <?php
-        if($productStock > 0){
-          if($productStock <= 10){
-            echo "<div id='exist'>残り<b>".$productStock."</b>点です。</div>";
+        if($productstock > 0){
+          if($productstock <= 10){
+            echo "<div id='exist'>残り<b>".$productstock."</b>点です。</div>";
           }else{
             echo "<div id='exist'>在庫あり</div>";
           }
@@ -49,7 +52,7 @@ while($row = $result->fetch_assoc()){
       <div id="add-cart">
         <?php
         if(isset($_SESSION["CUSTOMER_NAME"])){
-          echo '<form method="POST" action="add_cart.php?ID='.$ID.';">
+          echo '<form method="POST" id="pdatails" action="add_cart.php?ID='.$ID.';">
           <input type="submit" name="add-cart" value="カートに追加">
           <input type="number" min="1" name="QUANTITY" value="1">
         </form>

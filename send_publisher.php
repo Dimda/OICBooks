@@ -7,12 +7,12 @@
 	for ($i = 0 ; $i < count($quantity); $i++) {
 		if($quantity[$i] == 0)
 			continue;
-        $sql = "SELECT PRODUCT_NAME FROM PRODUCT WHERE PRODUCT_ID = '{$check[$i]}'";
+        $sql = "SELECT PRODUCT_NAME FROM product WHERE PRODUCT_ID = '{$check[$i]}'";
         $result = $conn->query($sql);
         while($row = $result->fetch_assoc()){
             $product = $row["PRODUCT_NAME"];
         }
-        $sql = "SELECT PUBLISHER_NAME,PUBLISHER_MAIL FROM PUBLISHER WHERE PUBLISHER_ID = (SELECT PUBLISHER_ID FROM PRODUCT WHERE PRODUCT_ID = '{$check[$i]}')";
+        $sql = "SELECT PUBLISHER_NAME,PUBLISHER_MAIL FROM publisher WHERE PUBLISHER_ID = (SELECT PUBLISHER_ID FROM PRODUCT WHERE PRODUCT_ID = '{$check[$i]}')";
         $result = $conn->query($sql);
         while($row = $result->fetch_assoc()){
             $message = '商品の発注:'.$row["PUBLISHER_NAME"].'様'.'
@@ -56,13 +56,13 @@
         //メール送信
         if ($mail->Send()){
             //echo 'Mail send Success!';
-            $sql = "SELECT STOCK FROM PRODUCT WHERE PRODUCT_ID = '{$check[$i]}'";
+            $sql = "SELECT stock FROM product WHERE PRODUCT_ID = '{$check[$i]}'";
             $result = $conn->query($sql);
             while($row = $result->fetch_assoc()){
-                $product_stock = $row["STOCK"];
+                $product_stock = $row["stock"];
             }
             $product_stock = $quantity[$i] + $product_stock;
-            $sql = "UPDATE PRODUCT SET STOCK = '{$product_stock}' WHERE PRODUCT_ID = '{$check[$i]}'";
+            $sql = "UPDATE product SET stock = '{$product_stock}' WHERE PRODUCT_ID = '{$check[$i]}'";
             $conn->query($sql);
             header('location: product_order.php');
         } else {
