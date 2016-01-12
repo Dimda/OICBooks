@@ -1,3 +1,4 @@
+/*
 $(document).ready(function(){
   $('form').on('submit', function(event) {
     event.preventDefault();
@@ -15,7 +16,7 @@ $(document).ready(function(){
   });
 });
 
-/*
+
 $(document).ready(function(){
 $("#add_err").css('display', 'none', 'important');
 $("#login").click(function(){

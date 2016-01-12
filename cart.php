@@ -20,7 +20,7 @@
 				include("includes/connect_DB.php");
 				$sum = 0;
 				$cart_id = $_SESSION["CART_ID"];
-				$sql = "SELECT PRODUCT_ID,QUANTITY FROM cart_product WHERE CART_ID = '$cart_id'";
+				$sql = "SELECT PRODUCT_ID,QUANTITY FROM cart_products WHERE CART_ID = '$cart_id'";
 				$result = $conn->query($sql);
 				while($row = $result->fetch_assoc()){
 					$matches = glob('./product_image/' . $row["PRODUCT_ID"] . "*");

@@ -24,7 +24,7 @@
 	$conn->query($sql);
 	$order_id = $conn->insert_id;
 	$cart_id = $_SESSION["CART_ID"];
-	$sql = "SELECT PRODUCT_ID,QUANTITY FROM cart_product WHERE CART_ID = '$cart_id'";
+	$sql = "SELECT PRODUCT_ID,QUANTITY FROM cart_products WHERE CART_ID = '$cart_id'";
 	$result = $conn->query($sql);
 	//ordered_productテーブル追加
 	while($row = $result->fetch_assoc()){
