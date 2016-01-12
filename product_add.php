@@ -120,8 +120,8 @@ include("includes/connect_DB.php")
       <div class="input"><input id="product-price" type="number"  name="productPrice" data-validation="number" data-validation-error-msg="数字ではありません。" required="required"></div>
     </p>
     <p>
-      <div class="label"><label for="product-stock">在庫数</label></div>
-      <div class="input"><input id="product-stock" type="number" name="productStock" data-validation="number" data-validation-error-msg="数字ではありません。" required="required"></div>
+      <div class="label"><label for="product-stocknoaaa">在庫数</label></div>
+      <div class="input"><input id="product-stocknoaaa" type="number" name="productstocknoaaa" data-validation="number" data-validation-error-msg="数字ではありません。" required="required"></div>
     </p>
     <p>
       <div class="label"><label for="product-keyword">検索キーワード</label></div>

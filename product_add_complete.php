@@ -13,14 +13,14 @@ $product = array(
   "category" =>            $_POST["productCategory"],
   "tax" =>                 $_POST["productTax"],
   "publisher" =>           $_POST["productPublisher"],
-  "stock" =>               $_POST["productStock"],
+  "stocknoaaa" =>               $_POST["productstocknoaaa"],
   "keyword" =>             $_POST["productKeyword"]
 );
 echo $date . '<br>';
-$sql = "INSERT INTO product (PRODUCT_NAME, STOCK, PRODUCT_AUTHOR, PRODUCT_PRICE,
+$sql = "INSERT INTO product (PRODUCT_NAME, stocknoaaa, PRODUCT_AUTHOR, PRODUCT_PRICE,
 PRODUCT_DESCRIPTION, PRODUCT_DATE_AVAILABLE, PRODUCT_CHANGE_DATE, CATEGORY_ID, TAX_RATE_CODE,
 PUBLISHER_ID, PRODUCT_ISBN, KEYWORD)
-VALUES ('{$product["name"]}', '{$product["stock"]}', '{$product["author"]}', '{$product["price"]}', '{$product["description"]}',
+VALUES ('{$product["name"]}', '{$product["stocknoaaa"]}', '{$product["author"]}', '{$product["price"]}', '{$product["description"]}',
 '{$product["dateAvailabe"]}', '{$product["changeDate"]}', '{$product["category"]}', '{$product["tax"]}', '{$product["publisher"]}',
 '{$product["isbn"]}', '{$product["keyword"]}')";
 

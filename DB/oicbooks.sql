@@ -17648,7 +17648,7 @@ INSERT INTO `post_all` (`d01`, `d02`, `d03`, `d04`, `d05`, `d06`, `d07`, `d08`, 
 CREATE TABLE `product` (
   `PRODUCT_ID` int(8) NOT NULL,
   `PRODUCT_NAME` varchar(50) CHARACTER SET utf8 DEFAULT NULL COMMENT 'タイトル',
-  `stock` int(8) DEFAULT '0' COMMENT '在庫数',
+  `stocknoaaanoaaa` int(8) DEFAULT '0' COMMENT '在庫数',
   `PRODUCT_AUTHOR` varchar(50) CHARACTER SET utf8 DEFAULT NULL COMMENT '著者',
   `PRODUCT_PRICE` float DEFAULT NULL,
   `PRODUCT_DESCRIPTION` varchar(500) CHARACTER SET utf8 DEFAULT NULL,
@@ -17665,7 +17665,7 @@ CREATE TABLE `product` (
 -- テーブルのデータのダンプ `product`
 --
 
-INSERT INTO `product` (`PRODUCT_ID`, `PRODUCT_NAME`, `stock`, `PRODUCT_AUTHOR`, `PRODUCT_PRICE`, `PRODUCT_DESCRIPTION`, `PRODUCT_DATE_AVAILABLE`, `PRODUCT_CHANGE_DATE`, `CATEGORY_ID`, `TAX_RATE_CODE`, `PUBLISHER_ID`, `PRODUCT_ISBN`, `KEYWORD`) VALUES
+INSERT INTO `product` (`PRODUCT_ID`, `PRODUCT_NAME`, `stocknoaaanoaaa`, `PRODUCT_AUTHOR`, `PRODUCT_PRICE`, `PRODUCT_DESCRIPTION`, `PRODUCT_DATE_AVAILABLE`, `PRODUCT_CHANGE_DATE`, `CATEGORY_ID`, `TAX_RATE_CODE`, `PUBLISHER_ID`, `PRODUCT_ISBN`, `KEYWORD`) VALUES
 (100011, 'ダンジョンに出会いを求めるのは間違っているだろうか ', 0, '大森 藤ノ', 670, '大森藤ノ×ヤスダスズヒトのコンビが贈る\r\nGA文庫大賞初の《大賞》受賞作、ここに開幕!!\r\n\r\n迷宮都市オラリオ──『ダンジョン』と通称される壮大な地下迷宮を保有する巨大都市。\r\n未知という名の興奮、輝かしい栄誉、そして可愛い女の子とのロマンス。\r\n人の夢と欲望全てが息を潜めるこの場所で、少年は一人の小さな「神様」に出会った。\r\n「よし、ベル君、付いてくるんだ! 【ファミリア】入団の儀式をやるぞ! 」\r\n「はいっ! 僕は強くなります! 」\r\nどの【ファミリア】にも門前払いだった冒険者志望の少年と、\r\n構成員ゼロの神様が果たした運命の出会い。\r\n\r\nこれは、少年が歩み、女神が記す、\r\n── 【眷族の物語(ファミリア・ミィス)】──', '2013-01-16', '2015-10-20 05:45:56', 6, 1, 1, '978-4797372809', '"ダンジョンに出会いを求めるのは間違っているだろうか"'),
 (100012, 'ダンジョンに出会いを求めるのは間違っているだろうか 2', 0, '大森 藤ノ', 680, '「初めまして、白髪のお兄さん」\r\nベルに声をかけてきたのは、自ら《サポーター》を名乗る少女・リリだった。\r\n半ば強引にペアを組むことになった少女を不審に思いながらも、\r\n順調にダンジョンを攻略していく二人。\r\n束の間の仲間。\r\n一方で、リリが所属する【ソーマ・ファミリア】には悪い噂が絶えない。\r\nその先には、人の心までも奪うとされる《神酒》の存在が──?\r\n\r\n「神様、僕は……」\r\n「大丈夫、ベル君の異性を見る目は確かなのさ。神のように、きっとね」\r\n\r\nこれは、少年が歩み、女神が記す、\r\n── 【眷族の物語(ファミリア・ミィス)】──', '2013-02-16', '2015-10-20 05:54:15', 6, 1, 1, '978-4797373073', '"ダンジョンに出会いを求めるのは間違っているだろうか"'),
 (100013, 'ダンジョンに出会いを求めるのは間違っているだろうか 3', 0, '大森 藤ノ', 648, '「……君は、臆病だね」\r\n「!?」\r\n「臆病でいることは冒険で大切なこと。\r\nでもそれ以外にも、君は何かに怯えてる」\r\n\r\n突如憧れの女性【剣姫】アイズと再会を果たしたベル。\r\nそこで突きつけられてしまった事実。\r\n自分を抉る最大の因縁。\r\n紅い紅い、凶悪な猛牛・ミノタウロス。\r\n少年はそんな自分を情けなく思った。\r\nそして少年は初めて思った。\r\n僕は── 英雄になりたい。\r\n\r\n『偉業を成し遂げればいい、\r\n人も、神々さえも讃える功績を』\r\n\r\nこれは、少年が歩み、女神が記す、── 【眷族の物語(ファミリア・ミィス)】──', '2013-05-16', '2015-10-20 06:03:27', 6, 1, 1, '978-4797373622', '"ダンジョンに出会いを求めるのは間違っているだろうか"'),

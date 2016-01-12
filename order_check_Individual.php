@@ -3,7 +3,7 @@ $title              = '発注確認';
 $subtitle           = '発注確認';
 
 $sideElement[0]     = '在庫情報の編集';
-$sideElementLink[0] = 'admin_stock_manager.php';
+$sideElementLink[0] = 'admin_stocknoaaa_manager.php';
 $sideElement[1]     = '商品の発注';
 $sideElementLink[1] = 'product_order.php';
 
@@ -25,15 +25,15 @@ include("includes/admin_top.php");
              <th>商品名</th><th>価格</th><th>数量</th>';
       $keyword = $_GET["ID"];
       $keyword = mysqli_real_escape_string($conn, $keyword);
-      $sql = "SELECT PRODUCT_ID, PRODUCT_NAME, PRODUCT_PRICE,STOCK FROM product WHERE PRODUCT_ID = '{$keyword}'";
+      $sql = "SELECT PRODUCT_ID, PRODUCT_NAME, PRODUCT_PRICE,stocknoaaa FROM product WHERE PRODUCT_ID = '{$keyword}'";
       $result = $conn->query($sql);
       while($row = $result->fetch_assoc()){
         echo   '<tr>
                   <td style="display:none"><input type="checkbox" class = "check" name="check[]" width = "10%" checked="checked" value=' . $row["PRODUCT_ID"] . '></td>
                   <td class = "product-name" width = "70%"><a class = "product-name" href="product_details.php?ID=' . $row["PRODUCT_ID"] . '">' . $row["PRODUCT_NAME"] .'</a></td>
                   <td class = "product-price" width = "10%">' . $row["PRODUCT_PRICE"] .'円</td>
-                  <td class = "product-stock" width = "10%">'.$row["STOCK"].''."冊".'</td>
-                  <td><input type="number" class = "product-stock" name="QUANTITY[]" width = "10%" value= "1" min= "0"></td>
+                  <td class = "product-stocknoaaa" width = "10%">'.$row["stocknoaaa"].''."冊".'</td>
+                  <td><input type="number" class = "product-stocknoaaa" name="QUANTITY[]" width = "10%" value= "1" min= "0"></td>
                 </tr>
                 ';
              }

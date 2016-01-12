@@ -26,7 +26,7 @@
         <li><a href="admin_direct_mail.php">ダイレクトメール設定</a></li>
         <li><a href="admin_event.php">イベント情報登録</a></li>
         <li><a href="admin_product_manager.php">商品管理</a></li>
-        <li><a href="admin_stock_manager.php">在庫情報</a></li>
+        <li><a href="admin_stocknoaaanoaaanoonoo_manager.php">在庫情報</a></li>
         <li><a href="admin_earnings.php">売り上げ情報</a></li>
         <li><a href="./index.php">お客様TOPへ</a></li>
       </ul>
