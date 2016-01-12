@@ -56,13 +56,13 @@
         //メール送信
         if ($mail->Send()){
             //echo 'Mail send Success!';
-            $sql = "SELECT stocknoaaa FROM product WHERE PRODUCT_ID = '{$check[$i]}'";
+            $sql = "SELECT stock FROM product WHERE PRODUCT_ID = '{$check[$i]}'";
             $result = $conn->query($sql);
             while($row = $result->fetch_assoc()){
-                $product_stocknoaaa = $row["stocknoaaa"];
+                $product_stock = $row["stock"];
             }
-            $product_stocknoaaa = $quantity[$i] + $product_stocknoaaa;
-            $sql = "UPDATE product SET stocknoaaa = '{$product_stocknoaaa}' WHERE PRODUCT_ID = '{$check[$i]}'";
+            $product_stock = $quantity[$i] + $product_stock;
+            $sql = "UPDATE product SET stock = '{$product_stock}' WHERE PRODUCT_ID = '{$check[$i]}'";
             $conn->query($sql);
             header('location: product_order.php');
         } else {

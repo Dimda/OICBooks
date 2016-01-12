@@ -3,7 +3,7 @@ $title              = '商品の発注';
 $subtitle           = '商品の発注';
 
 $sideElement[0]     = '在庫情報の編集';
-$sideElementLink[0] = 'admin_stocknoaaa_manager.php';
+$sideElementLink[0] = 'admin_stock_manager.php';
 $sideElement[1]     = '商品の発注';
 $sideElementLink[1] = 'product_order.php';
 
@@ -30,9 +30,9 @@ include("includes/admin_top.php");
       $keyword = $_POST["keyword"];
       $keyword = mysqli_real_escape_string($conn, $keyword);
       echo $keyword . "の検索結果";
-      $sql = "SELECT PRODUCT_ID, PRODUCT_NAME, PRODUCT_PRICE,stocknoaaa FROM product WHERE PRODUCT_NAME LIKE '%{$keyword}%'";
+      $sql = "SELECT PRODUCT_ID, PRODUCT_NAME, PRODUCT_PRICE,stock FROM product WHERE PRODUCT_NAME LIKE '%{$keyword}%'";
     }else{
-      $sql = "SELECT PRODUCT_ID, PRODUCT_NAME, PRODUCT_PRICE,stocknoaaa FROM product";
+      $sql = "SELECT PRODUCT_ID, PRODUCT_NAME, PRODUCT_PRICE,stock FROM product";
     }
     $result = $conn->query($sql);
     echo '<table>
@@ -43,7 +43,7 @@ include("includes/admin_top.php");
                   <td><input type="checkbox" class = "check" name="check[]" width = "10%" value=' . $row["PRODUCT_ID"] . '></td>
                   <td class = "product-name" width = "70%"><a class = "product-name" href="product_details.php?ID=' . $row["PRODUCT_ID"] . '">' . $row["PRODUCT_NAME"] .'</a></td>
                   <td class = "product-price" width = "10%">' . $row["PRODUCT_PRICE"] .'円</td>
-                  <td class = "product-stocknoaaa" width = "10%">'.$row["stocknoaaa"].''."冊".'</td>
+                  <td class = "product-stock" width = "10%">'.$row["stock"].''."冊".'</td>
                   <td class = "edit" width = "10%"><a href="order_check_individual.php?ID=' . $row["PRODUCT_ID"] . '">個別発注</a></td>
                 </tr>
                 ';

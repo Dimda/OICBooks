@@ -2,7 +2,7 @@
 $ID = $_GET["ID"];
 include("includes/connect_DB.php");
 
-$sql = "SELECT PRODUCT_NAME, PRODUCT_PRICE, PRODUCT_DESCRIPTION, PRODUCT_AUTHOR, stocknoaaa, PRODUCT_DATE_AVAILABLE FROM product WHERE PRODUCT_ID = $ID";
+$sql = "SELECT PRODUCT_NAME, PRODUCT_PRICE, PRODUCT_DESCRIPTION, PRODUCT_AUTHOR, stock, PRODUCT_DATE_AVAILABLE FROM product WHERE PRODUCT_ID = $ID";
 $result = $conn->query($sql);
 $matches = glob('./product_image/' . $_GET["ID"] . "*");
 while($row = $result->fetch_assoc()){
@@ -10,7 +10,7 @@ while($row = $result->fetch_assoc()){
   $productDescription = $row["PRODUCT_DESCRIPTION"];
   $productPrice = $row["PRODUCT_PRICE"];
   $productAuthor = $row["PRODUCT_AUTHOR"];
-  $productstocknoaaa = $row["stocknoaaa"];
+  $productstock = $row["stock"];
   $productDateAvailable = $row["PRODUCT_DATE_AVAILABLE"];
 }
 ?>
@@ -35,12 +35,12 @@ while($row = $result->fetch_assoc()){
       <div id="product-name"><?php echo $productName; ?></div>
       <span id ="product-author"><?php echo $productAuthor; ?>(著)</span>
       <span id="product-data-available"><?php echo $productDateAvailable?></span>
-      <div id="product-stocknoaaa">
+      <div id="product-stock">
         価格：<span id="product-price">¥<?php echo $productPrice; ?></span>
         <?php
-        if($productstocknoaaa > 0){
-          if($productstocknoaaa <= 10){
-            echo "<div id='exist'>残り<b>".$productstocknoaaa."</b>点です。</div>";
+        if($productstock > 0){
+          if($productstock <= 10){
+            echo "<div id='exist'>残り<b>".$productstock."</b>点です。</div>";
           }else{
             echo "<div id='exist'>在庫あり</div>";
           }
