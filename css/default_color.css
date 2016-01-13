@@ -29,12 +29,9 @@ a[title]:hover {
 #sidebar nav a:hover{
   background: #AC4F5B;
 }
-#top {
-  background-color: #9F1D2F;
-}
 #top a {
-  color: #ffffff;
+  color: #9F1D2F;
 }
 footer {
-  border-top: 1px solid #aa0000;
+  border-top: 1px solid #9F1D2F;
 }

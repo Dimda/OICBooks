@@ -5,8 +5,8 @@
 	<link rel="stylesheet" href="css/default_color.css">
 	<link rel="stylesheet" href="css/default.css">
 	<link rel="stylesheet" href="css/cart.css">
- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-
+ 　<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
  <title>カート</title>
 </head>
 <body>
