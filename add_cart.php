@@ -54,7 +54,6 @@
 		  ?>
     </div>
   </main>
- <?php include ("includes/top.html");?>
  <?php include("includes/footer.html"); ?>
  <script type="text/javascript" src="js/classie.js"></script>
  <script type="text/javascript" src="js/sidebar.js"></script>
