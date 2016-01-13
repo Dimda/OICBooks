@@ -12,7 +12,7 @@
         while($row = $result->fetch_assoc()){
             $product = $row["PRODUCT_NAME"];
         }
-        $sql = "SELECT PUBLISHER_NAME,PUBLISHER_MAIL FROM publisher WHERE PUBLISHER_ID = (SELECT PUBLISHER_ID FROM product WHERE PRODUCT_ID = '{$check[$i]}')";
+        $sql = "SELECT PUBLISHER_NAME,PUBLISHER_MAIL FROM publisher/* WHERE PUBLISHER_ID = (SELECT PUBLISHER_ID FROM product WHERE PRODUCT_ID = '{$check[$i]}')*/";
         $result = $conn->query($sql);
         while($row = $result->fetch_assoc()){
             $message = '商品の発注:'.$row["PUBLISHER_NAME"].'様'.'
