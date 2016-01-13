@@ -117,17 +117,17 @@ main {
 #top{
   position: fixed;
   bottom: 0;
-  right: 0;
+  right: 2%;
   z-index: 60;
-  margin-right: 0.5em;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
 }
 #top a{
   display: block;
-  padding: 1rem 1rem;
-  -webkit-transition: margin-left .25s ease;
-  transition: margin-bottom .25s ease;
+}
+#top:hover {
+  opacity: 0.8;
+}
+#top .fa{
+  background-color: rgba(255,255,255,0);
 }
 footer {
   position: absolute;
