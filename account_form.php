@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
-	<link rel="stylesheet" type="text/" href="css/default.css">
+	<link rel="stylesheet" type="text/css" href="css/default.css">
 	<link rel="stylesheet" type="text/css" href="css/default_color.css">
 	<link rel="stylesheet" type="text/css" href="css/account_form.css">
 	<link rel="stylesheet" type="text/css" href="css/theme-default.css">

@@ -26,7 +26,7 @@
 			</p>
 		<p>
 			<label for="pass">現在のパスワード</label><br>
-			<input type="password" id="pass" name="pass" size="30" data-validation="length" data-validation-length="6-12" data-validation-strength="2" data-validation-error-msg="パスワードを入力してください" maxlength="12">
+			<input type="password" id="pass" name="epass" size="30" data-validation="length" data-validation-length="6-12" data-validation-strength="2" data-validation-error-msg="パスワードを入力してください" maxlength="12">
 		</p>
 		<input type="submit">
 		</form>

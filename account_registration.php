@@ -23,12 +23,12 @@
 	$birthday     = $_POST['birthday'].'-'.$_POST['month'].'-'.$_POST['day'];//BIRTH_DATE
 	$email        = $_POST['user_email']; //EMAIL_ADDRESS
 	$phone_number = $_POST['phone_number']; //PHONE_NUMBER
-	$password     = $_POST['pass_confirmation']; //PASSWORD
 	$zip          = $_POST['address1'].$_POST['address2']; //ZIP_CODE
 	$pref         = $_POST['pref']; //ADDRESS_STREET_1
 	$city         = $_POST['city'].$_POST['area']; //ADDRESS_STREET_2
 	$mansion      = $_POST['mansion']; //ADDRESS_STREET_3
 	$mailmagazine = $_POST['mailmagazine']; //EMAIL_PERMIT
+	$password     = $_POST['pass']; //PASSWORD
 	$pass_md5     = MD5($password);
 	$pass_hash    = hash('sha256', 'coca'.$pass_md5.'cola');
 
