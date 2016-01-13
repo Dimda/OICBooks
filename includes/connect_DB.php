@@ -1,6 +1,6 @@
 <?php
 $servername = "127.0.0.1";
-$username = "oi1";
+$username = "root";
 $password = "cocacola";
 $dbname = "oicbooks";
 
