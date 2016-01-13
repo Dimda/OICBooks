@@ -30,8 +30,6 @@
 					ORDER BY `PURCHASE_DATE` DESC";
 				$result = $conn->query($sql);
 				while($row = $result->fetch_assoc()){
-					?>
-					<?php
 					echo	"<tr>";
 					echo	"<td>".$row["PURCHASE_DATE"]."</td>";
 					echo	"<td>".$row["PRODUCT_NAME"]."</td>";
