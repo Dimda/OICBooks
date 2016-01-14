@@ -24,9 +24,9 @@
   <?php include("includes/sidebar.html"); ?>
   <main>
     <div class="slider1">
-      <div class="slide"><a href="#"><img src="img/add-1.jpg" height="400px" width="1000px"/></a></div>
-      <div class="slide"><img src="img/add-2.jpg" height="400px" width="400px" /></div>
-      <div class="slide"><img src="img/add-3.jpg" height="400px" width="400px" /></div>
+      <div class="slide"><img src="img/add-1.jpg" height="400px" width="1000px"/></div>
+      <div class="slide"><img src="img/add-2.jpg" height="400px" width="1000px"/></div>
+      <div class="slide"><img src="img/add-3.jpg" height="400px" width="1000px"/></div>
     </div>
 
     <div id="new" class="link"><h2>新着商品</h2></div>
@@ -34,8 +34,8 @@
         <?php include ("includes/newproduct.php"); ?>
     </div>
     <h2 class="link">ランキング</h2>
-    <div id="recommended" class="boxdayo">
-      <?php include ("includes/ranking.php"); ?>
+    <div class="slider2">
+        <?php include ("includes/ranking.php"); ?>
     </div>
   </main>
   <?php include ("includes/top.html"); ?>
@@ -54,7 +54,6 @@
         slideMargin: 5
       });
       $('.slider2').bxSlider({
-        auto: true,
         slideWidth: 200,
         minSlides: 4,
         maxSlides: 5,
