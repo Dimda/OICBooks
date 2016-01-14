@@ -1,7 +1,7 @@
 
 $(document).ready(function(){
   $("#add_err").css('display', 'none', 'important');
-  $('form').on('submit', function(event) {
+  $('#login').on('submit', function(event) {
     email=$('#email').val();
     password=$('#password').val();
     event.preventDefault();
