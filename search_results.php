@@ -26,7 +26,7 @@
         if($keyword == ""){
           $sql = "SELECT PRODUCT_ID, PRODUCT_NAME, PRODUCT_PRICE, PRODUCT_AUTHOR FROM product";
         }else{
-          $sql = "SELECT PRODUCT_ID, PRODUCT_NAME, PRODUCT_PRICE, PRODUCT_AUTHOR FROM product WHERE PRODUCT_NAME LIKE '%{$keyword}%'";
+          $sql = "SELECT PRODUCT_ID, PRODUCT_NAME, PRODUCT_PRICE, PRODUCT_AUTHOR FROM product WHERE PRODUCT_NAME LIKE '%{$keyword}%' OR PRODUCT_ISBN = '{$keyword}'";
         }
         $result = $conn->query($sql);
 
