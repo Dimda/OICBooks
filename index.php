@@ -61,7 +61,7 @@
       });
     });
     $(window).cbKonami(function () {
-      window.location = "admin.php";
+      window.location = "starwars.php";
     });
   </script>
 
