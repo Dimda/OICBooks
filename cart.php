@@ -32,7 +32,7 @@
        echo '<span id="product-data-available">'.$row["PRODUCT_DATE_AVAILABLE"]."</span>";
        echo '<p id="space">';
        $id = $row["PRODUCT_ID"];
-       $sql = "SELECT PRODUCT_PRICE FROM PRODUCT WHERE PRODUCT_ID = '$id'";
+       $sql = "SELECT PRODUCT_PRICE FROM product WHERE PRODUCT_ID = '$id'";
        $price = $conn->query($sql);
        $price = $price->fetch_assoc();
        echo '価格: <span id="product-price">¥'. $price["PRODUCT_PRICE"].'</span>';
