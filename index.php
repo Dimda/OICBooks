@@ -21,9 +21,9 @@
   <?php include("includes/sidebar.html"); ?>
   <main>
     <div class="slider1">
-      <div class="slide"><a href="#"><img src="img/add-1.jpg" height="400px" width="1000px"/></a></div>
-      <div class="slide"><img src="img/add-2.jpg" height="400px" width="400px" /></div>
-      <div class="slide"><img src="img/add-3.jpg" height="400px" width="400px" /></div>
+      <div class="slide"><img src="img/add-1.jpg" height="400px" width="1000px"/></div>
+      <div class="slide"><img src="img/add-2.jpg" height="400px" width="1000px"/></div>
+      <div class="slide"><img src="img/add-3.jpg" height="400px" width="1000px"/></div>
     </div>
 
     <div id="new" class="link"><h2>新着商品</h2></div>
