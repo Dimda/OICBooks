@@ -31,8 +31,8 @@
         <?php include ("includes/newproduct.php"); ?>
     </div>
     <h2 class="link">ランキング</h2>
-    <div id="recommended" class="boxdayo">
-      <?php include ("includes/ranking.php"); ?>
+    <div class="slider2">
+        <?php include ("includes/ranking.php"); ?>
     </div>
   </main>
   <?php include ("includes/top.html"); ?>
@@ -51,7 +51,6 @@
         slideMargin: 5
       });
       $('.slider2').bxSlider({
-        auto: true,
         slideWidth: 200,
         minSlides: 4,
         maxSlides: 5,

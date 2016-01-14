@@ -6,7 +6,8 @@
 
     $i=1;
     while($row = $result->fetch_assoc()){
-      echo '<a href="product_details.php?ID=' . $row["PRODUCT_ID"] . '">'.$i." 位 ".$row["PRODUCT_NAME"]."</a><br><br>";
+			echo '<div class="slide"><a href="product_details.php?ID=' . $row["PRODUCT_ID"] . '"><img src="product_image/' . $row["PRODUCT_ID"] . '.jpg" height="200px"></a></div>';
+      $i+= 1;
       $i+= 1;
       if($i >10)
       	break;
