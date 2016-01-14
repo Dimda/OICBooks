@@ -2,6 +2,9 @@
 <html lang="jp">
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Cache-Control" content="no-cache">
+  <meta http-equiv="Expires" content="Thu, 01 Dec 1994 16:00:00 GMT">
   <script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
   <script type="text/javascript" src="js/jquery.cbkonami.min.js"></script>
   <script src="js/Slider/jquery.bxslider.min.js"></script>
