@@ -6,7 +6,6 @@
 	<script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
 	<script type="text/javascript" src="js/jquery.cbkonami.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="css/default.css" media="all">
-	<link rel="stylesheet" type="text/css" href="css/top_page.css" media="all">
 	<link rel="stylesheet" type="text/css" href="css/default_color.css" media="all">
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 </head>
@@ -32,16 +31,7 @@
 	$pass_md5     = MD5($password);
 	$pass_hash    = hash('sha256', 'coca'.$pass_md5.'cola');
 
-	echo $first_name . '<br>';
-	echo $last_name . '<br>';
-	echo $phonetic.'<br>';
-	echo $phone_number. '<br>';
-	echo $pref.$city.$mansion.'<br>';
-	echo $zip.'<br>';
-	echo $email.'<br>';
-	echo $sex.'<br>';
-	echo $mailmagazine.'<br>';
-	echo $birthday . '<br>';
+	echo "登録完了";
 
 	if($_SESSION["first_name"] != $first_name){
 		//mysql_set_charset('utf8');
