@@ -28,5 +28,5 @@ h1{
     text-align: justify;
     -webkit-animation: typetext linear 50s;
     color: #F1C40F;
-    letter-spacing: 3px;
+    letter-spacing: 15px;
   }
