@@ -7,8 +7,6 @@
 	<link rel="stylesheet" type="text/css" href="css/default_color.css">
 	<link rel="stylesheet" type="text/css" href="css/account_form.css">
 	<link rel="stylesheet" type="text/css" href="css/theme-default.css">
-	<script src="js/autoConfirm.js"></script>
-	<script src="js/jquery.ba-hashchange.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-form-validator/2.2.8/jquery.form-validator.min.js"></script>
 	<script type="text/javascript" src="http://jpostal.googlecode.com/svn/trunk/jquery.jpostal.js"></script>
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
@@ -35,13 +33,13 @@
 	<?php include("includes/connect_DB.php"); ?>
 	<?php $_SESSION["first_name"] = "aaa"; ?>
 	<main>
-		<form id="account_form" class="autoConfirm" action="account_registration.php" method="post">
+		<form id="account_form" action="account_registration.php" method="post">
 			<table>
 				<tr>
 					<th>氏名<i>*</i></th>
 					<td>
-						姓: <input type="text" class="name" name="first_name" data-validation="required" data-validation-error-msg="姓を入力してください" maxlength="20" placeholder="例) 田中" autofocus>
-						名: <input type="text" class="name" name="last_name" data-validation="required" data-validation-error-msg="名を入力してください" maxlength="20" placeholder="例) 太郎">
+						姓 <input type="text" class="name" name="first_name" data-validation="required" data-validation-error-msg="姓を入力してください" maxlength="20" placeholder="例) 田中" autofocus>
+						名 <input type="text" class="name" name="last_name" data-validation="required" data-validation-error-msg="名を入力してください" maxlength="20" placeholder="例) 太郎">
 					</td>
 				</tr>
 				<tr>
@@ -107,7 +105,7 @@
 				</tr>
 			</table>
 			<input type="submit">
-			<input type="button" value="戻る" class="autoConfirmBack" style="display:none;">
+			<input type="reset">
 		</form>
 	</main>
 	<script type="text/javascript" src="js/classie.js"></script>

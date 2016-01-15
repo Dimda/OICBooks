@@ -11,7 +11,6 @@ $zip              = mysqli_real_escape_string($conn, $_POST['address1'].$_POST['
 $pref             = mysqli_real_escape_string($conn, $_POST['pref']);
 $city             = mysqli_real_escape_string($conn, $_POST['city'].$_POST['area']);
 $mansion          = mysqli_real_escape_string($conn, $_POST['mansion']);
-// $epass_md5     	  = MD5($_POST["epass"]);
 $epass_hash   	  = hash('sha256', 'coca'.MD5($_POST["epass"]).'cola');
 $pass_md5     	  = MD5($_POST["pass"]);
 $pass_hash   	  = hash('sha256', 'coca'.$pass_md5.'cola');
