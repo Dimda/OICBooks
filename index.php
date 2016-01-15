@@ -2,6 +2,9 @@
 <html lang="jp">
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Cache-Control" content="no-cache">
+  <meta http-equiv="Expires" content="Thu, 01 Dec 1994 16:00:00 GMT">
   <script type="text/javascript" src="js/jquery-1.8.2.min.js"></script>
   <script type="text/javascript" src="js/jquery.cbkonami.min.js"></script>
   <script src="js/Slider/jquery.bxslider.min.js"></script>
@@ -21,9 +24,9 @@
   <?php include("includes/sidebar.html"); ?>
   <main>
     <div class="slider1">
-      <div class="slide"><a href="#"><img src="img/add-1.jpg" height="400px" width="1000px"/></a></div>
-      <div class="slide"><img src="img/add-2.jpg" height="400px" width="400px" /></div>
-      <div class="slide"><img src="img/add-3.jpg" height="400px" width="400px" /></div>
+      <div class="slide"><img src="img/add-1.jpg" height="400px" width="1000px"/></div>
+      <div class="slide"><img src="img/add-2.jpg" height="400px" width="1000px"/></div>
+      <div class="slide"><img src="img/add-3.jpg" height="400px" width="1000px"/></div>
     </div>
 
     <div id="new" class="link"><h2>新着商品</h2></div>
@@ -58,7 +61,7 @@
       });
     });
     $(window).cbKonami(function () {
-      window.location = "admin.php";
+      window.location = "starwars.php";
     });
   </script>
 
