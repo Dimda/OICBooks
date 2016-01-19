@@ -104,8 +104,10 @@
 					</td>
 				</tr>
 			</table>
-			<input type="submit">
-			<input type="reset">
+			<div class="center">
+				<input type="submit">
+				<input type="reset">
+			</div>
 		</form>
 	</main>
 	<script type="text/javascript" src="js/classie.js"></script>

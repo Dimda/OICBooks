@@ -1,8 +1,5 @@
-#account_form {
-	width: 70%;
-	margin: 0 auto;
-}
 table {
+	margin: 0 auto;
 	text-align: left;
 	border-collapse: collapse;
 }
@@ -61,10 +58,14 @@ table i {
 	float: right;
 	margin-left: 10px;
 }
-input[type="submit"], input[type="reset"] {
+.center{
+	text-align: center;
+}
+.center input[type="submit"], .center input[type="reset"] {
 	margin-top: 10px;
 	cursor: pointer;
+	width: 150px;
 }
-input[type="submit"]:hover, input[type="reset"]:hover {
+.center input[type="submit"]:hover, .center input[type="reset"]:hover {
 	background-color: #e1e1e1;
 }
