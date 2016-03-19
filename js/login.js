@@ -13,7 +13,8 @@ $(document).ready(function(){
         }else{
           $("#add_err").css('display', 'inline', 'important');
           $("#add_err").css('color', 'red');
-          $("#add_err").html("ユーザー名かパスワードは間違っています。");
+          $("#add_err").css('font-size', '10px');
+          $("#add_err").html("ユーザー名かパスワードが間違っています。");
         }
       });
   });

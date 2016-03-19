@@ -36,7 +36,7 @@
           echo  '<img id="product-picture" src="' . $matches[0] . '"></br>';
           echo  '<a id = "product-name" href="product_details.php?ID=' . $row["PRODUCT_ID"] . '">' . $row["PRODUCT_NAME"] .'</a></br>';
           echo  '<div id="product-author">'.$row["PRODUCT_AUTHOR"].'</div>';
-          echo  '<div id="product-price">¥ '. $row["PRODUCT_PRICE"] .'</div></br>';
+          echo  '<div id="product-price">¥'. $row["PRODUCT_PRICE"] .'</div></br>';
           echo  '</div>';
         }
         $conn->close();

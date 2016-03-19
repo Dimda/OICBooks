@@ -47,7 +47,6 @@ if ($id = $_SESSION["CUSTOMER_ID"]){
 		$sql = "UPDATE customer SET EMAIL_PERMIT = '$mailmagazine' WHERE CUSTOMER_ID = '$id'";
 		$conn->query($sql);
 	}
-	// var_dump($sql);exit;
 }
 $conn->close();
 header('Location: account_update.php');

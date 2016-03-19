@@ -10,9 +10,14 @@ header {
 .search_bar:focus{
   background-color: #eeeeee;
 }
-.fa {
+.fa-search{
   color: #8E8E8E;
   background-color: white;
+}
+.fa-angle-up{
+  background-color: rgba(255,255,255,0);
+}
+.fa-shopping-cart{
 }
 a[title] {
   color: #555555;

@@ -126,9 +126,6 @@ main {
 #top:hover {
   opacity: 0.8;
 }
-#top .fa{
-  background-color: rgba(255,255,255,0);
-}
 footer {
   position: absolute;
   bottom: 0;

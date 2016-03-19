@@ -3,18 +3,18 @@ include("includes/connect_DB.php");
 date_default_timezone_set('Asia/Tokyo');
 $date = date('Y-d-m h:i:s', time());
 $product = array(
-  "isbn" =>                $_POST["productISBN"],
-  "name" =>                $_POST["productName"],
-  "author" =>              $_POST["productAuthor"],
-  "price" =>               $_POST["productPrice"],
-  "description" =>         $_POST["productDescription"],
-  "dateAvailabe" =>        $_POST["productDateAvailable"],
-  "changeDate" =>          $date,
-  "category" =>            $_POST["productCategory"],
-  "tax" =>                 $_POST["productTax"],
-  "publisher" =>           $_POST["productPublisher"],
-  "stock" =>               $_POST["productstock"],
-  "keyword" =>             $_POST["productKeyword"]
+  "isbn"         => $_POST["productISBN"],
+  "name"         => $_POST["productName"],
+  "author"       => $_POST["productAuthor"],
+  "price"        => $_POST["productPrice"],
+  "description"  => $_POST["productDescription"],
+  "dateAvailabe" => $_POST["productDateAvailable"],
+  "changeDate"   => $date,
+  "category"     => $_POST["productCategory"],
+  "tax"          => $_POST["productTax"],
+  "publisher"    => $_POST["productPublisher"],
+  "stock"        => $_POST["productstock"],
+  "keyword"      => $_POST["productKeyword"]
 );
 echo $date . '<br>';
 $sql = "INSERT INTO product (PRODUCT_NAME, stock, PRODUCT_AUTHOR, PRODUCT_PRICE,
